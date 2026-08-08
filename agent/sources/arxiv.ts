@@ -98,11 +98,14 @@ export async function fetchArxiv(
 
   const candidates = parseEntries(result.body);
 
-  // A 200 that yields nothing parseable is a failure worth surfacing, not silence.
-  if (candidates.length === 0 && !result.body.includes("<entry>")) {
+  // A well-formed feed with zero entries is a legitimate empty result, not a
+  // failure — arXiv returns exactly that for a category with nothing new. Only
+  // a body that is not a feed at all counts as broken.
+  const looksLikeFeed = result.body.includes("<feed") || result.body.includes("<entry>");
+  if (candidates.length === 0 && !looksLikeFeed) {
     return {
       candidates: [],
-      failure: { source: "arxiv", error: "no parseable entries in feed", attempts: result.attempts },
+      failure: { source: "arxiv", error: "response was not a parseable Atom feed", attempts: result.attempts },
     };
   }
 
