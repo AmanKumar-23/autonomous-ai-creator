@@ -48,9 +48,14 @@ interface ProviderConfig {
   parse: (body: unknown) => { text: string | null; tokens?: number };
 }
 
-export const PROVIDERS: ProviderConfig[] = [
-  {
-    name: "groq",
+/**
+ * Groq's free tier meters tokens per model per day, so a second model is real
+ * additional headroom rather than the same bucket under another name — which is
+ * what makes this a meaningful fallback when the 70B model hits its daily cap.
+ */
+function groq(model: string): ProviderConfig {
+  return {
+    name: `groq:${model}`,
     envKey: "GROQ_API_KEY",
     request: (options, apiKey) => ({
       url: "https://api.groq.com/openai/v1/chat/completions",
@@ -61,7 +66,7 @@ export const PROVIDERS: ProviderConfig[] = [
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
+          model,
           messages: [
             { role: "system", content: options.system },
             { role: "user", content: options.user },
@@ -82,9 +87,18 @@ export const PROVIDERS: ProviderConfig[] = [
         tokens: data.usage?.total_tokens,
       };
     },
-  },
+  };
+}
+
+export const PROVIDERS: ProviderConfig[] = [
+  // Best quality first, then a smaller model on a separate per-model quota.
+  groq("llama-3.3-70b-versatile"),
+  groq("llama-3.1-8b-instant"),
   {
-    name: "gemini",
+    // Kept as a last tier: it authenticates but currently reports a free-tier
+    // limit of 0, so it only helps if that quota is ever granted. A fast 429 on
+    // the way past costs nothing.
+    name: "gemini:gemini-2.0-flash",
     envKey: "GEMINI_API_KEY",
     request: (options, apiKey) => ({
       url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,

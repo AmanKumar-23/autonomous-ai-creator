@@ -56,7 +56,7 @@ describe("provider failover", () => {
 
     const result = await generate({ system: "s", user: "u" });
     assert.equal(result.ok, true);
-    assert.equal(result.provider, "groq");
+    assert.match(result.provider ?? "", /^groq:/);
     assert.equal(result.text, "hello");
   });
 
@@ -68,7 +68,7 @@ describe("provider failover", () => {
     );
 
     const result = await generate({ system: "s", user: "u" });
-    assert.equal(result.provider, "gemini");
+    assert.match(result.provider ?? "", /^gemini:/);
     assert.equal(result.text, "from gemini");
     assert.equal(result.attempts[0].ok, false);
     assert.match(result.attempts[0].error ?? "", /429/);
@@ -85,7 +85,7 @@ describe("provider failover", () => {
 
     const result = await generate({ system: "s", user: "u" });
     assert.equal(groqCalled, false);
-    assert.equal(result.provider, "gemini");
+    assert.match(result.provider ?? "", /^gemini:/);
     assert.match(result.attempts[0].error ?? "", /no key/);
   });
 
@@ -97,7 +97,7 @@ describe("provider failover", () => {
     const result = await generate({ system: "s", user: "u" });
     assert.equal(result.ok, false);
     assert.equal(result.text, null);
-    assert.equal(result.attempts.length, 2);
+    assert.ok(result.attempts.length >= 2);
   });
 
   it("treats an empty completion as a failure and moves on", async () => {
@@ -106,7 +106,7 @@ describe("provider failover", () => {
     mockFetch((url) => (isGroq(url) ? groqReply("   ") : geminiReply("real content")));
 
     const result = await generate({ system: "s", user: "u" });
-    assert.equal(result.provider, "gemini");
+    assert.match(result.provider ?? "", /^gemini:/);
   });
 
   it("survives fetch rejecting outright", async () => {
