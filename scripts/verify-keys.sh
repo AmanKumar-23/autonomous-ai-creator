@@ -41,7 +41,7 @@ fi
 if [ -n "${GEMINI_API_KEY:-}" ]; then
   echo
   echo "Gemini"
-  models="$(curl -s --max-time 20 "https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}")"
+  models="$(curl -s --max-time 20 "https://generativelanguage.googleapis.com/v1beta/models" -H "x-goog-api-key: ${GEMINI_API_KEY}")"
   if printf '%s' "$models" | grep -q '"models"'; then
     echo "  PASS  flash models available:"
     printf '%s' "$models" \

@@ -37,18 +37,28 @@ if [ -z "$KEY" ]; then
   exit 1
 fi
 
-# Shape checks catch a truncated or half-copied paste before it reaches CI.
-case "$NAME" in
-  GROQ_API_KEY)
-    [[ "$KEY" == gsk_* ]] || { echo "FAIL: a Groq key starts with 'gsk_' (got '${KEY:0:4}…', ${#KEY} chars)"; exit 1; } ;;
-  GEMINI_API_KEY)
-    [[ "$KEY" == AIza* ]] || { echo "FAIL: a Gemini key starts with 'AIza' (got '${KEY:0:4}…', ${#KEY} chars)"; exit 1; } ;;
-esac
-
-if [ "${#KEY}" -lt 20 ] || [ "${#KEY}" -gt 120 ]; then
+if [ "${#KEY}" -lt 20 ] || [ "${#KEY}" -gt 200 ]; then
   echo "FAIL: ${#KEY} characters is not a plausible key length — the paste was mangled."
   exit 1
 fi
+
+# Ask the provider whether the key works, rather than guessing from its prefix.
+# Key formats change (Gemini keys are no longer always AIza…), so authentication
+# is the only check worth trusting. Nothing is written unless this passes.
+echo "checking the key against $NAME's provider..."
+case "$NAME" in
+  GROQ_API_KEY)
+    RESPONSE="$(curl -s --max-time 25 https://api.groq.com/openai/v1/models \
+      -H "Authorization: Bearer ${KEY}")"
+    printf '%s' "$RESPONSE" | grep -q '"data"' \
+      || { echo "FAIL: Groq rejected this key: $(printf '%s' "$RESPONSE" | head -c 160)"; exit 1; } ;;
+  GEMINI_API_KEY)
+    RESPONSE="$(curl -s --max-time 25 https://generativelanguage.googleapis.com/v1beta/models \
+      -H "x-goog-api-key: ${KEY}")"
+    printf '%s' "$RESPONSE" | grep -q '"models"' \
+      || { echo "FAIL: Google rejected this key: $(printf '%s' "$RESPONSE" | head -c 160)"; exit 1; } ;;
+esac
+echo "provider accepted the key"
 
 touch "$ENV_FILE"
 # Replace any existing line for this key rather than appending a duplicate.
