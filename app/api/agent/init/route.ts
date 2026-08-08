@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 
+import { isRemoteConfigured, readRemoteState, writeRemoteState } from "@/lib/github";
 import { readState, writeState } from "@/lib/store";
 import type { AgentState, Persona } from "@/lib/types";
 
@@ -11,6 +12,10 @@ import type { AgentState, Persona } from "@/lib/types";
  *
  * The persona is whatever the evaluator sends. Nothing about it is hardcoded —
  * the editorial voice layer wraps these supplied values at write time.
+ *
+ * State is persisted by committing data/state.json through the GitHub API, not
+ * by writing to disk: on Vercel a disk write is discarded, so the cron would
+ * never see the init and would never publish. See lib/github.ts.
  */
 
 export const runtime = "nodejs";
@@ -63,8 +68,12 @@ export async function POST(request: Request) {
   }
 
   try {
+    // GitHub is authoritative when configured: the committed file is what the
+    // cron reads, and it is already correct while Vercel is still redeploying.
+    const remote = await readRemoteState();
+    const existing = remote?.state ?? (await readState());
+
     // Idempotent: a retry must return the same id and must never reset state.
-    const existing = await readState();
     if (existing.initialized && existing.agentId) {
       console.log(`[init] already initialized, returning ${existing.agentId}`);
       return NextResponse.json({ agentId: existing.agentId });
@@ -78,14 +87,19 @@ export async function POST(request: Request) {
       initializedAt: new Date().toISOString(),
     };
 
+    const committed = await writeRemoteState(state, remote?.sha);
+
+    // Works locally, silently discarded on Vercel — harmless either way.
     try {
       await writeState(state);
-      console.log(`[init] initialized ${agentId} as ${persona.name} / ${persona.domain}`);
-    } catch (error) {
-      // Read-only filesystem (Vercel) or a transient write failure. The caller
-      // still gets a usable agentId — failing the request would be worse.
-      console.error("[init] could not persist state:", error);
+    } catch {
+      // Expected on a read-only filesystem. Covered by the commit above.
     }
+
+    if (!committed && isRemoteConfigured()) {
+      console.error(`[init] WARNING: ${agentId} was not committed; the cron will not see it`);
+    }
+    console.log(`[init] initialized ${agentId} as ${persona.name} / ${persona.domain}`);
 
     return NextResponse.json({ agentId });
   } catch (error) {
