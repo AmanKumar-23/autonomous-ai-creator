@@ -421,3 +421,71 @@ Everything was then reset to empty so the evaluator's own init is the first one 
 
 43/43 tests pass, including one asserting the supplied persona reaches the prompt and no
 other persona leaks in.
+
+---
+
+## Phase 5 — Memory via Breeth
+
+**Requirements advanced:** requirement 4 (memory) primarily; requirement 3 (continuity
+gives the persona a past to refer to) and requirement 6 (the rationale can now say what a
+story adds to earlier coverage).
+
+### The docs check, before any code
+
+The prompt required reading https://docs.thebreeth.com/ and stopping if only MCP were
+documented. Breeth publishes a REST API, so MCP was not needed:
+
+- `POST /v1/episodes` — `{ content, group_id, source_description, extract_intent }`
+- `POST /v1/search` — `{ query, group_id, limit }` returning `{ edges: [{ fact, ... }] }`
+- Auth: `Authorization: Bearer ck_live_...`
+- Hybrid ranking: "BM25 + vector cosine + graph centrality"
+
+### What the live API taught us that the docs did not
+
+Both findings changed the design, and the first would have broken the feed:
+
+1. **Search has no relevance cutoff and returns no similarity score.** Querying a group
+   with a completely unrelated topic still returns whatever facts that group holds —
+   verified: "humanoid robot loco-manipulation controller" returned prompt-injection
+   edges. Treating "any hit" as a duplicate would have rejected every candidate as soon
+   as memory contained anything, and the agent would have stopped publishing entirely.
+   So Breeth supplies the semantic recall, and a conservative local check decides whether
+   the recalled fact is genuinely the SAME story: two shared distinctive terms. One would
+   suppress every later story about the same organisation; two catches "OpenAI ships agent
+   SDK" against "new agent framework from OpenAI" while letting an unrelated OpenAI story
+   through. Over-rejection costs a publishing cycle, which is the more expensive mistake.
+2. **The post id does not survive fact extraction.** Episodes are distilled to facts, so
+   identity is resolved locally against posts.json rather than read back out of Breeth.
+
+### Where memory sits in the pipeline
+
+`recallSimilar` runs BEFORE the editorial gate, so the editor never spends a decision —
+or tokens — on ground already covered. Candidates it flags are rejected as "already
+covered (see post <id>)" into the same rejection log the editor writes to. Survivors carry
+their recalled facts into the judge, so `why_selected` can say what a story adds, and into
+the writer, where a callback is offered but never mandated.
+
+Note on ordering: the URL dedup in seen.json runs during discovery, ahead of memory, so a
+story already published is blocked before Breeth is consulted. Memory earns its place on
+the case URL matching cannot see — the same story, different words, different URL — which
+is what `scripts/demo-memory.sh` demonstrates.
+
+### Graceful degradation, verified rather than assumed
+
+Every call has an 8-second timeout and is wrapped; failures are recorded structurally.
+Two full cycles were run to prove availability is untouched:
+
+- with a deliberately invalid key: `[memory] recall failed: HTTP 401` three times, and the
+  cycle still published
+- with no key at all: no memory calls attempted, and the cycle still published
+
+### Verified end to end against the live API
+
+`./scripts/demo-memory.sh` publishes a post about "OpenAI ships agent SDK", remembers it,
+waits for Breeth's async extraction, then offers "New agent framework from OpenAI lets
+assistants call external tools" at a DIFFERENT domain, alongside an unrelated robotics
+story. Result: the reworded duplicate was caught, the unrelated story passed through.
+That is the exact case from the brief that a Set of URLs cannot catch.
+
+64/64 tests pass, including one asserting that a candidate is NOT flagged merely because
+memory returned something — if that ever regresses, the agent silently stops publishing.
