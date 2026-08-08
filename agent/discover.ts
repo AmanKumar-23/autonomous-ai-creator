@@ -59,6 +59,7 @@ export async function discoverWithReport(
 
   const { kept, dropped } = filterCandidates([...hn.candidates, ...arxiv.candidates], {
     relevance: profile.relevance,
+    supporting: profile.supporting,
     hnMaxAgeHours: options.hnMaxAgeHours,
     arxivMaxAgeDays: options.arxivMaxAgeDays,
     seen,

@@ -222,11 +222,31 @@ describe("the pre-filter explains itself", () => {
       snippet: "We train a neural network on clinical data.",
     };
     const { kept, dropped } = filterCandidates([generic], {
-      relevance: [...relevance, "model", "learning", "neural"],
+      relevance,
+      supporting: ["ai", "artificial intelligence", "machine learning", "model", "neural network"],
     });
     assert.equal(kept.length, 0);
     assert.equal(dropped[0].reason, "off-domain");
     assert.match(dropped[0].detail, /generic/);
+  });
+
+  it('does not let the phrase "artificial intelligence" admit an off-domain paper', () => {
+    // The real regression: this one paper cleared the gate for AI Security,
+    // Robotics AND Quantum Computing, because the supporting phrase was being
+    // treated as a domain-specific match.
+    const offDomain = {
+      ...base,
+      title: "Investigating Artificial Intelligence Digital Sovereignty in Mobile Shopping Apps",
+      snippet: "A case study of consumer research in Nigeria.",
+    };
+    for (const domain of ["AI Security", "Robotics", "Quantum Computing"]) {
+      const profile = deriveQueryProfile(domain);
+      const { kept } = filterCandidates([offDomain], {
+        relevance: profile.relevance,
+        supporting: profile.supporting,
+      });
+      assert.equal(kept.length, 0, `should not be relevant to ${domain}`);
+    }
   });
 
   it("does not match a term inside a longer word", () => {

@@ -9,8 +9,10 @@ import type { Candidate, DroppedCandidate, DropReason } from "../lib/types.ts";
  */
 
 export interface FilterOptions {
-  /** Terms that make an item relevant to the persona domain. */
+  /** Domain-specific terms. A match here admits the candidate. */
   relevance: string[];
+  /** General AI vocabulary. Affects ranking only, never admission. */
+  supporting?: string[];
   hnMaxAgeHours?: number;
   arxivMaxAgeDays?: number;
   /** Canonical URLs already seen in previous cycles. */
@@ -56,17 +58,6 @@ function ageHours(candidate: Candidate, now: number): number {
   return (now - published) / 3600_000;
 }
 
-/**
- * Words too broad to establish that an item belongs to a domain. They still
- * count toward the score, but on their own they cannot clear the gate —
- * otherwise every AI paper ever written is "relevant to AI Security".
- */
-const GENERIC_TERMS = new Set([
-  "ai", "artificial", "intelligence", "machine", "learning", "model", "models",
-  "research", "tech", "technology", "computing", "computer", "data", "system",
-  "systems", "software", "algorithm", "neural", "network", "networks",
-]);
-
 function escapeRegex(text: string): string {
   return text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -82,37 +73,46 @@ function termMatches(haystack: string, term: string): boolean {
 }
 
 interface RelevanceHits {
-  all: string[];
-  /** Matches on terms actually specific to the domain. */
+  /** Matches on domain-specific terms. These are what admit a candidate. */
   specific: string[];
+  /** Matches on general AI vocabulary. Ranking only. */
+  generic: string[];
 }
 
-function relevanceHits(candidate: Candidate, relevance: string[]): RelevanceHits {
+function relevanceHits(
+  candidate: Candidate,
+  relevance: string[],
+  supporting: string[],
+): RelevanceHits {
   const haystack = `${candidate.title} ${candidate.snippet}`.toLowerCase();
-  const all = relevance.filter((term) => term.length > 1 && termMatches(haystack, term));
-  return { all, specific: all.filter((term) => !GENERIC_TERMS.has(term.toLowerCase())) };
+  const hit = (term: string) => term.length > 1 && termMatches(haystack, term);
+  return { specific: relevance.filter(hit), generic: supporting.filter(hit) };
 }
 
 /**
- * An item qualifies on a domain-specific match. The exception is a domain whose
- * every term is generic (someone initializes with domain "AI"), where requiring
- * a specific match would reject everything.
+ * Admission requires a domain-specific match. Only when a domain has no
+ * specific terms at all does supporting vocabulary get to decide, so a caller
+ * that passes just generic words still gets results instead of silence.
  */
 function isRelevant(hits: RelevanceHits, relevance: string[]): boolean {
-  const hasSpecificTerms = relevance.some((term) => !GENERIC_TERMS.has(term.toLowerCase()));
-  return hasSpecificTerms ? hits.specific.length > 0 : hits.all.length > 0;
+  return relevance.length > 0 ? hits.specific.length > 0 : hits.generic.length > 0;
 }
 
 /**
  * Recency, engagement and domain overlap. Deterministic so the same inputs
  * always rank the same way — a judge can re-run it and see what the agent saw.
  */
-export function scoreCandidate(candidate: Candidate, relevance: string[], now: number): number {
+export function scoreCandidate(
+  candidate: Candidate,
+  relevance: string[],
+  now: number,
+  supporting: string[] = [],
+): number {
   const hours = ageHours(candidate, now);
   const recency = Math.max(0, 1 - hours / (24 * 7));
-  // Domain-specific matches are worth more than generic AI vocabulary.
-  const hits = relevanceHits(candidate, relevance);
-  const relevanceScore = Math.min(1, (hits.specific.length * 1.5 + hits.all.length * 0.5) / 5);
+  // Domain-specific matches are worth three times a generic vocabulary match.
+  const hits = relevanceHits(candidate, relevance, supporting);
+  const relevanceScore = Math.min(1, (hits.specific.length * 1.5 + hits.generic.length * 0.5) / 5);
 
   const points = candidate.signals.points ?? 0;
   const comments = candidate.signals.comments ?? 0;
@@ -132,6 +132,7 @@ export function filterCandidates(candidates: Candidate[], options: FilterOptions
   const hnMaxAgeHours = options.hnMaxAgeHours ?? 48;
   const arxivMaxAgeDays = options.arxivMaxAgeDays ?? 7;
   const seen = options.seen ?? new Set<string>();
+  const supporting = options.supporting ?? [];
 
   const kept: Candidate[] = [];
   const dropped: DroppedCandidate[] = [];
@@ -163,11 +164,11 @@ export function filterCandidates(candidates: Candidate[], options: FilterOptions
       continue;
     }
 
-    const hits = relevanceHits(candidate, options.relevance);
+    const hits = relevanceHits(candidate, options.relevance, supporting);
     if (!isRelevant(hits, options.relevance)) {
       const detail =
-        hits.all.length > 0
-          ? `only generic AI vocabulary matched (${hits.all.slice(0, 3).join(", ")}), nothing specific to the domain`
+        hits.generic.length > 0
+          ? `only generic AI vocabulary matched (${hits.generic.slice(0, 3).join(", ")}), nothing specific to the domain`
           : "no domain term appears in the title or abstract";
       drop(candidate, "off-domain", detail);
       continue;
@@ -186,7 +187,7 @@ export function filterCandidates(candidates: Candidate[], options: FilterOptions
       continue;
     }
 
-    candidate.score = scoreCandidate(candidate, options.relevance, now);
+    candidate.score = scoreCandidate(candidate, options.relevance, now, supporting);
     seenThisCycle.set(canonical, candidate);
     kept.push(candidate);
   }

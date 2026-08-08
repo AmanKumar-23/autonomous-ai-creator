@@ -14,8 +14,17 @@ export interface QueryProfile {
   terms: string[];
   /** arXiv categories, e.g. cs.CR. */
   categories: string[];
-  /** Terms used by the relevance filter to score title + snippet overlap. */
+  /**
+   * Terms specific enough to prove an item belongs to this domain. A match here
+   * is what admits a candidate.
+   */
   relevance: string[];
+  /**
+   * General AI/tech vocabulary. Contributes to ranking but never admits on its
+   * own — otherwise every paper with "Artificial Intelligence" in the title is
+   * relevant to every domain, which is exactly what happened before this split.
+   */
+  supporting: string[];
 }
 
 interface Profile {
@@ -102,8 +111,25 @@ const PROFILES: Profile[] = [
   },
 ];
 
-/** Applied to every domain so general AI/tech news is never entirely missed. */
-const BASELINE_RELEVANCE = ["ai", "artificial intelligence", "machine learning", "model", "research"];
+/**
+ * General AI/tech vocabulary. Deliberately never used to admit a candidate —
+ * only to rank one that a domain-specific term already let through.
+ */
+const SUPPORTING_VOCABULARY = [
+  "ai", "artificial intelligence", "machine learning", "deep learning",
+  "model", "models", "research", "neural network", "algorithm", "dataset",
+];
+
+/**
+ * Words too broad to establish that an item belongs anywhere. A domain token
+ * that is one of these gets demoted to supporting, so a domain like
+ * "AI Systems" does not admit every AI paper in existence.
+ */
+const GENERIC_TOKENS = new Set([
+  "ai", "artificial", "intelligence", "machine", "learning", "model", "models",
+  "research", "tech", "technology", "computing", "computer", "data", "system",
+  "systems", "software", "algorithm", "neural", "network", "networks", "digital",
+]);
 
 const STOP_WORDS = new Set(["and", "the", "of", "for", "in", "on", "with", "a", "an", "to"]);
 
@@ -133,13 +159,22 @@ export function deriveQueryProfile(domain: string): QueryProfile {
     profile.triggers.some((trigger) => normalized.includes(trigger)),
   );
 
+  const specificTokens = tokens.filter((token) => !GENERIC_TOKENS.has(token));
+  const genericTokens = tokens.filter((token) => GENERIC_TOKENS.has(token));
+
+  // A domain made entirely of generic words ("AI", "Technology") would admit
+  // nothing at all, so there its own tokens have to count as specific.
+  const relevance = unique([...specificTokens, ...matched.flatMap((p) => p.relevance)]);
+  const fallbackRelevance = relevance.length > 0 ? relevance : unique(tokens);
+
   if (matched.length === 0) {
     // Unknown domain: search the domain itself and its individual words, and
     // fall back to the broad AI categories so arXiv still returns something.
     return {
       terms: unique([raw, ...tokens]).slice(0, 3),
       categories: ["cs.AI", "cs.LG"],
-      relevance: unique([...tokens, ...BASELINE_RELEVANCE]),
+      relevance: fallbackRelevance,
+      supporting: unique([...SUPPORTING_VOCABULARY, ...genericTokens]),
     };
   }
 
@@ -147,6 +182,7 @@ export function deriveQueryProfile(domain: string): QueryProfile {
     // The domain itself leads: it is the most faithful expression of the persona.
     terms: unique([raw, ...matched.flatMap((p) => p.terms)]).slice(0, 3),
     categories: unique(matched.flatMap((p) => p.categories)).slice(0, 3),
-    relevance: unique([...tokens, ...matched.flatMap((p) => p.relevance), ...BASELINE_RELEVANCE]),
+    relevance: fallbackRelevance,
+    supporting: unique([...SUPPORTING_VOCABULARY, ...genericTokens]),
   };
 }
