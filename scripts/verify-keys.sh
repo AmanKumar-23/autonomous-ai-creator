@@ -55,15 +55,15 @@ fi
 if [ -n "${BREETH_API_KEY:-}" ]; then
   echo
   echo "Breeth"
-  CODE="$(curl -s -o /tmp/breeth.$$ -w '%{http_code}' --max-time 25 \
-    https://api.thebreeth.com/v1/episodes -H "Authorization: Bearer ${BREETH_API_KEY}")"
-  if [ "$CODE" = "200" ]; then
-    echo "  PASS  GET /v1/episodes -> 200"
+  BODY="$(curl -s --max-time 25 -X POST https://api.thebreeth.com/v1/search \
+    -H "Authorization: Bearer ${BREETH_API_KEY}" -H "Content-Type: application/json" \
+    -d '{"query":"connectivity check","limit":1}')"
+  if printf '%s' "$BODY" | grep -q '"edges"'; then
+    echo "  PASS  POST /v1/search answered"
   else
-    echo "  FAIL  GET /v1/episodes -> HTTP $CODE  $(head -c 140 /tmp/breeth.$$ 2>/dev/null)"
+    echo "  FAIL  $(printf '%s' "$BODY" | head -c 160)"
     FAIL=1
   fi
-  rm -f /tmp/breeth.$$
 fi
 
 echo

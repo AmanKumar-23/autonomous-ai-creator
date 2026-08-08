@@ -58,11 +58,14 @@ case "$NAME" in
     printf '%s' "$RESPONSE" | grep -q '"models"' \
       || { echo "FAIL: Google rejected this key: $(printf '%s' "$RESPONSE" | head -c 160)"; exit 1; } ;;
   BREETH_API_KEY)
-    # Read-only probe: proves auth without writing an episode.
-    CODE="$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 \
-      https://api.thebreeth.com/v1/episodes -H "Authorization: Bearer ${KEY}")"
-    [ "$CODE" = "200" ] \
-      || { echo "FAIL: Breeth returned HTTP $CODE for GET /v1/episodes (401/403 means the key or its scope is wrong)"; exit 1; } ;;
+    # POST /v1/search is the read probe: it proves auth without writing an
+    # episode. GET /v1/episodes is not it — the collection path only accepts
+    # POST and answers 405, which reads like a failure when the key is fine.
+    RESPONSE="$(curl -s --max-time 25 -X POST https://api.thebreeth.com/v1/search \
+      -H "Authorization: Bearer ${KEY}" -H "Content-Type: application/json" \
+      -d '{"query":"connectivity check","limit":1}')"
+    printf '%s' "$RESPONSE" | grep -q '"edges"' \
+      || { echo "FAIL: Breeth rejected this key: $(printf '%s' "$RESPONSE" | head -c 160)"; exit 1; } ;;
 esac
 echo "provider accepted the key"
 
