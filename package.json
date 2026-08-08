@@ -8,7 +8,8 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "discover": "tsx agent/cli.ts",
-    "test": "node --import tsx --test agent/*.test.ts"
+    "test": "node --import tsx --test agent/*.test.ts",
+    "cycle": "tsx agent/run.ts"
   },
   "dependencies": {
     "next": "^15.5.23",

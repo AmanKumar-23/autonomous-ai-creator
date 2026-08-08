@@ -101,6 +101,34 @@ export interface SourceFailure {
   attempts: number;
 }
 
+/**
+ * One run of the agent loop, recorded whether or not it published. This is the
+ * evidence of autonomous operation and the data behind the /status page.
+ */
+export type CycleStatus =
+  | "not-initialized"
+  | "no-candidates"
+  | "discovered"
+  | "published"
+  | "failed";
+
+export interface CycleRecord {
+  id: string;
+  /** ISO 8601 UTC. */
+  startedAt: string;
+  finishedAt: string;
+  status: CycleStatus;
+  /** Plain-language explanation of what the cycle decided and why. */
+  reason: string;
+  domain: string | null;
+  discovered: number;
+  kept: number;
+  dropped: number;
+  failures: SourceFailure[];
+  /** Which LLM provider served this cycle, once Phase 3 exists. */
+  provider?: string;
+}
+
 export interface DiscoveryReport {
   domain: string;
   /** ISO 8601 UTC. */

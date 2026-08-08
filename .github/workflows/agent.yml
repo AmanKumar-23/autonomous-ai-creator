@@ -1,0 +1,67 @@
+name: agent cycle
+
+on:
+  schedule:
+    # Every two hours. The offset keeps us off the top of the hour, when
+    # GitHub's scheduler is most congested and runs are most likely to be late.
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+
+# Without this the commit below fails silently and the agent never publishes.
+permissions:
+  contents: write
+
+# Cycles must not overlap: two runs committing data/ at once would conflict.
+concurrency:
+  group: agent-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run one agent cycle
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BREETH_API_KEY: ${{ secrets.BREETH_API_KEY }}
+        run: npm run cycle
+
+      - name: Commit whatever the cycle produced
+        run: |
+          git config user.name  "autonomous-ai-creator"
+          git config user.email "actions@github.com"
+
+          if git diff --quiet -- data/; then
+            echo "no data changes to commit"
+            exit 0
+          fi
+
+          git add data/
+          git commit -m "agent: cycle $(date -u +%Y-%m-%dT%H:%MZ)"
+
+          # POST /api/agent/init also commits data/state.json from Vercel, so the
+          # remote can move underneath us. Rebase and retry rather than fail.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected, rebasing (attempt $attempt)"
+            git pull --rebase --autostash origin main || true
+            sleep 5
+          done
+
+          echo "::error::could not push cycle results after 3 attempts"
+          exit 1
