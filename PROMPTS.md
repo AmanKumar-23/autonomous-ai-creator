@@ -171,3 +171,92 @@ Using the locally authenticated `gh` token, not a mock:
   base. Rebasing then replayed nothing and the live test's initialized state survived onto
   `main`. Caught by reading the pushed file back from GitHub rather than trusting the push;
   fixed in a follow-up commit. The repo now ships uninitialized with an empty feed.
+
+---
+
+## Phase 2 — Topic discovery
+
+**Goal:** the agent finds its own topics from live sources, with no LLM and no API keys.
+
+**Requirements advanced:** requirement 1 (topic discovery from live sources). Seeds
+requirement 2 by recording a reason for every discarded candidate, which the Phase 3
+editorial gate and the public rejection log build on. Protects requirement 3 by deriving
+all queries from the persona domain rather than a fixed topic list.
+
+### Prompt given
+
+> Read CLAUDE.md, then build Phase 2: topic discovery.
+>
+> GOAL — Satisfy brief requirement 1: the agent independently discovers AI/tech topics
+> from live information sources. No LLM, no API keys, fully testable in isolation.
+>
+> BUILD
+> 1. `agent/discover.ts` exporting `discoverCandidates(domain: string): Promise<Candidate[]>`
+> 2. Two live sources queried in parallel: Hacker News Algolia (search_by_date, tags=story) capturing points and comment count; arXiv (cs.AI, cs.LG, cs.CR and whatever else fits) capturing abstract and submission date.
+> 3. Queries must be DERIVED FROM THE PERSONA DOMAIN passed at init, not hardcoded. Build a small domain -> query-terms mapper with a sensible generic fallback. Hardcoding my own topic list here would fail the persona requirement later.
+> 4. Normalise both sources into one Candidate type: id, title, url, source, publishedAt, snippet, signals { points?, comments?, category? }.
+> 5. Deterministic pre-filter, no LLM: recency window (48h HN, 7d arXiv), domain relevance via term matching, drop unresolvable URLs and obvious noise, deduplicate by canonical URL and against `data/seen.json`, and record every DROPPED candidate with the reason.
+> 6. Resilience: per-source timeout (~8s) and one retry with backoff; if one source fails continue with the other; never throw out of `discoverCandidates`; log failures structurally for `/status`.
+> 7. An npm script (`npm run discover -- "AI Security"`) that prints ranked candidates plus the drop log.
+> 8. Tests: a source returning 500, a source timing out, both failing, malformed JSON, empty results, duplicate URLs across sources. None of these may throw.
+>
+> CONSTRAINTS — No LLM calls and no API keys in this phase. Small files, obvious names.
+> Commit in small logical steps.
+>
+> WHEN DONE — Show the command to run discovery for two different domains so I can confirm
+> results change with the persona. Append a Phase 2 section to PROMPTS.md. Audit: confirm
+> requirement 1 is met, confirm the feed endpoint is untouched and still cannot 500, and
+> name the single biggest remaining risk to a top-3 finish.
+
+### What was built
+
+| file | role |
+|---|---|
+| `agent/domain-terms.ts` | persona domain to search terms and arXiv categories, with a generic fallback |
+| `agent/http.ts` | the only network entry point: timeout, one retry, never throws |
+| `agent/sources/hackernews.ts` | HN Algolia, `search_by_date`, points and comments as signal |
+| `agent/sources/arxiv.ts` | arXiv Atom feed, regex-parsed, no XML dependency |
+| `agent/filter.ts` | deterministic pre-filter, canonical URL, scoring, drop reasons |
+| `agent/seen.ts` | `data/seen.json` memory; discovery reads, the judge writes |
+| `agent/discover.ts` | orchestration; `discoverCandidates` and `discoverWithReport` |
+| `agent/cli.ts` | `npm run discover -- "<domain>"` |
+| `agent/discover.test.ts` | 18 tests, all failure modes |
+
+Added `tsx` as the only new dependency, to run TypeScript under Node in CI.
+
+### Deviation from the prompt, deliberate
+
+The prompt specified `discoverCandidates(domain): Promise<Candidate[]>`, but requirements 5
+and 6 also need the drop log and the source failures. Rather than change the agreed
+signature, `discoverWithReport()` returns the full `DiscoveryReport` and
+`discoverCandidates()` is a thin wrapper over it. Phase 3 and `/status` consume the report;
+the pipeline can still use the simple signature.
+
+### Bugs found by running it, not by reading it
+
+1. **Substring matching poisoned relevance.** `"ai"` matched inside *training*, *domain*
+   and *explain*, so an "AI Security" run kept a heart-failure feature-engineering paper
+   and a study of mobile shopping apps in Nigeria, both ranked above real security stories.
+   Fixed with whole-word matching, plus a generic-vocabulary rule: words like *ai*, *model*
+   and *learning* contribute to the score but cannot on their own establish domain
+   relevance. Same query afterwards: 36 kept became 13, with the top five all on-domain.
+2. **An empty arXiv feed was reported as a source failure.** arXiv returns a well-formed
+   feed with zero entries when a category has nothing new, which is normal on a quiet day.
+   That would have shown a healthy source as broken on the `/status` page. Only a body that
+   is not a feed at all counts as a failure now.
+3. **A test that proved nothing.** The timeout test slept without honouring the
+   `AbortSignal`, so the request simply succeeded late and the timeout path was never
+   exercised. The mock now aborts the way a real fetch does.
+
+### Verified
+
+18/18 tests pass, `tsc --noEmit` clean, `npm run build` clean, and live runs against both
+real APIs return sensible results that change with the domain:
+
+- `AI Security` — prompt-injection disclosures, a sandbox escape, cs.CR papers
+- `Robotics` — cs.RO humanoid loco-manipulation and world-model papers, Gemini Robotics
+- `Quantum Computing` — matches no profile, so the generic fallback searches the domain's
+  own words and still returns quantum stories
+
+The pre-filter is a shortlist, not the editorial decision: a few weak items still get
+through, and rejecting those on quality grounds is Phase 3's job.
