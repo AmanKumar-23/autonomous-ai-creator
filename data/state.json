@@ -1,6 +1,9 @@
 {
-  "initialized": false,
-  "agentId": null,
-  "persona": null,
-  "initializedAt": null
+  "initialized": true,
+  "agentId": "0145edc4-64b0-482f-bd2d-b0611c0fb0c8",
+  "persona": {
+    "name": "Check",
+    "domain": "Test"
+  },
+  "initializedAt": "2026-08-08T14:57:08.431Z"
 }
