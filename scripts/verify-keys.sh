@@ -52,6 +52,20 @@ if [ -n "${GEMINI_API_KEY:-}" ]; then
   fi
 fi
 
+if [ -n "${BREETH_API_KEY:-}" ]; then
+  echo
+  echo "Breeth"
+  CODE="$(curl -s -o /tmp/breeth.$$ -w '%{http_code}' --max-time 25 \
+    https://api.thebreeth.com/v1/episodes -H "Authorization: Bearer ${BREETH_API_KEY}")"
+  if [ "$CODE" = "200" ]; then
+    echo "  PASS  GET /v1/episodes -> 200"
+  else
+    echo "  FAIL  GET /v1/episodes -> HTTP $CODE  $(head -c 140 /tmp/breeth.$$ 2>/dev/null)"
+    FAIL=1
+  fi
+  rm -f /tmp/breeth.$$
+fi
+
 echo
 if [ "$FAIL" -eq 0 ]; then
   echo "All configured keys answered."

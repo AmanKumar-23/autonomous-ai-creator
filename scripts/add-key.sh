@@ -57,6 +57,12 @@ case "$NAME" in
       -H "x-goog-api-key: ${KEY}")"
     printf '%s' "$RESPONSE" | grep -q '"models"' \
       || { echo "FAIL: Google rejected this key: $(printf '%s' "$RESPONSE" | head -c 160)"; exit 1; } ;;
+  BREETH_API_KEY)
+    # Read-only probe: proves auth without writing an episode.
+    CODE="$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 \
+      https://api.thebreeth.com/v1/episodes -H "Authorization: Bearer ${KEY}")"
+    [ "$CODE" = "200" ] \
+      || { echo "FAIL: Breeth returned HTTP $CODE for GET /v1/episodes (401/403 means the key or its scope is wrong)"; exit 1; } ;;
 esac
 echo "provider accepted the key"
 
