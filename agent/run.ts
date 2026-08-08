@@ -5,8 +5,11 @@ import path from "node:path";
 import { recordCycle } from "./cycles.ts";
 import { discoverWithReport } from "./discover.ts";
 import { judgeCandidates } from "./judge.ts";
+import { appendPost, recentTitles } from "./posts.ts";
 import { recordRejections, type RejectionRecord } from "./rejections.ts";
-import type { AgentState, CycleRecord, CycleStatus } from "../lib/types.ts";
+import { markSeen } from "./seen.ts";
+import { writePost } from "./write.ts";
+import type { AgentState, CycleRecord, CycleStatus, Post } from "../lib/types.ts";
 
 /**
  * One cycle of the agent loop. Run by GitHub Actions on a schedule; this is the
@@ -96,7 +99,11 @@ async function main() {
     return;
   }
 
-  const verdict = await judgeCandidates(state.persona, report.candidates, []);
+  // Requirement 4: what it has already published shapes what it does next.
+  // Compact titles rather than full bodies, to keep the cycle inside its budget.
+  const memory = await recentTitles(10).catch(() => [] as string[]);
+
+  const verdict = await judgeCandidates(state.persona, report.candidates, memory);
   const now = new Date().toISOString();
 
   // Log what the deterministic filter dropped alongside what the editor turned
@@ -145,12 +152,42 @@ async function main() {
     return;
   }
 
-  // Phase 4 turns this selection into a written post. The decision and its
-  // rationale already exist, because only the judge saw the alternatives.
+  const written = await writePost(state.persona, verdict.selected, verdict.rationale, memory);
+
+  if (written.error) {
+    await finish(
+      "failed",
+      `Selected "${verdict.selected.title}" but the post could not be written (${written.error}). Nothing was published.`,
+      common,
+    );
+    return;
+  }
+
+  const post: Post = {
+    id: randomUUID(),
+    createdAt: new Date().toISOString(),
+    title: written.title,
+    text: written.text,
+    // Produced during judgment, when the alternatives were visible.
+    rationale: verdict.rationale,
+    sources: [{ title: verdict.selected.title, url: verdict.selected.url }],
+    ...(written.provider ? { provider: written.provider } : {}),
+  };
+
+  await appendPost(post);
+
+  // Everything judged this cycle is now spent: the published story must never
+  // return, and re-judging the same rejects every two hours would burn tokens
+  // and fill the rejection log with duplicates.
+  await markSeen([
+    { url: verdict.selected.url, title: verdict.selected.title },
+    ...verdict.rejections.map((rejection) => ({ url: rejection.url, title: rejection.title })),
+  ]).catch((error) => console.error("[cycle] could not update seen memory:", error));
+
   await finish(
-    "discovered",
-    `Selected "${verdict.selected.title}" and rejected ${verdict.rejections.length}. ${verdict.rationale}`,
-    common,
+    "published",
+    `Published "${written.title}" and rejected ${verdict.rejections.length} other candidate(s).`,
+    { ...common, ...(written.provider ? { provider: written.provider } : {}) },
   );
 }
 

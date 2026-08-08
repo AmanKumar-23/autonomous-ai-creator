@@ -17,6 +17,9 @@ import type { Candidate, SourceFailure } from "../../lib/types.ts";
 
 const ENDPOINT = "https://export.arxiv.org/api/query";
 const MAX_RESULTS = 30;
+// arXiv is regularly slower than the 8s default and a timeout costs the whole
+// source for that cycle, so it gets a longer leash than Hacker News.
+const ARXIV_TIMEOUT_MS = 15000;
 
 function decodeEntities(text: string): string {
   return text
@@ -83,7 +86,7 @@ export async function fetchArxiv(
     `${ENDPOINT}?search_query=${encodeURIComponent(searchQuery)}` +
     `&sortBy=submittedDate&sortOrder=descending&max_results=${MAX_RESULTS}`;
 
-  const result = await fetchText(url, { timeoutMs: options.timeoutMs });
+  const result = await fetchText(url, { timeoutMs: options.timeoutMs ?? ARXIV_TIMEOUT_MS });
 
   if (!result.ok || !result.body) {
     return {
