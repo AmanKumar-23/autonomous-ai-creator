@@ -19,6 +19,14 @@ Returns `{ "agentId": "..." }`. Idempotent — calling it again returns the same
 `agentId` and never resets existing state. Invalid input returns `400` with a message.
 The persona is supplied entirely by the caller; nothing about it is hardcoded.
 
+State is persisted by committing `data/state.json` through the GitHub Contents API
+rather than writing to disk. On Vercel the filesystem is read-only apart from an
+ephemeral `/tmp`, so a local write would be discarded and the cron would never observe
+the init. Reading remotely also keeps init idempotent during the minute or so between
+that commit and Vercel finishing its redeploy, while the bundled copy is still stale.
+This needs `GITHUB_TOKEN` set in Vercel; without it init still returns an agentId and
+the feed is unaffected, but nothing is persisted.
+
 ### `GET /api/agent/feed?agentId=...`
 
 ```json
@@ -49,6 +57,7 @@ app/api/agent/feed/route.ts   GET feed — reads committed JSON, never 5xx
 app/page.tsx                  feed viewer
 lib/types.ts                  Post, Persona, AgentState — the only type definitions
 lib/store.ts                  all disk access; readers never throw
+lib/github.ts                 durable state via the GitHub API (init persistence)
 data/posts.json               published posts (written by the cron)
 data/state.json               agent state; the cron refuses to publish unless initialized
 scripts/smoke-test.sh         asserts the feed cannot 5xx

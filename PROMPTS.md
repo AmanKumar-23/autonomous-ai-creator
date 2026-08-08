@@ -98,10 +98,76 @@ Also deviated from the prompt in two small places, deliberately:
 `npm run build` clean, `tsc --noEmit` clean, 14/14 smoke assertions passing, viewer page
 loads with zero console errors. The repo ships uninitialized with an empty feed.
 
-### Known gap carried into a later phase
+### Known gap identified in this phase — since fixed, see Phase 1b
 
-`POST /api/agent/init` writes `data/state.json` to the local filesystem. **On Vercel that
-write cannot persist** — serverless filesystems are read-only apart from `/tmp`, which is
-per-instance and ephemeral. So the GitHub Actions cron will never observe the evaluator's
-init and will correctly refuse to publish. The write is isolated behind `writeState()` in
-`lib/store.ts` so the fix is a single-function change; it must land before the deadline.
+`POST /api/agent/init` wrote `data/state.json` to the local filesystem. On Vercel that
+write cannot persist — serverless filesystems are read-only apart from `/tmp`, which is
+per-instance and ephemeral. The GitHub Actions cron would therefore never observe the
+evaluator's init, would correctly refuse to publish, and would produce zero posts across
+the entire 48-hour evaluation window while every endpoint still returned a healthy 200.
+
+---
+
+## Phase 1b — Durable init state
+
+**Goal:** close the persistence gap above, so the evaluator's init is actually visible to
+the write path.
+
+**Requirements advanced:** requirement 5 (autonomous publishing) — without this the agent
+can never start. It is a prerequisite for the top-weighted judging criterion, autonomous
+operation after init.
+
+### Prompt given
+
+> The Vercel import at vercel.com/new is still the next step, and the state-persistence
+> gap in writeState() is still the thing to fix, complete these task
+
+### What was built
+
+`lib/github.ts` — durable state through the GitHub Contents API, the same
+`data/state.json` the cron checks out.
+
+- `readRemoteState()` returns the committed state plus the blob sha needed to update it.
+- `writeRemoteState()` commits the new state and returns whether it landed, so init can
+  log honestly rather than assume success.
+- Both fail soft. No token, a rate limit or a GitHub outage degrades init; it never 5xx's.
+- 8-second `AbortSignal.timeout` on both calls so a slow GitHub cannot hang the evaluator's
+  single init request.
+
+`app/api/agent/init/route.ts` now treats GitHub as authoritative when configured and falls
+back to the local file otherwise. The disk write is kept because it is what makes local
+development work; on Vercel it fails silently and is covered by the commit.
+
+Config: `GITHUB_TOKEN` (required in Vercel), `GITHUB_REPO` and `GITHUB_BRANCH` (optional,
+defaulted). Documented in `.env.example`.
+
+### Why read remotely rather than trust the bundle
+
+After init commits `state.json`, GitHub triggers a Vercel redeploy that takes roughly a
+minute. During that window the bundled copy on disk still says `initialized: false`. An
+init retry in that window would read the stale bundle, mint a second agentId and clobber
+the persona. Reading through the API removes the race entirely.
+
+### Verified end-to-end against the real GitHub API
+
+Using the locally authenticated `gh` token, not a mock:
+
+1. Init with no `GITHUB_TOKEN` — still returns an agentId, smoke test 14/14, feed untouched.
+2. Init with a token — committed `9756aa6 Initialize agent as Ada (AI Security)`; the
+   committed `state.json` carried the same agentId that was returned to the caller.
+3. **The Vercel scenario:** local `state.json` reset to uninitialized while the remote
+   stayed initialized, then init called again with a *different* persona. It returned the
+   original agentId, left the stored persona as `Ada / AI Security`, and produced no second
+   commit. This is the case that would have silently broken the run.
+
+### Two mistakes worth recording
+
+- **The first test was measuring the wrong server.** Port 3000 was still held by an earlier
+  dev process, so the token-enabled instance quietly started on 3001 and the curl hit the
+  old tokenless one. It read as "the GitHub write silently failed" when nothing had been
+  exercised at all. Killed the stale listeners and re-ran on a clean port.
+- **The reset commit was a no-op.** The commit intended to restore `state.json` to
+  uninitialized contained no diff for that file, because it already matched at the commit's
+  base. Rebasing then replayed nothing and the live test's initialized state survived onto
+  `main`. Caught by reading the pushed file back from GitHub rather than trusting the push;
+  fixed in a follow-up commit. The repo now ships uninitialized with an empty feed.
