@@ -51,3 +51,63 @@ export const EMPTY_STATE: AgentState = {
   persona: null,
   initializedAt: null,
 };
+
+/* ------------------------------------------------------------------ *
+ * Discovery (Phase 2). Both live sources normalize into one Candidate
+ * so nothing downstream needs to know where an item came from.
+ * ------------------------------------------------------------------ */
+
+export type SourceName = "hackernews" | "arxiv";
+
+export interface Candidate {
+  /** Stable per source, e.g. "hackernews:38912345" or "arxiv:2401.00001v1". */
+  id: string;
+  title: string;
+  url: string;
+  source: SourceName;
+  /** ISO 8601 UTC. */
+  publishedAt: string;
+  snippet: string;
+  signals: {
+    points?: number;
+    comments?: number;
+    /** arXiv primary category, e.g. cs.CR */
+    category?: string;
+  };
+  /** Deterministic rank from recency, engagement and term overlap. */
+  score?: number;
+}
+
+/** Why the deterministic pre-filter discarded something. No LLM involved. */
+export type DropReason =
+  | "no-url"
+  | "stale"
+  | "off-domain"
+  | "noise"
+  | "duplicate"
+  | "already-seen";
+
+export interface DroppedCandidate {
+  candidate: Candidate;
+  reason: DropReason;
+  /** Human-readable specifics, surfaced by the rejection log in Phase 3. */
+  detail: string;
+}
+
+/** A source that failed after its retry. Discovery continues without it. */
+export interface SourceFailure {
+  source: SourceName;
+  error: string;
+  attempts: number;
+}
+
+export interface DiscoveryReport {
+  domain: string;
+  /** ISO 8601 UTC. */
+  queriedAt: string;
+  /** Query terms derived from the domain — proves the persona drove the search. */
+  terms: string[];
+  candidates: Candidate[];
+  dropped: DroppedCandidate[];
+  failures: SourceFailure[];
+}
