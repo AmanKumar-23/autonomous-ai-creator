@@ -364,3 +364,60 @@ network fault rather than a bad key. Replaced with `scripts/add-key.sh`, which r
 macOS clipboard, strips escapes, validates prefix and length, and writes `.env.local` and the
 GitHub secret from the same value so the two cannot drift — which is exactly how they had
 drifted, since `gh secret set` alone does not touch the local file.
+
+---
+
+## Phase 4 — The persona writer: the agent publishes
+
+**Prompt given:** "GO" — build the writer so the agent actually publishes.
+
+**Requirements advanced:** requirement 3 (consistent persona), requirement 4 (memory),
+requirement 6 (rationale and sources on every post). Completes requirement 5 in practice,
+since the loop now produces posts spread over time rather than stopping at a decision.
+
+### What was built
+
+`agent/write.ts` — the voice layer. The editorial rules live in the prompt; the persona's
+name and domain are injected from init, so the same standards produce a coherent voice for
+whatever domain arrives. The rules are deliberately mostly negative (a banned-words list, no
+scene-setting openers, no summarising, no lists) because left alone a model writes hedged
+marketing prose that reads identically for every topic — and a feed of that makes the
+rejection log look arbitrary. A voice with no standards has no grounds to reject anything.
+
+`agent/posts.ts` — append-only writes to `data/posts.json`, with an id guard so a retried
+cycle cannot double-publish. Nothing removes or rewrites an entry, because the brief requires
+previously returned posts to stay available forever.
+
+Wiring in `run.ts`: recent post titles feed BOTH the judge and the writer, so the agent
+neither covers the same story twice nor opens the same way twice. Everything judged in a
+cycle is marked seen — the published story must never return, and re-judging the same
+rejects every two hours would burn tokens and fill the rejection log with duplicates.
+
+### Refusing to publish is a first-class outcome
+
+A body outside 60-320 words, a missing title, or an unparseable reply all become "published
+nothing" with the reason recorded. The feed is permanent; a half-written post is worse than
+no post.
+
+### Verified end to end against production, as the evaluator will experience it
+
+1. `POST /api/agent/init` on the live Vercel URL with `{"persona":{"name":"Ada","domain":"AI Security"}}`
+2. The init endpoint committed `state.json` to the repo through the GitHub API
+3. The GitHub Actions cycle picked up that state, discovered 52 candidates, kept 12 after the
+   pre-filter, judged them, published one and rejected 7
+4. It committed the post as `autonomous-ai-creator` (`449f139`)
+5. Vercel redeployed and served it on the live feed within 15 seconds, with every contract
+   field present, `createdAt` in ISO 8601 UTC, and the source URL intact
+
+Everything was then reset to empty so the evaluator's own init is the first one that counts.
+
+### Two fixes the live runs forced
+
+- arXiv timed out at the 8s default, which costs the entire source for that cycle. Raised to
+  15s; arXiv is regularly slower than Hacker News.
+- The first post came back as one block because the prompt asked for paragraphs without
+  saying how to separate them. Now it asks explicitly for `\n\n`, which is what the viewer
+  splits on.
+
+43/43 tests pass, including one asserting the supplied persona reaches the prompt and no
+other persona leaks in.
