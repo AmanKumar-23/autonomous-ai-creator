@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# vercel
+.vercel
+
+# secrets — never commit these
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.mcp.json
+!.env.example
+
+# os
+.DS_Store
+
+# logs
+*.log
+npm-debug.log*
