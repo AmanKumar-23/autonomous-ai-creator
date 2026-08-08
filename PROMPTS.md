@@ -260,3 +260,32 @@ real APIs return sensible results that change with the domain:
 
 The pre-filter is a shortlist, not the editorial decision: a few weak items still get
 through, and rejecting those on quality grounds is Phase 3's job.
+
+### Follow-up: cross-domain contamination (found by reading the CLI output)
+
+Running all three domains side by side exposed a bug the earlier fix had missed. One paper —
+*Investigating Artificial Intelligence Digital Sovereignty in Mobile Shopping Apps: A Case
+Study of Nigeria* — was ranked in the top ten for **AI Security, Robotics and Quantum
+Computing at once**, and a handful of generic arXiv papers padded all three lists.
+
+The cause: the generic-vocabulary guard was a list of single words (`ai`, `model`,
+`learning`), but the baseline vocabulary injected the multi-word phrase
+`"artificial intelligence"`, which the guard never recognised. It was therefore treated as a
+domain-specific match, so any paper with "Artificial Intelligence" in its title cleared the
+gate for every persona.
+
+The word-list approach was the wrong shape: whether a term is generic depends on where it
+came from, not how it is spelled. `QueryProfile` now carries two lists — `relevance`, which
+admits a candidate, and `supporting`, which only affects ranking — and the guard is gone
+from the filter entirely. A domain composed entirely of generic words (someone initializes
+with domain "AI") still falls back to admitting on its own tokens rather than rejecting
+everything.
+
+Result: AI Security 13 to 11 kept, Robotics 10 to 8, Quantum 13 to 11, with the shared
+false positives gone from all three and each list now internally coherent.
+
+One apparent false positive was left in deliberately. *Show HN: Otaku - A Roleplay Terminal
+Client* still passes for AI Security because its post genuinely discusses context
+"injection". A keyword filter cannot separate that from prompt-injection research; doing so
+needs judgment, which is what the Phase 3 editorial gate is for. Tightening the keyword list
+to exclude it would start rejecting real security stories.
