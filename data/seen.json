@@ -1,3 +1,44 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "url": "https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns",
+      "title": "OpenAI to pause some work on AI model Astra due to security concerns",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.10100",
+      "title": "Robust AI Security and Alignment: A Sisyphean Endeavor?",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    },
+    {
+      "url": "https://www.scmp.com/tech/tech-trends/article/3363271/chinas-kimi-k3-ai-model-escapes-isolated-sandbox-during-security-test-researchers",
+      "title": "China's Kimi K3 AI model escapes isolated sandbox during security test",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    },
+    {
+      "url": "https://www.reddit.com/r/LocalLLaMA/comments/1vhivsb/prompt_injection_in_ollama_gemma4_and/",
+      "title": "Prompt Injection Vulnerability in Ollama, Gemma4 and HuggingFace's Transformers",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    },
+    {
+      "url": "https://www.cnn.com/2026/08/04/tech/ai-anthropic-openai-security-breach-intl-hnk",
+      "title": "AI agents fake identities, target real people in new security incident",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    },
+    {
+      "url": "https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/",
+      "title": "Chinese Model Kimi K3 Breaks UK AI Safety Institute Benchmark Evaluations",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    },
+    {
+      "url": "https://github.com/enclavum/otaku",
+      "title": "Show HN: Otaku – A Roleplay Terminal Client",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    },
+    {
+      "url": "https://vaultak.com",
+      "title": "Show HN: Vaultak – Security for AI agents (built before the breaches started)",
+      "seenAt": "2026-08-08T22:16:09.026Z"
+    }
+  ]
 }
