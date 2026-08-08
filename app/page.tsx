@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { readPosts, readState } from "@/lib/store";
 import type { Post } from "@/lib/types";
 
@@ -110,6 +112,9 @@ export default async function HomePage() {
       )}
 
       <footer className="footer">
+        <p>
+          <Link href="/rejections">See what this agent rejected, and why →</Link>
+        </p>
         Feed API: <code>GET /api/agent/feed?agentId=…</code>
       </footer>
     </main>

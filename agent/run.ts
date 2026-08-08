@@ -115,7 +115,7 @@ async function main() {
       rejectedAt: now,
       cycleId: id,
     })),
-    ...report.dropped.slice(0, 20).map((drop) => ({
+    ...report.dropped.map((drop) => ({
       id: drop.candidate.id,
       title: drop.candidate.title,
       url: drop.candidate.url,

@@ -15,8 +15,25 @@ import type { Candidate, Persona } from "../lib/types.ts";
  * ANY field would hold, applied to whatever domain arrives.
  */
 
-const MAX_CANDIDATES = 8;
+/**
+ * How many candidates the editor actually reads. Anything beyond this is still
+ * logged as a rejection with an honest reason rather than silently discarded —
+ * a rejection log that omits what it never looked at is not a record of what was
+ * considered. 12 costs roughly 1900 tokens against a 5000-token cycle budget.
+ */
+const MAX_CANDIDATES = 12;
 const SNIPPET_CHARS = 220;
+
+/** Below this, a "reason" is an assertion rather than an editorial judgment. */
+const MIN_REASON_CHARS = 40;
+
+/** Reasons that restate the verdict instead of explaining it. */
+const FILLER_REASON =
+  /^(not |too |it('s| is) )?(relevant|interesting|important|substantial|timely|good|useful|newsworthy)( enough)?\.?$|^(irrelevant|off.?topic|low.?quality|does not meet( the)? (bar|standard)s?)\.?$/i;
+
+function isSubstantiveReason(reason: string): boolean {
+  return reason.length >= MIN_REASON_CHARS && !FILLER_REASON.test(reason.trim());
+}
 
 export interface JudgeRejection {
   id: string;
@@ -48,14 +65,25 @@ function buildSystemPrompt(persona: Persona): string {
 
 You are deciding which single story, if any, is worth publishing to your feed today.
 
-Your standards, in order:
-1. SUBSTANCE. A concrete development — a disclosed vulnerability, a shipped system, a
-   result with evidence. Announcements, funding rounds, rebrands and opinion pieces with
-   no new information are not developments.
+Your standards, in descending order of weight:
+
+1. SUBSTANCE — this carries the most weight. A concrete development: a disclosed
+   vulnerability, a system that shipped or broke, a reproducible result, an incident
+   with technical detail. A statement of intent is not a development. "Company X is
+   pausing work", "Company Y plans to", "Z announces a commitment" are press releases
+   about the future, not events. A disclosed technical vulnerability in named systems
+   OUTRANKS a corporate announcement even when the announcement is more recent.
+
 2. RELEVANCE TO ${persona.domain.toUpperCase()}. Adjacent-but-not-really is a rejection.
    A story that merely mentions your field in passing does not belong to it.
-3. TIMELINESS. There must be a reason it matters NOW rather than at any point in the
-   last year.
+
+3. WHY IT MATTERS NOW — and note carefully: this is NOT about age. Every candidate has
+   already passed a recency filter before reaching you, so nothing here is old. Never
+   reject an item for being "from two days ago" or "from yesterday" — that is not a
+   valid objection and age is not yours to judge. Ask instead whether a reader needs
+   this now: is there an active exploit, an unpatched system, a decision being taken,
+   a deadline? If a story is important but nothing makes it urgent, say that instead.
+
 4. SOMETHING TO SAY. You publish opinions, not summaries. If you have no view beyond
    restating the headline, reject it.
 
@@ -119,8 +147,16 @@ export async function judgeCandidates(
 ): Promise<JudgeVerdict> {
   const shortlist = candidates.slice(0, MAX_CANDIDATES);
 
+  // Everything the editor never saw is still accounted for, with the true reason.
+  const overflow: JudgeRejection[] = candidates.slice(MAX_CANDIDATES).map((candidate) => ({
+    id: candidate.id,
+    title: candidate.title,
+    url: candidate.url,
+    reason: `not read this cycle: ranked ${candidates.indexOf(candidate) + 1} of ${candidates.length} by the pre-filter, below the top ${MAX_CANDIDATES} the editor reviews`,
+  }));
+
   if (shortlist.length === 0) {
-    return { selected: null, rationale: "", rejections: [], provider: null, error: null };
+    return { selected: null, rationale: "", rejections: overflow, provider: null, error: null };
   }
 
   const result = await generate({
@@ -133,7 +169,7 @@ export async function judgeCandidates(
 
   if (!result.ok) {
     const error = result.attempts.map((a) => `${a.provider}: ${a.error}`).join("; ");
-    return { selected: null, rationale: "", rejections: [], provider: null, error };
+    return { selected: null, rationale: "", rejections: overflow, provider: null, error };
   }
 
   const raw = parseJsonResponse<RawVerdict>(result.text);
@@ -141,7 +177,7 @@ export async function judgeCandidates(
     return {
       selected: null,
       rationale: "",
-      rejections: [],
+      rejections: overflow,
       provider: result.provider,
       error: "could not parse the judge's response as JSON",
     };
@@ -159,12 +195,17 @@ export async function judgeCandidates(
         const id = asText(record.id);
         const candidate = shortlist.find((item) => item.id === id);
         if (!candidate || candidate.id === selected?.id) return [];
+        const reason = asText(record.reason);
         return [
           {
             id,
             title: candidate.title,
             url: candidate.url,
-            reason: asText(record.reason) || "did not meet the editorial bar",
+            // Filler is not judgment. Saying the editor gave no real objection is
+            // honest; dressing up "not relevant" as editorial reasoning is not.
+            reason: isSubstantiveReason(reason)
+              ? reason
+              : "the editor rejected this without giving a specific objection",
           },
         ];
       })
@@ -187,5 +228,5 @@ export async function judgeCandidates(
   const whyNow = asText(raw.why_now);
   const rationale = selected ? [whySelected, whyNow].filter(Boolean).join(" ") : "";
 
-  return { selected, rationale, rejections, provider: result.provider, error: null };
+  return { selected, rationale, rejections: [...rejections, ...overflow], provider: result.provider, error: null };
 }

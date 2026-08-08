@@ -129,6 +129,21 @@ export interface CycleRecord {
   provider?: string;
 }
 
+/**
+ * A topic the agent considered and turned down. "editor" means the LLM judged it
+ * against the persona's standards; "prefilter" means a deterministic rule did.
+ */
+export interface Rejection {
+  id: string;
+  title: string;
+  url: string;
+  reason: string;
+  stage: "editor" | "prefilter";
+  /** ISO 8601 UTC. */
+  rejectedAt: string;
+  cycleId: string;
+}
+
 export interface DiscoveryReport {
   domain: string;
   /** ISO 8601 UTC. */

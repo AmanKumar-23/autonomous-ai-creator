@@ -11,7 +11,15 @@ import path from "node:path";
  */
 
 const REJECTIONS_PATH = path.join(process.cwd(), "data", "rejections.json");
-const MAX_ENTRIES = 300;
+
+/**
+ * Capped per stage rather than overall. A cycle produces a handful of editorial
+ * rejections and up to forty deterministic ones, so a single shared cap would
+ * let pre-filter noise evict the editor's reasoning within a few hours — and the
+ * editor's reasoning is the entire point of the log.
+ */
+const MAX_EDITOR_ENTRIES = 200;
+const MAX_PREFILTER_ENTRIES = 200;
 
 export interface RejectionRecord {
   id: string;
@@ -35,11 +43,18 @@ export async function readRejections(): Promise<RejectionRecord[]> {
   }
 }
 
-/** Newest first, capped. */
+/** Newest first, capped independently per stage. */
 export async function recordRejections(entries: RejectionRecord[]): Promise<void> {
   if (entries.length === 0) return;
   const existing = await readRejections();
-  const merged = [...entries, ...existing].slice(0, MAX_ENTRIES);
+  const all = [...entries, ...existing];
+
+  const keep = (stage: RejectionRecord["stage"], limit: number) =>
+    all.filter((entry) => entry.stage === stage).slice(0, limit);
+
+  const merged = [...keep("editor", MAX_EDITOR_ENTRIES), ...keep("prefilter", MAX_PREFILTER_ENTRIES)].sort(
+    (a, b) => Date.parse(b.rejectedAt) - Date.parse(a.rejectedAt),
+  );
   await fs.mkdir(path.dirname(REJECTIONS_PATH), { recursive: true });
   await fs.writeFile(REJECTIONS_PATH, `${JSON.stringify({ rejections: merged }, null, 2)}\n`, "utf8");
 }

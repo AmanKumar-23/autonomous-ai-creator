@@ -1,7 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-import { EMPTY_STATE, type AgentState, type Post, type Source } from "@/lib/types";
+import { EMPTY_STATE, type AgentState, type Post, type Rejection, type Source } from "@/lib/types";
 
 /**
  * All disk access for the read path goes through this file.
@@ -17,6 +17,7 @@ import { EMPTY_STATE, type AgentState, type Post, type Source } from "@/lib/type
 const DATA_DIR = path.join(process.cwd(), "data");
 export const POSTS_PATH = path.join(DATA_DIR, "posts.json");
 export const STATE_PATH = path.join(DATA_DIR, "state.json");
+export const REJECTIONS_PATH = path.join(DATA_DIR, "rejections.json");
 
 async function readJson(filePath: string): Promise<unknown> {
   const raw = await fs.readFile(filePath, "utf8");
@@ -115,6 +116,43 @@ export async function readState(): Promise<AgentState> {
   } catch (error) {
     console.error("[store] could not read state, treating as uninitialized:", error);
     return { ...EMPTY_STATE };
+  }
+}
+
+/**
+ * The public rejection log. Requirement 2 asks the agent to intentionally reject
+ * topics that fail its standards; a rejection nobody can read is indistinguishable
+ * from one that never happened. Never throws.
+ */
+export async function readRejections(): Promise<Rejection[]> {
+  try {
+    const parsed = (await readJson(REJECTIONS_PATH)) as { rejections?: unknown };
+    if (!Array.isArray(parsed.rejections)) return [];
+
+    return parsed.rejections
+      .flatMap((entry): Rejection[] => {
+        if (!entry || typeof entry !== "object") return [];
+        const record = entry as Record<string, unknown>;
+        if (!isNonEmptyString(record.title) || !isNonEmptyString(record.reason)) return [];
+        return [
+          {
+            id: isNonEmptyString(record.id) ? record.id : record.title,
+            title: record.title,
+            url: isNonEmptyString(record.url) ? record.url : "",
+            reason: record.reason,
+            stage: record.stage === "editor" ? "editor" : "prefilter",
+            rejectedAt: isNonEmptyString(record.rejectedAt) ? record.rejectedAt : "",
+            cycleId: isNonEmptyString(record.cycleId) ? record.cycleId : "",
+          },
+        ];
+      })
+      .sort((a, b) => {
+        const delta = Date.parse(b.rejectedAt) - Date.parse(a.rejectedAt);
+        return Number.isNaN(delta) ? 0 : delta;
+      });
+  } catch (error) {
+    console.error("[store] could not read rejections:", error);
+    return [];
   }
 }
 
