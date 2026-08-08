@@ -1,17 +1,17 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-import bundledPosts from "@/data/posts.json";
-import bundledState from "@/data/state.json";
 import { EMPTY_STATE, type AgentState, type Post, type Source } from "@/lib/types";
 
 /**
  * All disk access for the read path goes through this file.
  *
- * Two layers of defence, because a 5xx on the feed is an eligibility failure:
- *   1. read the committed file from disk at runtime (freshest — the cron commits here)
- *   2. if that fails for any reason, fall back to the copy bundled at build time
- *   3. if that is also unusable, return empty — never throw
+ * Everything is read lazily inside a try/catch. There is deliberately NO
+ * top-level `import ... from "@/data/posts.json"` fallback: a static import is
+ * evaluated when the module loads, so a corrupt or missing data file would throw
+ * before any handler code runs and produce a 5xx that no try/catch can intercept.
+ * Since the cron rewrites posts.json on every cycle, one truncated commit would
+ * otherwise take the feed down. Reading at call time keeps every failure catchable.
  */
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -102,12 +102,9 @@ function newestFirst(posts: Post[]): Post[] {
 export async function readPosts(): Promise<Post[]> {
   try {
     return newestFirst(toPosts(await readJson(POSTS_PATH)));
-  } catch {
-    try {
-      return newestFirst(toPosts(bundledPosts));
-    } catch {
-      return [];
-    }
+  } catch (error) {
+    console.error("[store] could not read posts, serving empty feed:", error);
+    return [];
   }
 }
 
@@ -115,12 +112,9 @@ export async function readPosts(): Promise<Post[]> {
 export async function readState(): Promise<AgentState> {
   try {
     return toState(await readJson(STATE_PATH));
-  } catch {
-    try {
-      return toState(bundledState);
-    } catch {
-      return { ...EMPTY_STATE };
-    }
+  } catch (error) {
+    console.error("[store] could not read state, treating as uninitialized:", error);
+    return { ...EMPTY_STATE };
   }
 }
 
