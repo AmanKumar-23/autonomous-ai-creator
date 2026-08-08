@@ -1,4 +1,5 @@
 import { generate, parseJsonResponse } from "./llm.ts";
+import type { RecentPost } from "./posts.ts";
 import type { Candidate, Persona } from "../lib/types.ts";
 
 /**
@@ -17,12 +18,50 @@ import type { Candidate, Persona } from "../lib/types.ts";
 
 const MIN_WORDS = 60;
 const MAX_WORDS = 320;
+const MIN_TITLE_WORDS = 5;
+const MAX_TITLE_WORDS = 13;
+
+/**
+ * The verdict the post commits to. Requiring one is what stops every post
+ * collapsing into the same shape — state the development, express mild doubt,
+ * promise to keep watching. A voice that only ever hedges has no standards.
+ */
+export const STANCES = ["endorse", "dispute", "deflate", "warn", "contextualise"] as const;
+export type Stance = (typeof STANCES)[number];
+
+/**
+ * Marketing register that the earlier banned-WORDS list let through. "A notable
+ * step forward" does the same work as "game-changer" while avoiding the token,
+ * so the phrases have to be banned, not just the vocabulary.
+ */
+const BANNED_REGISTER = [
+  /\b(a |an )?(notable|significant|major|important|exciting|promising) (step|advance|advancement|development|milestone|leap)\b/i,
+  /\bstep (forward|change) (for|in)\b/i,
+  /\bhas the potential to\b/i,
+  /\bpaves? the way\b/i,
+  /\bushers? in\b/i,
+  /\bset to (transform|revolutionise|revolutionize|change)\b/i,
+];
+
+/** Closers that retreat from the verdict the post just reached. */
+const BANNED_CLOSERS = [
+  /\bi('ll| will) be (watching|looking|keeping an eye)\b/i,
+  /\bit remains to be seen\b/i,
+  /\bonly time will tell\b/i,
+  /\btime will tell\b/i,
+  /\bwe('ll| will) (have to )?(wait and )?see\b/i,
+  /\bmore (information|detail|research) is needed\b/i,
+  /\bwatch(ing)? (this )?(space|closely)\b/i,
+];
 
 export interface WrittenPost {
   title: string;
   text: string;
+  stance: Stance | null;
   provider: string | null;
   error: string | null;
+  /** Style problems that survived the retry. Logged, never fatal. */
+  warnings: string[];
 }
 
 function buildSystemPrompt(persona: Persona): string {
@@ -42,32 +81,60 @@ How you write:
 - Two or three short paragraphs, 120-200 words. Separate paragraphs with a blank
   line (\n\n) inside the "text" value — the feed renders them as paragraphs.
 
-Words you never use: game-changer, revolutionary, groundbreaking, unlock, leverage,
-delve, landscape, realm, testament, seismic, "it's important to note", "in today's
-world". If a sentence would survive being pasted into any other article, rewrite it.
+COMMIT TO A VERDICT. Every post reaches a conclusion and stays there. Pick the stance
+the evidence actually supports — do not default to the same one every time:
+- "endorse"       — this is real and it matters; say why it deserves attention
+- "dispute"       — the obvious reading is wrong; say what the correct one is
+- "deflate"       — this is being over-read; say what it actually amounts to
+- "warn"          — this is worse than it looks; say what breaks
+- "contextualise" — this only makes sense against something else; supply it
 
-Reply with JSON only:
-{ "title": "<6-12 words, declarative, YOUR angle rather than the source's headline>",
+Your LAST sentence must be your judgment, not a retreat from it. These closers are
+forbidden: "I'll be watching", "watching closely", "it remains to be seen", "time will
+tell", "we'll see", "more information is needed". If you find yourself hedging at the
+end, you have not decided — decide.
+
+Never use these words: game-changer, revolutionary, groundbreaking, unlock, leverage,
+delve, landscape, realm, testament, seismic, "it's important to note", "in today's world".
+
+Also avoid the REGISTER those words belong to, not just the words. These are equally
+banned because they say nothing: "a notable step forward", "a significant advancement",
+"a promising development", "has the potential to", "paves the way", "ushers in". If a
+sentence would survive being pasted into any other article, rewrite it.
+
+Reply with a raw JSON object and nothing else. Do NOT wrap it in markdown code
+fences — the provider validates JSON server-side and rejects a fenced response
+outright, which costs the whole post.
+{ "title": "<${MIN_TITLE_WORDS}-${MAX_TITLE_WORDS} words, declarative, YOUR angle rather than the source's headline>",
+  "stance": "<one of: ${STANCES.join(" | ")}>",
   "text": "<the post body>" }`;
 }
 
 function buildUserPrompt(
   candidate: Candidate,
   rationale: string,
-  recentTitles: string[],
+  recent: RecentPost[],
+  correction: string,
 ): string {
   const signals =
     candidate.source === "hackernews"
       ? `Hacker News, ${candidate.signals.points ?? 0} points and ${candidate.signals.comments ?? 0} comments`
       : `arXiv ${candidate.signals.category ?? ""}`.trim();
 
-  // The rationale is passed in rather than regenerated: it was produced during
-  // judgment, when the alternatives were visible, and the post has to agree with it.
+  // Stances and openings, not just titles: the repetition worth preventing is
+  // structural, so the model has to see the shape of what it already wrote.
+  const recentStances = recent.map((post) => post.stance).filter((stance) => stance !== "unrecorded");
+  const overused = recentStances.slice(0, 3);
+
   const continuity =
-    recentTitles.length > 0
-      ? `\n\nYour recent posts, newest first. Do not repeat these angles, and do not open the same way twice:\n${recentTitles
-          .map((title) => `- ${title}`)
-          .join("\n")}`
+    recent.length > 0
+      ? `\n\nWhat you have already published, newest first:\n${recent
+          .map((post) => `- [${post.stance}] "${post.title}" — opened: "${post.opening}…"`)
+          .join("\n")}${
+          overused.length > 0
+            ? `\n\nYour last ${overused.length} stance(s): ${overused.join(", ")}. Do not reach for the same stance again unless the evidence genuinely demands it, and do not open the same way twice.`
+            : ""
+        }`
       : "\n\nThis is your first post. Establish the voice.";
 
   return `Write today's post about this story.
@@ -81,43 +148,88 @@ ${candidate.snippet ? `Summary: ${candidate.snippet}` : ""}
 You already decided to publish this, for this reason:
 "${rationale}"
 
-Write the post so it earns that reasoning.${continuity}`;
+Write the post so it earns that reasoning.${continuity}${correction}`;
 }
 
 function wordCount(text: string): number {
   return text.trim().split(/\s+/).filter(Boolean).length;
 }
 
-/** Never throws. On any failure the cycle publishes nothing and says why. */
-export async function writePost(
+/** The last sentence of the body, where the verdict has to live. */
+function finalSentence(text: string): string {
+  const sentences = text.trim().split(/(?<=[.!?])\s+/).filter(Boolean);
+  return sentences[sentences.length - 1] ?? "";
+}
+
+/**
+ * Style problems worth a second attempt. Deliberately separate from the hard
+ * checks: these degrade the voice, they do not make the post unpublishable, so
+ * they must never cost a cycle.
+ */
+function styleProblems(title: string, text: string, stance: Stance | null): string[] {
+  const problems: string[] = [];
+
+  const titleWords = wordCount(title);
+  if (titleWords < MIN_TITLE_WORDS || titleWords > MAX_TITLE_WORDS) {
+    problems.push(
+      `the title is ${titleWords} words; it must be ${MIN_TITLE_WORDS}-${MAX_TITLE_WORDS}`,
+    );
+  }
+
+  if (!stance) problems.push(`"stance" must be one of: ${STANCES.join(", ")}`);
+
+  for (const pattern of BANNED_REGISTER) {
+    const hit = text.match(pattern);
+    if (hit) problems.push(`"${hit[0]}" is empty marketing register — say what actually changed instead`);
+  }
+
+  const closer = finalSentence(text);
+  for (const pattern of BANNED_CLOSERS) {
+    if (pattern.test(closer)) {
+      problems.push(`the post ends by retreating ("${closer.slice(0, 60)}…") — end on your judgment`);
+      break;
+    }
+  }
+
+  return problems;
+}
+
+interface Attempt {
+  title: string;
+  text: string;
+  stance: Stance | null;
+  provider: string | null;
+  error: string | null;
+}
+
+async function attemptWrite(
   persona: Persona,
   candidate: Candidate,
   rationale: string,
-  recentTitles: string[] = [],
-): Promise<WrittenPost> {
+  recent: RecentPost[],
+  correction: string,
+): Promise<Attempt> {
   const result = await generate({
     system: buildSystemPrompt(persona),
-    user: buildUserPrompt(candidate, rationale, recentTitles),
+    user: buildUserPrompt(candidate, rationale, recent, correction),
     json: true,
     temperature: 0.75,
     maxTokens: 900,
   });
 
   if (!result.ok) {
-    return {
-      title: "",
-      text: "",
-      provider: null,
-      error: result.attempts.map((a) => `${a.provider}: ${a.error}`).join("; "),
-    };
+    const error = result.attempts.map((a) => `${a.provider}: ${a.error}`).join("; ");
+    return { title: "", text: "", stance: null, provider: null, error };
   }
 
-  const parsed = parseJsonResponse<{ title?: unknown; text?: unknown }>(result.text);
+  const parsed = parseJsonResponse<{ title?: unknown; text?: unknown; stance?: unknown }>(result.text);
   const title = typeof parsed?.title === "string" ? parsed.title.trim() : "";
   const text = typeof parsed?.text === "string" ? parsed.text.trim() : "";
+  const rawStance = typeof parsed?.stance === "string" ? parsed.stance.trim().toLowerCase() : "";
+  const stance = (STANCES as readonly string[]).includes(rawStance) ? (rawStance as Stance) : null;
 
   if (!title || !text) {
-    return { title: "", text: "", provider: result.provider, error: "writer returned no usable title or body" };
+    return { title: "", text: "", stance, provider: result.provider, error: "writer returned no usable title or body" };
   }
 
   // A truncated or runaway body is worse than no post: the feed is permanent.
@@ -126,10 +238,53 @@ export async function writePost(
     return {
       title: "",
       text: "",
+      stance,
       provider: result.provider,
       error: `post was ${words} words, outside the ${MIN_WORDS}-${MAX_WORDS} range`,
     };
   }
 
-  return { title, text, provider: result.provider, error: null };
+  return { title, text, stance, provider: result.provider, error: null };
+}
+
+/**
+ * Never throws. On a hard failure the cycle publishes nothing and says why.
+ *
+ * Style problems get exactly one retry with the specific objection quoted back.
+ * If the second attempt still has them, the post is published anyway with the
+ * problems recorded: losing a publishing cycle to style pedantry would trade the
+ * highest-weighted judging criterion for a lower one.
+ */
+export async function writePost(
+  persona: Persona,
+  candidate: Candidate,
+  rationale: string,
+  recent: RecentPost[] = [],
+): Promise<WrittenPost> {
+  let attempt = await attemptWrite(persona, candidate, rationale, recent, "");
+  if (attempt.error) {
+    return { ...attempt, warnings: [] };
+  }
+
+  let problems = styleProblems(attempt.title, attempt.text, attempt.stance);
+
+  if (problems.length > 0) {
+    console.log(`[write] retrying, style problems: ${problems.join("; ")}`);
+    const correction = `\n\nYour previous draft was rejected for these reasons:\n${problems
+      .map((problem) => `- ${problem}`)
+      .join("\n")}\nWrite it again, fixing every one of them.`;
+
+    const retry = await attemptWrite(persona, candidate, rationale, recent, correction);
+    if (!retry.error) {
+      const retryProblems = styleProblems(retry.title, retry.text, retry.stance);
+      if (retryProblems.length < problems.length) {
+        attempt = retry;
+        problems = retryProblems;
+      }
+    }
+  }
+
+  if (problems.length > 0) console.warn(`[write] publishing with style warnings: ${problems.join("; ")}`);
+
+  return { ...attempt, warnings: problems };
 }

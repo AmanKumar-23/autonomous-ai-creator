@@ -6,7 +6,7 @@ import { recordCycle } from "./cycles.ts";
 import { discoverWithReport } from "./discover.ts";
 import { canonicalUrl } from "./filter.ts";
 import { judgeCandidates } from "./judge.ts";
-import { appendPost, recentTitles } from "./posts.ts";
+import { appendPost, recentContext, recentTitles } from "./posts.ts";
 import { recordRejections, type RejectionRecord } from "./rejections.ts";
 import { markSeen } from "./seen.ts";
 import { writePost } from "./write.ts";
@@ -103,6 +103,8 @@ async function main() {
   // Requirement 4: what it has already published shapes what it does next.
   // Compact titles rather than full bodies, to keep the cycle inside its budget.
   const memory = await recentTitles(10).catch(() => [] as string[]);
+  // The writer needs the shape of what it already wrote, not just the subjects.
+  const voiceMemory = await recentContext(6).catch(() => []);
 
   const verdict = await judgeCandidates(state.persona, report.candidates, memory);
   const now = new Date().toISOString();
@@ -175,7 +177,7 @@ async function main() {
     return;
   }
 
-  const written = await writePost(state.persona, verdict.selected, verdict.rationale, memory);
+  const written = await writePost(state.persona, verdict.selected, verdict.rationale, voiceMemory);
 
   if (written.error) {
     await finish(
@@ -195,6 +197,7 @@ async function main() {
     rationale: verdict.rationale,
     sources: [{ title: verdict.selected.title, url: verdict.selected.url }],
     ...(written.provider ? { provider: written.provider } : {}),
+    ...(written.stance ? { stance: written.stance } : {}),
   };
 
   await appendPost(post);

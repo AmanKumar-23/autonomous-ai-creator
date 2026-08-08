@@ -23,14 +23,38 @@ export async function readPosts(): Promise<Post[]> {
   }
 }
 
-/** Titles of the most recent posts, for continuity and repetition checks. */
+function newestFirst(posts: Post[]): Post[] {
+  return posts.slice().sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
+}
+
+/** Titles of the most recent posts. Used by the judge to avoid re-covering a story. */
 export async function recentTitles(limit = 10): Promise<string[]> {
-  const posts = await readPosts();
-  return posts
-    .slice()
-    .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
+  return newestFirst(await readPosts())
     .slice(0, limit)
     .map((post) => post.title || post.text.slice(0, 80));
+}
+
+/**
+ * What the agent has recently said and how it said it. This is the persona's
+ * accumulated state: the stances it has taken and the openings it has used.
+ * Titles alone cannot stop it reaching for the same rhetorical move every time,
+ * because the repetition lives in structure rather than subject.
+ */
+export interface RecentPost {
+  title: string;
+  stance: string;
+  /** First few words, so it can avoid opening the same way twice. */
+  opening: string;
+}
+
+export async function recentContext(limit = 6): Promise<RecentPost[]> {
+  return newestFirst(await readPosts())
+    .slice(0, limit)
+    .map((post) => ({
+      title: post.title || post.text.slice(0, 60),
+      stance: post.stance ?? "unrecorded",
+      opening: post.text.trim().split(/\s+/).slice(0, 8).join(" "),
+    }));
 }
 
 /**

@@ -34,6 +34,8 @@ export interface Post {
   title?: string;
   /** Which LLM provider served this cycle. Optional: powers the /status page. */
   provider?: string;
+  /** The verdict this post committed to. Optional: feeds voice continuity. */
+  stance?: string;
 }
 
 /** Persisted in data/state.json. The cron refuses to publish unless initialized. */

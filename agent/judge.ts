@@ -95,7 +95,9 @@ outcome. Do not select a weak item merely because it is the best of a weak set.
 You must give a specific reason for every rejection. "Not relevant" is not a reason;
 say what is actually wrong with it as a story for this feed.
 
-Reply with JSON only, in exactly this shape:
+Reply with a raw JSON object and nothing else. Do NOT wrap it in markdown code
+fences — the provider validates JSON server-side and rejects a fenced response.
+Use exactly this shape:
 {
   "selected_id": "<the id of the one item worth publishing, or null>",
   "why_selected": "<1-2 sentences: what makes this worth your readers' attention, and why it beat the others. Empty string if nothing selected.>",

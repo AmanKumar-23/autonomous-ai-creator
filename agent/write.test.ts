@@ -26,6 +26,19 @@ function mockGroq(content: string) {
     })) as typeof fetch;
 }
 
+/** Different response per call, so the retry path can be exercised. */
+function mockGroqSequence(...contents: string[]) {
+  process.env.GROQ_API_KEY = "k";
+  let call = 0;
+  globalThis.fetch = (async () => {
+    const content = contents[Math.min(call++, contents.length - 1)];
+    return new Response(JSON.stringify({ choices: [{ message: { content } }] }), { status: 200 });
+  }) as typeof fetch;
+}
+
+const good = (over: Record<string, unknown> = {}) =>
+  JSON.stringify({ title: "A clear declarative title for the post", stance: "warn", text: body(150), ...over });
+
 const persona: Persona = { name: "Ada", domain: "AI Security" };
 const candidate: Candidate = {
   id: "hackernews:1",
@@ -99,5 +112,63 @@ describe("the writer", () => {
     assert.match(sentBody, /Kepler/, "the supplied persona name must reach the prompt");
     assert.match(sentBody, /Robotics/, "the supplied domain must reach the prompt");
     assert.doesNotMatch(sentBody, /\bAda\b/, "no other persona should leak in");
+  });
+
+  it("records the stance the post committed to", async () => {
+    mockGroq(good());
+    const post = await writePost(persona, candidate, "r");
+    assert.equal(post.stance, "warn");
+  });
+
+  it("rejects an invented stance and retries", async () => {
+    mockGroqSequence(good({ stance: "vibes" }), good({ stance: "deflate" }));
+    const post = await writePost(persona, candidate, "r");
+    assert.equal(post.stance, "deflate");
+    assert.deepEqual(post.warnings, []);
+  });
+
+  it("retries a title outside the word bounds", async () => {
+    mockGroqSequence(good({ title: "Too short" }), good());
+    const post = await writePost(persona, candidate, "r");
+    assert.equal(post.title, "A clear declarative title for the post");
+    assert.deepEqual(post.warnings, []);
+  });
+
+  it("retries marketing register that the banned-word list would miss", async () => {
+    const marketing = `${body(140)} This is a notable step forward for the field.`;
+    mockGroqSequence(good({ text: marketing }), good());
+    const post = await writePost(persona, candidate, "r");
+    assert.deepEqual(post.warnings, [], "the retry should clear the register problem");
+  });
+
+  it("retries a post that ends by retreating from its verdict", async () => {
+    const hedged = `${body(140)} I will be watching this closely.`;
+    mockGroqSequence(good({ text: hedged }), good());
+    const post = await writePost(persona, candidate, "r");
+    assert.deepEqual(post.warnings, []);
+  });
+
+  it("publishes with warnings rather than losing the cycle to style", async () => {
+    // Both attempts are stylistically poor: a post still ships, flagged.
+    const hedged = `${body(140)} I will be watching this closely.`;
+    mockGroq(good({ text: hedged }));
+    const post = await writePost(persona, candidate, "r");
+    assert.equal(post.error, null, "style must never cost a publishing cycle");
+    assert.ok(post.warnings.length > 0, "but the problem must be recorded");
+  });
+
+  it("shows the writer what it already published, not just the titles", async () => {
+    process.env.GROQ_API_KEY = "k";
+    let sent = "";
+    globalThis.fetch = (async (_u: unknown, init: RequestInit) => {
+      sent = String(init.body);
+      return new Response(JSON.stringify({ choices: [{ message: { content: good() } }] }), { status: 200 });
+    }) as unknown as typeof fetch;
+
+    await writePost(persona, candidate, "r", [
+      { title: "An earlier post", stance: "deflate", opening: "The claim here is thinner than" },
+    ]);
+    assert.match(sent, /deflate/, "recent stances must reach the prompt");
+    assert.match(sent, /The claim here is thinner than/, "recent openings must reach the prompt");
   });
 });
