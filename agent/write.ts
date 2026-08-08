@@ -115,6 +115,7 @@ function buildUserPrompt(
   rationale: string,
   recent: RecentPost[],
   correction: string,
+  priorCoverage: string[] = [],
 ): string {
   const signals =
     candidate.source === "hackernews"
@@ -137,6 +138,17 @@ function buildUserPrompt(
         }`
       : "\n\nThis is your first post. Establish the voice.";
 
+  // Requirement 3: continuity is what separates a persona from a template. Offered,
+  // never mandated — a forced callback in every post is its own kind of tell.
+  const coverage =
+    priorCoverage.length > 0
+      ? `\n\nYour memory recalls what you have said on related ground:\n${priorCoverage
+          .map((fact) => `- ${fact}`)
+          .join(
+            "\n",
+          )}\nIf it genuinely sharpens this post, refer back to it the way a columnist would — briefly, in passing. If it does not, ignore it. Do not force a callback.`
+      : "";
+
   return `Write today's post about this story.
 
 Title: ${candidate.title}
@@ -148,7 +160,7 @@ ${candidate.snippet ? `Summary: ${candidate.snippet}` : ""}
 You already decided to publish this, for this reason:
 "${rationale}"
 
-Write the post so it earns that reasoning.${continuity}${correction}`;
+Write the post so it earns that reasoning.${continuity}${coverage}${correction}`;
 }
 
 function wordCount(text: string): number {
@@ -208,10 +220,11 @@ async function attemptWrite(
   rationale: string,
   recent: RecentPost[],
   correction: string,
+  priorCoverage: string[] = [],
 ): Promise<Attempt> {
   const result = await generate({
     system: buildSystemPrompt(persona),
-    user: buildUserPrompt(candidate, rationale, recent, correction),
+    user: buildUserPrompt(candidate, rationale, recent, correction, priorCoverage),
     json: true,
     temperature: 0.75,
     maxTokens: 900,
@@ -260,8 +273,9 @@ export async function writePost(
   candidate: Candidate,
   rationale: string,
   recent: RecentPost[] = [],
+  priorCoverage: string[] = [],
 ): Promise<WrittenPost> {
-  let attempt = await attemptWrite(persona, candidate, rationale, recent, "");
+  let attempt = await attemptWrite(persona, candidate, rationale, recent, "", priorCoverage);
   if (attempt.error) {
     return { ...attempt, warnings: [] };
   }
@@ -274,7 +288,7 @@ export async function writePost(
       .map((problem) => `- ${problem}`)
       .join("\n")}\nWrite it again, fixing every one of them.`;
 
-    const retry = await attemptWrite(persona, candidate, rationale, recent, correction);
+    const retry = await attemptWrite(persona, candidate, rationale, recent, correction, priorCoverage);
     if (!retry.error) {
       const retryProblems = styleProblems(retry.title, retry.text, retry.stance);
       if (retryProblems.length < problems.length) {

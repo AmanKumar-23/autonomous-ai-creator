@@ -6,7 +6,8 @@ import { recordCycle } from "./cycles.ts";
 import { discoverWithReport } from "./discover.ts";
 import { canonicalUrl } from "./filter.ts";
 import { judgeCandidates } from "./judge.ts";
-import { appendPost, recentContext, recentTitles } from "./posts.ts";
+import { groupFor, memoryFailures, recallSimilar, rememberPost } from "./memory.ts";
+import { appendPost, readPosts, recentContext, recentTitles } from "./posts.ts";
 import { recordRejections, type RejectionRecord } from "./rejections.ts";
 import { markSeen } from "./seen.ts";
 import { writePost } from "./write.ts";
@@ -106,8 +107,39 @@ async function main() {
   // The writer needs the shape of what it already wrote, not just the subjects.
   const voiceMemory = await recentContext(6).catch(() => []);
 
-  const verdict = await judgeCandidates(state.persona, report.candidates, memory);
+  // Requirement 4: semantic recall runs BEFORE the editorial gate, so the editor
+  // never spends a decision on ground the agent has already covered.
+  const groupId = groupFor(state.agentId);
+  const priorPosts = await readPosts().catch(() => []);
+  const recalled = await recallSimilar(report.candidates, { groupId, priorPosts });
+
+  const alreadyCovered = report.candidates.filter((c) => recalled.get(c.id)?.covered);
+  const freshCandidates = report.candidates.filter((c) => !recalled.get(c.id)?.covered);
+
+  // Anything still worth judging carries its prior context, so the editor can
+  // weigh "this extends what we said" against "this repeats it".
+  const priorContext = freshCandidates.flatMap((c) => {
+    const hit = recalled.get(c.id);
+    return hit && hit.facts.length > 0 ? [{ id: c.id, facts: hit.facts }] : [];
+  });
+
+  const verdict = await judgeCandidates(state.persona, freshCandidates, memory, priorContext);
   const now = new Date().toISOString();
+
+  // Memory rejections join the same log as the editor's, with the earlier post.
+  const memoryRejections: RejectionRecord[] = alreadyCovered.map((c) => {
+    const hit = recalled.get(c.id);
+    const reference = hit?.relatedPostId ? ` (see post ${hit.relatedPostId})` : "";
+    return {
+      id: c.id,
+      title: c.title,
+      url: c.url,
+      reason: `already covered${reference}: memory recalls "${hit?.facts[0] ?? ""}"`,
+      stage: "editor" as const,
+      rejectedAt: now,
+      cycleId: id,
+    };
+  });
 
   // Log what the deterministic filter dropped alongside what the editor turned
   // down: together they are the full record of what was considered.
@@ -118,7 +150,7 @@ async function main() {
   // reached the editor is excluded outright — a story cannot honestly appear as
   // filtered out when it was in fact judged, or published.
   const judged = new Set(
-    [verdict.selected, ...verdict.rejections]
+    [verdict.selected, ...verdict.rejections, ...alreadyCovered]
       .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
       .map((entry) => canonicalUrl(entry.url)),
   );
@@ -142,6 +174,7 @@ async function main() {
   });
 
   const rejectionLog: RejectionRecord[] = [
+    ...memoryRejections,
     ...verdict.rejections.map((rejection) => ({
       ...rejection,
       stage: "editor" as const,
@@ -158,7 +191,7 @@ async function main() {
     domain,
     discovered,
     kept: report.candidates.length,
-    dropped: report.dropped.length,
+    dropped: report.dropped.length + alreadyCovered.length,
     failures: report.failures,
     ...(verdict.provider ? { provider: verdict.provider } : {}),
   };
@@ -177,7 +210,14 @@ async function main() {
     return;
   }
 
-  const written = await writePost(state.persona, verdict.selected, verdict.rationale, voiceMemory);
+    const selectedMemory = recalled.get(verdict.selected.id)?.facts ?? [];
+  const written = await writePost(
+    state.persona,
+    verdict.selected,
+    verdict.rationale,
+    voiceMemory,
+    selectedMemory,
+  );
 
   if (written.error) {
     await finish(
@@ -205,6 +245,10 @@ async function main() {
   // Everything judged this cycle is now spent: the published story must never
   // return, and re-judging the same rejects every two hours would burn tokens
   // and fill the rejection log with duplicates.
+  await rememberPost(post, state.persona.name, groupId).catch((error) =>
+    console.error("[cycle] could not write to memory:", error),
+  );
+
   await markSeen([
     { url: verdict.selected.url, title: verdict.selected.title },
     ...verdict.rejections.map((rejection) => ({ url: rejection.url, title: rejection.title })),

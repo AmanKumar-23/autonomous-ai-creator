@@ -108,7 +108,11 @@ Use exactly this shape:
 Every candidate you do not select must appear in "rejections".`;
 }
 
-function buildUserPrompt(candidates: Candidate[], recentTitles: string[]): string {
+function buildUserPrompt(
+  candidates: Candidate[],
+  recentTitles: string[],
+  priorContext: Array<{ id: string; facts: string[] }> = [],
+): string {
   const list = candidates
     .map((candidate, index) => {
       const signals =
@@ -131,7 +135,18 @@ function buildUserPrompt(candidates: Candidate[], recentTitles: string[]): strin
           .join("\n")}`
       : "\n\nYou have not published anything yet. This would be your first post.";
 
-  return `Today's candidates:\n\n${list}${memory}`;
+  // Requirement 6: "we covered X, this adds Y" is precisely why-this-over-others,
+  // and it is only answerable with recalled coverage in scope at judgment time.
+  const recalled =
+    priorContext.length > 0
+      ? `\n\nYour memory recalls related ground you have already covered:\n${priorContext
+          .map((entry) => `- for ${entry.id}: ${entry.facts.join("; ")}`)
+          .join(
+            "\n",
+          )}\nIf a candidate merely repeats what you already said, reject it and say so. If it genuinely EXTENDS that coverage, say what it adds in "why_selected".`
+      : "";
+
+  return `Today's candidates:\n\n${list}${memory}${recalled}`;
 }
 
 function asText(value: unknown): string {
@@ -146,6 +161,7 @@ export async function judgeCandidates(
   persona: Persona,
   candidates: Candidate[],
   recentTitles: string[] = [],
+  priorContext: Array<{ id: string; facts: string[] }> = [],
 ): Promise<JudgeVerdict> {
   const shortlist = candidates.slice(0, MAX_CANDIDATES);
 
@@ -163,7 +179,7 @@ export async function judgeCandidates(
 
   const result = await generate({
     system: buildSystemPrompt(persona),
-    user: buildUserPrompt(shortlist, recentTitles),
+    user: buildUserPrompt(shortlist, recentTitles, priorContext),
     json: true,
     temperature: 0.3,
     maxTokens: 1000,
