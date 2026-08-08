@@ -289,3 +289,78 @@ Client* still passes for AI Security because its post genuinely discusses contex
 "injection". A keyword filter cannot separate that from prompt-injection research; doing so
 needs judgment, which is what the Phase 3 editorial gate is for. Tightening the keyword list
 to exclude it would start rejecting real security stories.
+
+---
+
+## Phase 3 — Editorial gate, provider failover, and the cron
+
+**Prompt given:** "YOU HAVE ALL THE PRIVILEGES TO DO, SO WHATEVER THE ISSUE IS THERE FIX IT",
+following an audit that named the missing cron as the single biggest risk to a top-3 finish.
+
+**Requirements advanced:** requirement 2 (editorial judgment with intentional rejection),
+requirement 5 (autonomous publishing over time), and the transparency half of requirement 6 —
+the rationale now exists, produced at the moment of judgment.
+
+### What was built
+
+`.github/workflows/agent.yml` + `agent/run.ts` — the scheduled loop. Three details each of
+which would have failed silently: `permissions: contents: write` (without it the commit is
+rejected with no error), a concurrency group so overlapping cycles cannot fight over `data/`,
+and rebase-retry on push because `POST /api/agent/init` also commits `state.json` from Vercel,
+so the remote genuinely moves underneath the job. `run.ts` exits 0 even on failure — a red run
+every two hours becomes wallpaper, and the feed is unaffected either way.
+
+`agent/llm.ts` — one `generate()` with providers as configuration. Each provider declares how
+to build its request and how to extract text; everything above sees one shape. Failover skips
+providers with no key and returns `ok:false` rather than throwing when all tiers fail.
+`parseJsonResponse` recovers JSON from code fences and surrounding prose, because models wrap
+their output even when told not to, and burning a retry on that is wasteful.
+
+`agent/judge.ts` — the editorial gate. The whole shortlist is judged in ONE call, deliberately:
+"why this one over the others" can only be answered by something that saw the others, which is
+why CLAUDE.md puts rationale generation in the judge rather than the writer.
+
+`agent/rejections.ts` — persists both editor-stage and pre-filter-stage rejections, so the
+public rejection log can show what was considered and why it was turned down.
+
+### Two safeguards worth naming
+
+- **A `selected_id` that is not on the shortlist is refused.** Without this, a hallucinated id
+  becomes a published post citing a source the agent never actually saw. That is the single
+  worst failure this system could have, because it looks completely normal in the feed.
+- **Every candidate the model ignores is still logged as a rejection.** The log has to account
+  for everything it was shown, or the rejection log quietly under-reports.
+
+### Verified live, not mocked
+
+Against the real Groq endpoint, on real discovered candidates, the gate:
+
+- rejected the pre-filter's **top-ranked** item as "an opinion piece with no new information",
+  proving it is not rubber-stamping the highest score
+- rejected "Show HN: Otaku - A Roleplay Terminal Client", the false positive the keyword filter
+  provably could not catch (its post genuinely discusses context "injection")
+- selected a concrete disclosed vulnerability, with a rationale covering both why it was chosen
+  over the alternatives and why it matters now
+- cost 1427 tokens against a 5000-token budget per cycle
+
+36/36 tests pass, including groq-to-gemini failover, a provider with no key, all providers
+failing, empty completions, and unparseable replies.
+
+### The cron is proven autonomous
+
+`workflow_dispatch` succeeding does not prove the `schedule` trigger works — they are separate
+mechanisms. The scheduled run fired on its own at 16:55Z for the 16:17 slot (GitHub delays
+scheduled runs under load, routinely by 15-40 minutes), completed successfully, and committed
+its cycle record back to the repo as `autonomous-ai-creator`. Two agent-authored commits now
+exist that no human triggered.
+
+### An operational mistake worth recording
+
+I told the user to install API keys with `read -rs`. That captures arrow-key escape sequences
+and bracketed-paste markers as literal characters, which silently corrupted both keys — the
+Groq key came out 174 characters instead of 56, and the Gemini key came out as `[D`, the escape
+sequence for left-arrow. The symptom was an HTTP 400 with an empty body, which reads as a
+network fault rather than a bad key. Replaced with `scripts/add-key.sh`, which reads from the
+macOS clipboard, strips escapes, validates prefix and length, and writes `.env.local` and the
+GitHub secret from the same value so the two cannot drift — which is exactly how they had
+drifted, since `gh secret set` alone does not touch the local file.
