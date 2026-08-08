@@ -4,6 +4,8 @@ import path from "node:path";
 
 import { recordCycle } from "./cycles.ts";
 import { discoverWithReport } from "./discover.ts";
+import { judgeCandidates } from "./judge.ts";
+import { recordRejections, type RejectionRecord } from "./rejections.ts";
 import type { AgentState, CycleRecord, CycleStatus } from "../lib/types.ts";
 
 /**
@@ -94,18 +96,61 @@ async function main() {
     return;
   }
 
-  // Phase 3 judges these candidates and Phase 4 writes the post. Until then the
-  // cycle stops here, having proved the loop runs unattended.
+  const verdict = await judgeCandidates(state.persona, report.candidates, []);
+  const now = new Date().toISOString();
+
+  // Log what the deterministic filter dropped alongside what the editor turned
+  // down: together they are the full record of what was considered.
+  const rejectionLog: RejectionRecord[] = [
+    ...verdict.rejections.map((rejection) => ({
+      ...rejection,
+      stage: "editor" as const,
+      rejectedAt: now,
+      cycleId: id,
+    })),
+    ...report.dropped.slice(0, 20).map((drop) => ({
+      id: drop.candidate.id,
+      title: drop.candidate.title,
+      url: drop.candidate.url,
+      reason: drop.detail,
+      stage: "prefilter" as const,
+      rejectedAt: now,
+      cycleId: id,
+    })),
+  ];
+  await recordRejections(rejectionLog).catch((error) =>
+    console.error("[cycle] could not write rejection log:", error),
+  );
+
+  const common = {
+    domain,
+    discovered,
+    kept: report.candidates.length,
+    dropped: report.dropped.length,
+    failures: report.failures,
+    ...(verdict.provider ? { provider: verdict.provider } : {}),
+  };
+
+  if (verdict.error) {
+    await finish("failed", `Editorial judgment could not run (${verdict.error}). Nothing was published.`, common);
+    return;
+  }
+
+  if (!verdict.selected) {
+    await finish(
+      "no-candidates",
+      `The editor reviewed ${report.candidates.length} candidate(s) and rejected all of them. Publishing nothing is preferable to publishing filler.`,
+      common,
+    );
+    return;
+  }
+
+  // Phase 4 turns this selection into a written post. The decision and its
+  // rationale already exist, because only the judge saw the alternatives.
   await finish(
     "discovered",
-    `Found ${report.candidates.length} candidate(s) worth judging, led by "${report.candidates[0].title}". Editorial judgment lands in the next phase.`,
-    {
-      domain,
-      discovered,
-      kept: report.candidates.length,
-      dropped: report.dropped.length,
-      failures: report.failures,
-    },
+    `Selected "${verdict.selected.title}" and rejected ${verdict.rejections.length}. ${verdict.rationale}`,
+    common,
   );
 }
 
