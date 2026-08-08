@@ -4,6 +4,7 @@ import path from "node:path";
 
 import { recordCycle } from "./cycles.ts";
 import { discoverWithReport } from "./discover.ts";
+import { canonicalUrl } from "./filter.ts";
 import { judgeCandidates } from "./judge.ts";
 import { appendPost, recentTitles } from "./posts.ts";
 import { recordRejections, type RejectionRecord } from "./rejections.ts";
@@ -108,6 +109,36 @@ async function main() {
 
   // Log what the deterministic filter dropped alongside what the editor turned
   // down: together they are the full record of what was considered.
+  //
+  // Hacker News is queried with several terms, so the same story arrives more than
+  // once and is dropped once per copy. Collapsing to one entry per canonical URL
+  // keeps the log a record of decisions rather than of retries. Anything that
+  // reached the editor is excluded outright — a story cannot honestly appear as
+  // filtered out when it was in fact judged, or published.
+  const judged = new Set(
+    [verdict.selected, ...verdict.rejections]
+      .filter((entry): entry is NonNullable<typeof entry> => entry !== null)
+      .map((entry) => canonicalUrl(entry.url)),
+  );
+  const loggedPrefilter = new Set<string>();
+
+  const prefilterLog: RejectionRecord[] = report.dropped.flatMap((drop) => {
+    const key = canonicalUrl(drop.candidate.url);
+    if (judged.has(key) || loggedPrefilter.has(key)) return [];
+    loggedPrefilter.add(key);
+    return [
+      {
+        id: drop.candidate.id,
+        title: drop.candidate.title,
+        url: drop.candidate.url,
+        reason: drop.detail,
+        stage: "prefilter" as const,
+        rejectedAt: now,
+        cycleId: id,
+      },
+    ];
+  });
+
   const rejectionLog: RejectionRecord[] = [
     ...verdict.rejections.map((rejection) => ({
       ...rejection,
@@ -115,15 +146,7 @@ async function main() {
       rejectedAt: now,
       cycleId: id,
     })),
-    ...report.dropped.map((drop) => ({
-      id: drop.candidate.id,
-      title: drop.candidate.title,
-      url: drop.candidate.url,
-      reason: drop.detail,
-      stage: "prefilter" as const,
-      rejectedAt: now,
-      cycleId: id,
-    })),
+    ...prefilterLog,
   ];
   await recordRejections(rejectionLog).catch((error) =>
     console.error("[cycle] could not write rejection log:", error),
