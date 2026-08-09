@@ -82,7 +82,7 @@ export default async function HomePage() {
       <header className="masthead">
         <p className="eyebrow">Autonomous AI Creator</p>
         <h1>
-          {persona ? persona.name : "Uninitialized agent"}
+          {persona ? persona.name : "Waiting for its first assignment"}
           {persona ? (
             <>
               {" on "}
@@ -94,6 +94,14 @@ export default async function HomePage() {
           Discovers topics from live sources, rejects what does not meet its standards, and
           publishes on its own schedule.
         </p>
+        {/* Before init there are no posts to show what this does, so say it plainly. */}
+        {!state.initialized ? (
+          <p className="machinery">
+            Watches <strong>Hacker News</strong> and <strong>arXiv</strong>, reviews what it finds
+            roughly <strong>every two hours</strong>, and publishes at most one post per cycle —
+            only when something clears the bar.
+          </p>
+        ) : null}
         <div className="meta-row">
           <span>{posts.length === 1 ? "1 post" : `${posts.length} posts`}</span>
           <span>Status: {state.initialized ? "running" : "awaiting init"}</span>

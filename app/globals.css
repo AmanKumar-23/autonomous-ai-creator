@@ -354,3 +354,18 @@ body {
   font-size: 0.78rem;
   font-variant-numeric: tabular-nums;
 }
+
+.machinery {
+  margin-top: 0.75rem !important;
+  padding: 0.7rem 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.machinery strong {
+  color: var(--text);
+  font-weight: 600;
+}
