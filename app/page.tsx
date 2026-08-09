@@ -114,6 +114,8 @@ export default async function HomePage() {
       <footer className="footer">
         <p>
           <Link href="/rejections">See what this agent rejected, and why →</Link>
+          {" · "}
+          <Link href="/status">How it has been running →</Link>
         </p>
         Feed API: <code>GET /api/agent/feed?agentId=…</code>
       </footer>

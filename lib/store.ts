@@ -1,7 +1,15 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-import { EMPTY_STATE, type AgentState, type Post, type Rejection, type Source } from "@/lib/types";
+import {
+  EMPTY_STATE,
+  type AgentState,
+  type CycleRecord,
+  type CycleStatus,
+  type Post,
+  type Rejection,
+  type Source,
+} from "@/lib/types";
 
 /**
  * All disk access for the read path goes through this file.
@@ -18,6 +26,7 @@ const DATA_DIR = path.join(process.cwd(), "data");
 export const POSTS_PATH = path.join(DATA_DIR, "posts.json");
 export const STATE_PATH = path.join(DATA_DIR, "state.json");
 export const REJECTIONS_PATH = path.join(DATA_DIR, "rejections.json");
+export const CYCLES_PATH = path.join(DATA_DIR, "cycles.json");
 
 async function readJson(filePath: string): Promise<unknown> {
   const raw = await fs.readFile(filePath, "utf8");
@@ -152,6 +161,66 @@ export async function readRejections(): Promise<Rejection[]> {
       });
   } catch (error) {
     console.error("[store] could not read rejections:", error);
+    return [];
+  }
+}
+
+/**
+ * The operational log behind /status: one record per run of the agent loop,
+ * whether or not it published. Never throws — a page that cannot render its own
+ * health data is worse than one showing an empty history.
+ */
+export async function readCycles(): Promise<CycleRecord[]> {
+  try {
+    const parsed = (await readJson(CYCLES_PATH)) as { cycles?: unknown };
+    if (!Array.isArray(parsed.cycles)) return [];
+
+    const statuses: CycleStatus[] = [
+      "not-initialized",
+      "no-candidates",
+      "discovered",
+      "published",
+      "failed",
+    ];
+
+    return parsed.cycles
+      .flatMap((entry): CycleRecord[] => {
+        if (!entry || typeof entry !== "object") return [];
+        const record = entry as Record<string, unknown>;
+        if (!isNonEmptyString(record.id)) return [];
+
+        const status = statuses.includes(record.status as CycleStatus)
+          ? (record.status as CycleStatus)
+          : "failed";
+
+        const cycle: CycleRecord = {
+          id: record.id,
+          startedAt: isNonEmptyString(record.startedAt) ? record.startedAt : "",
+          finishedAt: isNonEmptyString(record.finishedAt) ? record.finishedAt : "",
+          status,
+          reason: isNonEmptyString(record.reason) ? record.reason : "",
+          domain: isNonEmptyString(record.domain) ? record.domain : null,
+          discovered: typeof record.discovered === "number" ? record.discovered : 0,
+          kept: typeof record.kept === "number" ? record.kept : 0,
+          dropped: typeof record.dropped === "number" ? record.dropped : 0,
+          failures: Array.isArray(record.failures) ? (record.failures as CycleRecord["failures"]) : [],
+        };
+        if (isNonEmptyString(record.provider)) cycle.provider = record.provider;
+        if (record.memory && typeof record.memory === "object") {
+          const memory = record.memory as Record<string, unknown>;
+          cycle.memory = {
+            available: memory.available === true,
+            failures: typeof memory.failures === "number" ? memory.failures : 0,
+          };
+        }
+        return [cycle];
+      })
+      .sort((a, b) => {
+        const delta = Date.parse(b.startedAt) - Date.parse(a.startedAt);
+        return Number.isNaN(delta) ? 0 : delta;
+      });
+  } catch (error) {
+    console.error("[store] could not read cycles:", error);
     return [];
   }
 }

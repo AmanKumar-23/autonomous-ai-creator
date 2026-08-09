@@ -6,7 +6,7 @@ import { recordCycle } from "./cycles.ts";
 import { discoverWithReport } from "./discover.ts";
 import { canonicalUrl } from "./filter.ts";
 import { judgeCandidates } from "./judge.ts";
-import { groupFor, memoryFailures, recallSimilar, rememberPost } from "./memory.ts";
+import { groupFor, isMemoryConfigured, memoryFailures, recallSimilar, rememberPost } from "./memory.ts";
 import { appendPost, readPosts, recentContext, recentTitles } from "./posts.ts";
 import { recordRejections, type RejectionRecord } from "./rejections.ts";
 import { markSeen } from "./seen.ts";
@@ -194,6 +194,8 @@ async function main() {
     dropped: report.dropped.length + alreadyCovered.length,
     failures: report.failures,
     ...(verdict.provider ? { provider: verdict.provider } : {}),
+    // Recorded per cycle so /status can show when memory was unavailable.
+    memory: { available: isMemoryConfigured() && memoryFailures.length === 0, failures: memoryFailures.length },
   };
 
   if (verdict.error) {

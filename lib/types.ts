@@ -129,6 +129,8 @@ export interface CycleRecord {
   failures: SourceFailure[];
   /** Which LLM provider served this cycle, once Phase 3 exists. */
   provider?: string;
+  /** Whether Breeth answered this cycle. Absent on cycles that never called it. */
+  memory?: { available: boolean; failures: number };
 }
 
 /**
