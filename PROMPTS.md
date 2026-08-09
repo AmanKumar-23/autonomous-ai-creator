@@ -489,3 +489,70 @@ That is the exact case from the brief that a Set of URLs cannot catch.
 
 64/64 tests pass, including one asserting that a candidate is NOT flagged merely because
 memory returned something — if that ever regresses, the agent silently stops publishing.
+
+---
+
+## Phase 6 — Hardening and evidence surfaces
+
+**Requirements advanced:** requirement 2 (the editorial record becomes readable evidence
+rather than a log), requirement 5 (unattended survival across the 48-hour window), and
+requirement 6 (the tally and the per-cycle record make the reasoning auditable).
+
+### What was already done when this phase was requested
+
+The prompt asked for the `/rejections` and `/status` pages, `permissions: contents: write`,
+a concurrency group, and timeouts on every external call. All of those already existed from
+earlier phases, so this phase covered what was genuinely missing rather than rebuilding them.
+The prompt also said 43 tests; the real number was 70.
+
+### Part A — the rejection log became a standards record
+
+It listed everything flat, which is a log, not evidence. It now groups by the standard a
+topic failed — on a real cycle: 3 "not a real development", 30 "outside the domain", 1 "too
+thin to have a view on", 1 "not a topic at all" — and carries the running tally: 41
+considered, 1 published, 40 rejected, 2% acceptance. Each entry shows its source host,
+timestamp, stage and the full reason.
+
+### Part B — the status page answers the reliability questions
+
+Added: whether the agent is initialized and when, first and most recent cycle timestamps,
+time since the last successful publish, and each failover event with its reason rather than
+only a count of tiers.
+
+### Part C — unattended survival
+
+**Model ids (C6).** `gemini-2.0-flash` appeared twice — in the tier name and in the request
+URL — so a one-sided edit would have produced a chain that reported one model while calling
+another. All ids now live in `MODELS` in `agent/llm.ts`, and `/status` derives its tier order
+from `PROVIDERS` rather than repeating the names.
+
+**State consistency (C2).** Audited rather than assumed. `markSeen` and `appendPost` both sit
+after the writer-error return, so a failed write cannot consume its candidates — they stay
+eligible next cycle. But `recordRejections` sits *before* it, so a repeatedly failing writer
+would re-log the same rejections every two hours and inflate the grouped counts. Entries are
+now deduplicated by stage and URL.
+
+**Token budget (C5), measured rather than estimated.** Observed across live runs: judge
+~2,200 tokens worst case, writer ~1,200. Per cycle: 3,400 published, 2,200 when nothing is
+selected, 4,600 worst case including a style retry. At the configured 2-hour cadence that is
+12 cycles/day = 40,800 typical and 55,200 worst case against Groq's 100K/day ceiling — 41%
+and 55%. Across the full 48-hour window: 81,600 typical, 110,400 worst case against a 200K
+two-day ceiling, so 55% at worst. Headroom is effectively doubled again because the two Groq
+models have separate per-model quotas and the 8B is untouched until the 70B fails.
+
+### Part D — the failure drill, actually run
+
+1. **Tier 1 forced down** — `groq:llama-3.1-8b-instant` served both calls and published
+   "AI Agents Impersonate Humans to Target Real People".
+2. **All Groq tiers forced down** — this is where the prompt expected Gemini to publish, and
+   it cannot: `gemini:gemini-2.0-flash` returned HTTP 429, because the key authenticates but
+   the project has no free-tier allocation. The cycle failed cleanly, logged every provider's
+   error, and the previously published post survived: 1 post before, 1 after.
+3. **Feed after a total provider outage** — HTTP 200, still serving the existing post with a
+   valid ISO 8601 UTC timestamp. Then `posts.json` corrupted five ways (truncated, `null`,
+   empty, non-JSON, deleted) — HTTP 200 and `{"posts":[]}` every time, and the real post
+   returned once restored.
+4. **Cycle run before init** — status `not-initialized`, no LLM call attempted at all, posts
+   unchanged.
+
+70/70 tests still pass and the feed endpoint was not touched.
