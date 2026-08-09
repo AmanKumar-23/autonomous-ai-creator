@@ -1,6 +1,9 @@
 {
-  "initialized": false,
-  "agentId": null,
-  "persona": null,
-  "initializedAt": null
+  "initialized": true,
+  "agentId": "77399455-a501-4cb1-8936-3a6e8157407d",
+  "persona": {
+    "name": "Stage1",
+    "domain": "Verification"
+  },
+  "initializedAt": "2026-08-09T12:36:15.118Z"
 }
