@@ -3,11 +3,12 @@
 #
 #   ./scripts/health.sh
 #
-# Checks the four things that can independently lose the competition:
+# Checks the five things that can independently lose the competition:
 #   1. the endpoints the evaluator polls
 #   2. whether the cron is actually firing
 #   3. what the cycles are deciding (publishing vs failing silently)
 #   4. whether the repo is in a clean state to be evaluated
+#   5. whether the live site is actually serving what the repo contains
 #
 # Read-only. Safe to run at any time, including mid-evaluation.
 
@@ -123,6 +124,76 @@ if git grep -qE 'gsk_[A-Za-z0-9]{20}|ck_live_[A-Za-z0-9]{20}|AIza[A-Za-z0-9_-]{2
   bad "possible API key committed to the repo — rotate it now"
 else
   green "no key material tracked in the repo"
+fi
+
+echo
+echo "═══ 5. DOES THE LIVE SITE MATCH THE REPO? ═══"
+# The failure this exists for: a commit lands correctly, Vercel creates no
+# deployment for it, and production keeps serving the previous build. The repo is
+# right, the endpoints answer 200, every workflow run is green — and the feed
+# never changes. Checking each side separately cannot see it; only comparing can.
+
+fetch_committed() {  # fetch_committed <path> -> file contents, or empty
+  curl -s --max-time 20 "https://api.github.com/repos/$REPO/contents/$1" \
+    | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{try{
+        process.stdout.write(Buffer.from(JSON.parse(d).content,'base64').toString('utf8'))
+      }catch(e){process.stdout.write('')}})" 2>/dev/null
+}
+
+REPO_POSTS="$(fetch_committed data/posts.json)"
+REPO_STATE="$(fetch_committed data/state.json)"
+LIVE_FEED="$(curl -s --max-time 20 "$URL/api/agent/feed")"
+LIVE_HOME="$(curl -s --max-time 20 "$URL/")"
+
+if [ -z "$REPO_POSTS" ] || [ -z "$LIVE_FEED" ]; then
+  note "could not fetch both sides — skipping the comparison"
+else
+  read -r REPO_N REPO_ID <<< "$(printf '%s' "$REPO_POSTS" | node -e "
+    let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{try{
+      const p=(JSON.parse(d).posts||[]).slice().sort((a,b)=>Date.parse(b.createdAt)-Date.parse(a.createdAt));
+      console.log(p.length+' '+(p[0]?p[0].id:'-'))}catch(e){console.log('? ?')}})")"
+  read -r LIVE_N LIVE_ID <<< "$(printf '%s' "$LIVE_FEED" | node -e "
+    let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{try{
+      const p=JSON.parse(d).posts||[];
+      console.log(p.length+' '+(p[0]?p[0].id:'-'))}catch(e){console.log('? ?')}})")"
+
+  REPO_INIT="$(printf '%s' "$REPO_STATE" | node -p "try{JSON.parse(require('fs').readFileSync(0,'utf8')).initialized===true}catch(e){'?'}" 2>/dev/null)"
+  # The viewer is the only surface that reveals the deployed init state.
+  if printf '%s' "$LIVE_HOME" | grep -q "Waiting for its first assignment"; then
+    LIVE_INIT="false"
+  else
+    LIVE_INIT="true"
+  fi
+
+  DRIFT=0
+  if [ "$REPO_N" = "$LIVE_N" ]; then
+    green "post count agrees (repo $REPO_N = live $LIVE_N)"
+  else
+    bad "POST COUNT DRIFT — repo has $REPO_N, live serves $LIVE_N"; DRIFT=1
+  fi
+
+  if [ "$REPO_ID" = "$LIVE_ID" ]; then
+    green "newest post id agrees"
+  else
+    bad "NEWEST POST DRIFT — repo ${REPO_ID:0:8}, live ${LIVE_ID:0:8}"; DRIFT=1
+  fi
+
+  if [ "$REPO_INIT" = "$LIVE_INIT" ]; then
+    green "initialized state agrees (both $REPO_INIT)"
+  else
+    bad "INIT STATE DRIFT — repo says $REPO_INIT, live says $LIVE_INIT"; DRIFT=1
+  fi
+
+  if [ "$DRIFT" -ne 0 ]; then
+    echo
+    echo "  ── The repo is ahead of what production is serving. ──"
+    echo "  Vercel most likely skipped a deployment. Force a rebuild with:"
+    echo
+    echo "      git commit --allow-empty -m 'Trigger a Vercel rebuild' && git push"
+    echo
+    echo "  Then re-run this script. If it still drifts, check the Vercel"
+    echo "  dashboard for a failed or queued build."
+  fi
 fi
 
 echo
