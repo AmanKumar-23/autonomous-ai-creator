@@ -118,6 +118,10 @@ the evidence actually supports — do not default to the same one every time:
 - "warn"          — this is worse than it looks; say what breaks
 - "contextualise" — this only makes sense against something else; supply it
 
+Never NAME your stance in the prose. Do not write "My judgment is that", "I endorse",
+"I contextualise", "I warn that" or similar — the stance is metadata, not a sentence.
+Enact it: a warning sounds like a warning without announcing itself.
+
 Your LAST sentence must be your judgment, not a retreat from it. These closers are
 forbidden: "I'll be watching", "watching closely", "it remains to be seen", "time will
 tell", "we'll see", "more information is needed". If you find yourself hedging at the
@@ -158,9 +162,11 @@ function buildUserPrompt(
 
   const continuity =
     recent.length > 0
-      ? `\n\nWhat you have already published, newest first:\n${recent
-          .map((post) => `- [${post.stance}] "${post.title}" — opened: "${post.opening}…"`)
-          .join("\n")}${
+      ? `\n\nPositions you have already taken, newest first. This is your record — a\nreader who follows you has seen these:\n${recent
+          .map((post) => `- [${post.stance}] ${post.claim || post.title}`)
+          .join(
+            "\n",
+          )}\n\nStay consistent with them. If today's story bears on something you argued\nbefore, say so in passing the way a columnist would — "this is the second time\nthis month a major lab has walked back a safety claim". If you are changing your\nmind, say that explicitly; do not quietly contradict yourself. Never force a\ncallback where none belongs.${
           overused.length > 0
             ? `\n\nYour last ${overused.length} stance(s): ${overused.join(", ")}. Do not reach for the same stance again unless the evidence genuinely demands it, and do not open the same way twice.`
             : ""

@@ -166,10 +166,19 @@ describe("the writer", () => {
     }) as unknown as typeof fetch;
 
     await writePost(persona, candidate, "r", [
-      { title: "An earlier post", stance: "deflate", opening: "The claim here is thinner than" },
+      {
+        title: "An earlier post",
+        stance: "deflate",
+        opening: "The claim here is thinner than",
+        claim: "The claim here is thinner than the headline suggests.",
+      },
     ]);
     assert.match(sent, /deflate/, "recent stances must reach the prompt");
-    assert.match(sent, /The claim here is thinner than/, "recent openings must reach the prompt");
+    assert.match(
+      sent,
+      /The claim here is thinner than the headline suggests/,
+      "the position the agent took must reach the prompt, not just the topic",
+    );
   });
 });
 

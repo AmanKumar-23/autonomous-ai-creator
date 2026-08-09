@@ -45,6 +45,12 @@ export interface RecentPost {
   stance: string;
   /** First few words, so it can avoid opening the same way twice. */
   opening: string;
+  /**
+   * The opening sentence — which, because the voice rules require leading with
+   * the claim, IS the position the agent took. Titles say what a post was about;
+   * this says what it argued, which is what continuity actually needs.
+   */
+  claim: string;
 }
 
 export async function recentContext(limit = 6): Promise<RecentPost[]> {
@@ -54,6 +60,7 @@ export async function recentContext(limit = 6): Promise<RecentPost[]> {
       title: post.title || post.text.slice(0, 60),
       stance: post.stance ?? "unrecorded",
       opening: post.text.trim().split(/\s+/).slice(0, 8).join(" "),
+      claim: (post.text.trim().split(/(?<=[.!?])\s+/)[0] ?? "").slice(0, 180),
     }));
 }
 
