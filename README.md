@@ -216,7 +216,8 @@ data/*.json                   posts, state, seen, rejections, cycles
 ./scripts/health.sh          # one command: is the run on track?
 ./scripts/verify-keys.sh     # prove every configured provider still answers
 ./scripts/demo-memory.sh     # semantic dedup, end to end against the live Breeth API
-./scripts/smoke-test.sh      # assert the feed cannot 5xx, including corrupt data files
+./scripts/smoke-test.sh      # assert the feed cannot 5xx (destructive checks are
+                             # skipped against a remote target; --force overrides)
 ./scripts/add-key.sh NAME    # add an API key from the clipboard, verified before it is stored
 npm run discover -- "..."    # run discovery standalone and eyeball the shortlist
 npm run cycle                # run one full cycle locally
