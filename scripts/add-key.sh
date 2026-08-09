@@ -42,21 +42,29 @@ if [ "${#KEY}" -lt 20 ] || [ "${#KEY}" -gt 200 ]; then
   exit 1
 fi
 
-# Ask the provider whether the key works, rather than guessing from its prefix.
-# Key formats change (Gemini keys are no longer always AIza…), so authentication
-# is the only check worth trusting. Nothing is written unless this passes.
+# Ask the provider whether the key can do THE THING WE NEED, not merely whether
+# it authenticates. A Gemini key passed a models-list check three separate times
+# and then returned 429 limit:0 on every generation — the project had no
+# free-tier allocation at all. Listing models proves nothing about generating.
+# So each probe exercises the capability the agent actually depends on.
+#
+# Model ids are read from agent/llm.ts so this cannot drift from the real chain.
 echo "checking the key against $NAME's provider..."
 case "$NAME" in
   GROQ_API_KEY)
-    RESPONSE="$(curl -s --max-time 25 https://api.groq.com/openai/v1/models \
-      -H "Authorization: Bearer ${KEY}")"
-    printf '%s' "$RESPONSE" | grep -q '"data"' \
-      || { echo "FAIL: Groq rejected this key: $(printf '%s' "$RESPONSE" | head -c 160)"; exit 1; } ;;
+    MODEL="$(grep -oE 'groqPrimary: "[^"]+"' agent/llm.ts | grep -oE '"[^"]+"' | tr -d '"')"
+    RESPONSE="$(curl -s --max-time 30 https://api.groq.com/openai/v1/chat/completions \
+      -H "Authorization: Bearer ${KEY}" -H "Content-Type: application/json" \
+      -d "{\"model\":\"${MODEL}\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply OK\"}],\"max_tokens\":5}")"
+    printf '%s' "$RESPONSE" | grep -q '"content"' \
+      || { echo "FAIL: Groq could not GENERATE with this key (${MODEL}):"; echo "      $(printf '%s' "$RESPONSE" | tr -d '\n' | head -c 220)"; exit 1; } ;;
   GEMINI_API_KEY)
-    RESPONSE="$(curl -s --max-time 25 https://generativelanguage.googleapis.com/v1beta/models \
-      -H "x-goog-api-key: ${KEY}")"
-    printf '%s' "$RESPONSE" | grep -q '"models"' \
-      || { echo "FAIL: Google rejected this key: $(printf '%s' "$RESPONSE" | head -c 160)"; exit 1; } ;;
+    MODEL="$(grep -oE 'gemini: "[^"]+"' agent/llm.ts | grep -oE '"[^"]+"' | tr -d '"')"
+    RESPONSE="$(curl -s --max-time 30 "https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent" \
+      -H "x-goog-api-key: ${KEY}" -H "Content-Type: application/json" \
+      -d '{"contents":[{"role":"user","parts":[{"text":"Reply OK"}]}],"generationConfig":{"maxOutputTokens":10}}')"
+    printf '%s' "$RESPONSE" | grep -q '"candidates"' \
+      || { echo "FAIL: Gemini authenticates but cannot GENERATE (${MODEL}):"; echo "      $(printf '%s' "$RESPONSE" | tr -d '\n' | grep -oE '\"message\": \"[^\"]{0,160}' | head -1)"; echo "      A limit of 0 means the Google project has no free-tier allocation."; exit 1; } ;;
   BREETH_API_KEY)
     # POST /v1/search is the read probe: it proves auth without writing an
     # episode. GET /v1/episodes is not it — the collection path only accepts

@@ -13,6 +13,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.." || exit 1
 set -a && source .env.local && set +a
 
 FAIL=0
+GEMINI_DEAD=0
 
 echo "Key shapes"
 for name in GROQ_API_KEY GEMINI_API_KEY BREETH_API_KEY; do
@@ -26,10 +27,11 @@ done
 
 if [ -n "${GROQ_API_KEY:-}" ]; then
   echo
-  echo "Groq — llama-3.3-70b-versatile"
-  body="$(curl -s --max-time 20 https://api.groq.com/openai/v1/chat/completions \
+  QMODEL="$(grep -oE 'groqPrimary: "[^"]+"' agent/llm.ts | grep -oE '"[^"]+"' | tr -d '"')"
+  echo "Groq — ${QMODEL}"
+  body="$(curl -s --max-time 25 https://api.groq.com/openai/v1/chat/completions \
     -H "Authorization: Bearer ${GROQ_API_KEY}" -H "Content-Type: application/json" \
-    -d '{"model":"llama-3.3-70b-versatile","messages":[{"role":"user","content":"Reply with the single word OK"}],"max_tokens":5}')"
+    -d "{\"model\":\"${QMODEL}\",\"messages\":[{\"role\":\"user\",\"content\":\"Reply with the single word OK\"}],\"max_tokens\":5}")"
   if printf '%s' "$body" | grep -q '"content"'; then
     echo "  PASS  replied: $(printf '%s' "$body" | sed -n 's/.*"content":"\([^"]*\)".*/\1/p' | head -1)"
   else
@@ -41,14 +43,17 @@ fi
 if [ -n "${GEMINI_API_KEY:-}" ]; then
   echo
   echo "Gemini"
-  models="$(curl -s --max-time 20 "https://generativelanguage.googleapis.com/v1beta/models" -H "x-goog-api-key: ${GEMINI_API_KEY}")"
-  if printf '%s' "$models" | grep -q '"models"'; then
-    echo "  PASS  flash models available:"
-    printf '%s' "$models" \
-      | sed -n 's/.*"name": *"models\/\([^"]*flash[^"]*\)".*/    \1/p' | head -4
+  # Generation, not the models list: a key can list 42 models and generate none.
+  GMODEL="$(grep -oE 'gemini: "[^"]+"' agent/llm.ts | grep -oE '"[^"]+"' | tr -d '"')"
+  body="$(curl -s --max-time 30 "https://generativelanguage.googleapis.com/v1beta/models/${GMODEL}:generateContent" \
+    -H "x-goog-api-key: ${GEMINI_API_KEY}" -H "Content-Type: application/json" \
+    -d '{"contents":[{"role":"user","parts":[{"text":"Reply with the single word OK"}]}],"generationConfig":{"maxOutputTokens":10}}')"
+  if printf '%s' "$body" | grep -q '"candidates"'; then
+    echo "  PASS  ${GMODEL} generated a reply"
   else
-    echo "  FAIL  $(printf '%s' "$models" | head -c 200)"
-    FAIL=1
+    echo "  FAIL  ${GMODEL} authenticates but cannot generate"
+    echo "        $(printf '%s' "$body" | tr -d '\n' | grep -oE 'limit: [0-9]+, model: [a-z0-9.-]+' | head -1)"
+    GEMINI_DEAD=1
   fi
 fi
 
@@ -67,9 +72,15 @@ if [ -n "${BREETH_API_KEY:-}" ]; then
 fi
 
 echo
-if [ "$FAIL" -eq 0 ]; then
-  echo "All configured keys answered."
+if [ "$FAIL" -eq 0 ] && [ "$GEMINI_DEAD" -eq 0 ]; then
+  echo "Every configured provider can generate."
+elif [ "$FAIL" -eq 0 ]; then
+  # Gemini is tier 3 and optional; the agent publishes fine without it.
+  echo "Groq can generate, so publishing works. Gemini is a dead tier — a limit of 0"
+  echo "means that Google project has no free-tier allocation, and a new key from the"
+  echo "same account will behave identically. Enabling billing is the only fix."
 else
-  echo "At least one key failed — re-copy it and run ./scripts/add-key.sh <NAME>"
+  echo "A provider the agent depends on cannot generate — publishing will fail."
+  echo "Re-copy the key and run ./scripts/add-key.sh <NAME>"
 fi
 exit "$FAIL"

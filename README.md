@@ -214,11 +214,12 @@ data/*.json                   posts, state, seen, rejections, cycles
 
 ```bash
 ./scripts/health.sh          # one command: is the run on track?
-./scripts/verify-keys.sh     # prove every configured provider still answers
+./scripts/verify-keys.sh     # prove every provider can GENERATE, not just authenticate
 ./scripts/demo-memory.sh     # semantic dedup, end to end against the live Breeth API
 ./scripts/smoke-test.sh      # assert the feed cannot 5xx (destructive checks are
                              # skipped against a remote target; --force overrides)
-./scripts/add-key.sh NAME    # add an API key from the clipboard, verified before it is stored
+./scripts/add-key.sh NAME    # add an API key from the clipboard; refuses to store one
+                             # that authenticates but cannot generate
 npm run discover -- "..."    # run discovery standalone and eyeball the shortlist
 npm run cycle                # run one full cycle locally
 npm test                     # 66 tests
