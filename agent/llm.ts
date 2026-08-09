@@ -15,6 +15,20 @@
 
 const TIMEOUT_MS = 20000;
 
+/**
+ * Every model id in one place. Google retired a model mid-build once already,
+ * and a literal buried in provider code is a silent failure at 3am — the id
+ * appeared twice for Gemini (in the tier name AND the URL), so a one-sided edit
+ * would have produced a chain that reports one model while calling another.
+ *
+ * To swap a model, change it here and nowhere else.
+ */
+export const MODELS = {
+  groqPrimary: "llama-3.3-70b-versatile",
+  groqFallback: "llama-3.1-8b-instant",
+  gemini: "gemini-2.0-flash",
+} as const;
+
 export interface GenerateOptions {
   system: string;
   user: string;
@@ -92,16 +106,16 @@ function groq(model: string): ProviderConfig {
 
 export const PROVIDERS: ProviderConfig[] = [
   // Best quality first, then a smaller model on a separate per-model quota.
-  groq("llama-3.3-70b-versatile"),
-  groq("llama-3.1-8b-instant"),
+  groq(MODELS.groqPrimary),
+  groq(MODELS.groqFallback),
   {
     // Kept as a last tier: it authenticates but currently reports a free-tier
     // limit of 0, so it only helps if that quota is ever granted. A fast 429 on
     // the way past costs nothing.
-    name: "gemini:gemini-2.0-flash",
+    name: `gemini:${MODELS.gemini}`,
     envKey: "GEMINI_API_KEY",
     request: (options, apiKey) => ({
-      url: `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      url: `https://generativelanguage.googleapis.com/v1beta/models/${MODELS.gemini}:generateContent?key=${apiKey}`,
       init: {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { PROVIDERS } from "@/agent/llm";
 import { readCycles, readState } from "@/lib/store";
 import type { CycleRecord, CycleStatus } from "@/lib/types";
 
@@ -13,8 +14,8 @@ import type { CycleRecord, CycleStatus } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
-/** Tier order must match PROVIDERS in agent/llm.ts. */
-const TIERS = ["groq:llama-3.3-70b-versatile", "groq:llama-3.1-8b-instant", "gemini:gemini-2.0-flash"];
+/** Derived from the provider chain itself, so a model swap cannot desync it. */
+const TIERS = PROVIDERS.map((provider) => provider.name);
 
 const STATUS_LABEL: Record<CycleStatus, string> = {
   published: "published a post",
