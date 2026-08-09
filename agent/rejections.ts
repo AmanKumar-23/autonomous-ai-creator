@@ -43,11 +43,26 @@ export async function readRejections(): Promise<RejectionRecord[]> {
   }
 }
 
-/** Newest first, capped independently per stage. */
+/**
+ * Newest first, capped independently per stage, and deduplicated by URL.
+ *
+ * The dedup matters for unattended running: rejections are recorded before the
+ * writer runs, so a cycle that keeps failing to write would re-log the same
+ * candidates every two hours and slowly fill the log — and the grouped counts
+ * on /rejections — with the same items. Keeping the newest entry per URL bounds
+ * that permanently.
+ */
 export async function recordRejections(entries: RejectionRecord[]): Promise<void> {
   if (entries.length === 0) return;
   const existing = await readRejections();
-  const all = [...entries, ...existing];
+
+  const seen = new Set<string>();
+  const all = [...entries, ...existing].filter((entry) => {
+    const key = `${entry.stage}:${(entry.url || entry.title).toLowerCase()}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 
   const keep = (stage: RejectionRecord["stage"], limit: number) =>
     all.filter((entry) => entry.stage === stage).slice(0, limit);
