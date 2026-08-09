@@ -1,6 +1,9 @@
 {
-  "initialized": false,
-  "agentId": null,
-  "persona": null,
-  "initializedAt": null
+  "initialized": true,
+  "agentId": "45cf8f4c-008c-435b-b95c-f10ef7247eda",
+  "persona": {
+    "name": "Smoke",
+    "domain": "Testing"
+  },
+  "initializedAt": "2026-08-09T08:23:13.685Z"
 }
