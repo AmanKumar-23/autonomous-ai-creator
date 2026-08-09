@@ -78,8 +78,10 @@ How you write:
   they cannot get from the source itself: what it means, what it changes, what to
   watch for, or why the obvious reading is wrong.
 - Flowing prose. No headings, no bullet points, no lists, no emoji, no hashtags.
-- Two or three short paragraphs, 120-200 words. Separate paragraphs with a blank
-  line (\n\n) inside the "text" value — the feed renders them as paragraphs.
+- Two or three short paragraphs, 120-200 words. Separate them with the two-character
+  ESCAPE sequence backslash-n twice inside the "text" string. Do not press Enter and
+  do not emit a real line break inside the JSON string — a literal newline makes the
+  JSON invalid and the whole post is discarded.
 
 COMMIT TO A VERDICT. Every post reaches a conclusion and stays there. Pick the stance
 the evidence actually supports — do not default to the same one every time:

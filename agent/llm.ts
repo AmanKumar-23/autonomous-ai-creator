@@ -142,16 +142,33 @@ export async function generate(options: GenerateOptions): Promise<GenerateResult
 
     try {
       const { url, init } = provider.request(options, apiKey);
-      const response = await fetch(url, { ...init, signal: AbortSignal.timeout(TIMEOUT_MS) });
+      let response = await fetch(url, { ...init, signal: AbortSignal.timeout(TIMEOUT_MS) });
 
       if (!response.ok) {
-        const detail = (await response.text().catch(() => "")).slice(0, 200);
-        attempts.push({
-          provider: provider.name,
-          ok: false,
-          error: `HTTP ${response.status}${detail ? `: ${detail}` : ""}`,
-        });
-        continue;
+        const detail = (await response.text().catch(() => "")).slice(0, 400);
+
+        // Strict JSON mode rejects a completion the model got slightly wrong —
+        // most often a literal newline inside a string — and returns 400 before
+        // we ever see the text. Observed killing one initialized cycle in two.
+        // Retrying the same provider WITHOUT the JSON constraint gets us the raw
+        // completion, which parseJsonResponse can recover from fences or prose.
+        if (response.status === 400 && options.json && /json_validate_failed|Failed to generate JSON/i.test(detail)) {
+          console.warn(`[llm] ${provider.name} rejected its own JSON; retrying unconstrained`);
+          const relaxed = provider.request({ ...options, json: false }, apiKey);
+          response = await fetch(relaxed.url, {
+            ...relaxed.init,
+            signal: AbortSignal.timeout(TIMEOUT_MS),
+          });
+        }
+
+        if (!response.ok) {
+          attempts.push({
+            provider: provider.name,
+            ok: false,
+            error: `HTTP ${response.status}${detail ? `: ${detail.slice(0, 200)}` : ""}`,
+          });
+          continue;
+        }
       }
 
       const { text, tokens } = provider.parse(await response.json());

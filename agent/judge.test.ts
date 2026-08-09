@@ -234,3 +234,54 @@ describe("the editorial gate", () => {
     assert.equal(verdict.selected, null);
   });
 });
+
+describe("strict JSON mode rejecting its own output", () => {
+  it("retries the same provider unconstrained rather than failing over", async () => {
+    // Observed in production: Groq returned 400 json_validate_failed and the
+    // cycle published nothing. The recovery must happen on the same tier.
+    process.env.GROQ_API_KEY = "k";
+    delete process.env.GEMINI_API_KEY;
+
+    let call = 0;
+    globalThis.fetch = (async (_url: unknown, init: RequestInit) => {
+      call++;
+      const sentJsonMode = String(init.body).includes("response_format");
+      if (sentJsonMode) {
+        return new Response(
+          JSON.stringify({ error: { code: "json_validate_failed", message: "Failed to generate JSON." } }),
+          { status: 400 },
+        );
+      }
+      // Unconstrained retry: fenced output, which parseJsonResponse recovers.
+      return new Response(
+        JSON.stringify({ choices: [{ message: { content: '```json\n{"ok":true}\n```' } }] }),
+        { status: 200 },
+      );
+    }) as unknown as typeof fetch;
+
+    const result = await generate({ system: "s", user: "u", json: true });
+    assert.equal(result.ok, true, "the unconstrained retry should succeed");
+    assert.match(result.provider ?? "", /^groq:/);
+    assert.equal(call, 2, "exactly one retry on the same provider");
+    assert.deepEqual(parseJsonResponse(result.text), { ok: true });
+  });
+
+  it("does not drop the JSON constraint for an ordinary 400", async () => {
+    // An ordinary 400 should fail over across the two Groq tiers, but must never
+    // relax the JSON requirement — that recovery is only for json_validate_failed.
+    process.env.GROQ_API_KEY = "k";
+    delete process.env.GEMINI_API_KEY;
+    const bodies: string[] = [];
+    globalThis.fetch = (async (_url: unknown, init: RequestInit) => {
+      bodies.push(String(init.body));
+      return new Response(JSON.stringify({ error: { message: "bad request" } }), { status: 400 });
+    }) as unknown as typeof fetch;
+
+    const result = await generate({ system: "s", user: "u", json: true });
+    assert.equal(result.ok, false);
+    assert.ok(
+      bodies.every((body) => body.includes("response_format")),
+      "every attempt must still have asked for JSON",
+    );
+  });
+});
