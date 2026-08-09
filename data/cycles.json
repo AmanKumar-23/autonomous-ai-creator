@@ -1,3 +1,21 @@
 {
-  "cycles": []
+  "cycles": [
+    {
+      "id": "9e870a8a-af3b-4350-8414-b636f4ee282c",
+      "startedAt": "2026-08-09T12:37:05.168Z",
+      "finishedAt": "2026-08-09T12:37:08.605Z",
+      "status": "no-candidates",
+      "reason": "The editor reviewed 1 candidate(s) and rejected all of them. Publishing nothing is preferable to publishing filler.",
+      "domain": "Verification",
+      "discovered": 36,
+      "kept": 1,
+      "dropped": 35,
+      "failures": [],
+      "provider": "groq:llama-3.3-70b-versatile",
+      "memory": {
+        "available": true,
+        "failures": 0
+      }
+    }
+  ]
 }

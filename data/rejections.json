@@ -1,3 +1,301 @@
 {
-  "rejections": []
+  "rejections": [
+    {
+      "id": "hackernews:49223677",
+      "title": "Photo Verification PDF share links that ask for a photo before they unlock",
+      "url": "https://iguardpdf.com",
+      "reason": "Lacks substance as it does not provide a concrete development, such as a disclosed technical vulnerability or a system that shipped or broke, but rather seems to be a feature announcement without technical detail.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "hackernews:49228350",
+      "title": "Illinois just told every operating system to start reporting your kid's age",
+      "url": "https://itsfoss.com/news/illinois-age-verification-bill/",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "hackernews:49222874",
+      "title": "How Google makes sure your phones doesn't work without it",
+      "url": "https://news.ycombinator.com/item?id=49222874",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06377v1",
+      "title": "Learning When to Trust via Selective Context Preference Optimization",
+      "url": "https://arxiv.org/abs/2608.06377v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06366v1",
+      "title": "Tracing the Heart: An Evidence-Linked Pipeline for Heart-Failure Feature Engineering",
+      "url": "https://arxiv.org/abs/2608.06366v1",
+      "reason": "only generic AI vocabulary matched (ai, model, research), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06364v1",
+      "title": "Investigating Artificial Intelligence Digital Sovereignty in Mobile Shopping Apps: A Case Study of Nigeria",
+      "url": "https://arxiv.org/abs/2608.06364v1",
+      "reason": "only generic AI vocabulary matched (ai, artificial intelligence, research), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06363v1",
+      "title": "An Optimal Agnostic PAC Algorithm",
+      "url": "https://arxiv.org/abs/2608.06363v1",
+      "reason": "only generic AI vocabulary matched (algorithm), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06362v1",
+      "title": "AV-AIVAT: 74x Cheaper Agent Evaluation with Certified Anytime-Valid Stopping in Imperfect-Information Games",
+      "url": "https://arxiv.org/abs/2608.06362v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06361v1",
+      "title": "The Low Frequency Trap: Video Language Models Fail at Simple Event Bookkeeping",
+      "url": "https://arxiv.org/abs/2608.06361v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06353v1",
+      "title": "Resourced Authority A Mechanism-Design Model for Participatory Governance of Deployed AI Agents",
+      "url": "https://arxiv.org/abs/2608.06353v1",
+      "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06352v1",
+      "title": "CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks",
+      "url": "https://arxiv.org/abs/2608.06352v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06351v1",
+      "title": "Challenges in Evaluating Explanation Methods for Static and Evolving Data",
+      "url": "https://arxiv.org/abs/2608.06351v1",
+      "reason": "only generic AI vocabulary matched (artificial intelligence), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06346v1",
+      "title": "TRAJDEBUG: Tracing Error Lifecycle to Identify Critical Failures in Long-Horizon Agent Trajectories",
+      "url": "https://arxiv.org/abs/2608.06346v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06340v1",
+      "title": "Scalable estimation of VARMA models",
+      "url": "https://arxiv.org/abs/2608.06340v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06337v1",
+      "title": "Optimal Rates for Learning with Monotone Adversaries",
+      "url": "https://arxiv.org/abs/2608.06337v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06331v1",
+      "title": "Tytan: Interactive Neurosymbolic Construction of Analytic Semantic Schemas from Relational Data",
+      "url": "https://arxiv.org/abs/2608.06331v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06329v1",
+      "title": "Benchmarking the Benchmarks: Evaluating Benchmarks for Conversational Agents",
+      "url": "https://arxiv.org/abs/2608.06329v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06311v1",
+      "title": "Does FLAIR super-resolution erase or hallucinate small white-matter lesions?",
+      "url": "https://arxiv.org/abs/2608.06311v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06310v1",
+      "title": "RRC: Unlocking Generative Reward Models in LLM Reinforcement Learning via Ranking-Based Reward Construction",
+      "url": "https://arxiv.org/abs/2608.06310v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06305v1",
+      "title": "Beyond Top-K: Replacing Black-Box Retrieval with Interpretable Agentic Operations",
+      "url": "https://arxiv.org/abs/2608.06305v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06301v1",
+      "title": "HarnessOpt-Bench: Evaluating LLMs at Harness Optimization",
+      "url": "https://arxiv.org/abs/2608.06301v1",
+      "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06300v1",
+      "title": "Bias Analysis of L2 Speaking Assessment Systems Using Concept Activation Vectors",
+      "url": "https://arxiv.org/abs/2608.06300v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06296v1",
+      "title": "On-Policy Self-Distillation without Any Supervision",
+      "url": "https://arxiv.org/abs/2608.06296v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06294v1",
+      "title": "QuanTiMedAI: Quantum-Enhanced Time-Series Model guided by Agentic AI for Cardiac Arrest Mortality Prediction",
+      "url": "https://arxiv.org/abs/2608.06294v1",
+      "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06291v1",
+      "title": "BaKron: Efficient Quantization with Kronecker-Factored Hessians",
+      "url": "https://arxiv.org/abs/2608.06291v1",
+      "reason": "only generic AI vocabulary matched (neural network), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06288v1",
+      "title": "Surv-IPTB: An Attention-Based Model for Estimating Individual Probability of Treatment Benefit with Survival Data",
+      "url": "https://arxiv.org/abs/2608.06288v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06283v1",
+      "title": "The Tamed Subgradient Unadjusted Langevin Algorithm beyond Convexity",
+      "url": "https://arxiv.org/abs/2608.06283v1",
+      "reason": "only generic AI vocabulary matched (algorithm), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06276v1",
+      "title": "Stochastic Dynamics on Persistence Diagram Space via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2608.06276v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06270v1",
+      "title": "The Illusion of Visual Tool-Use: A Causal Audit of Thinking with Images",
+      "url": "https://arxiv.org/abs/2608.06270v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06265v1",
+      "title": "Improving the Realism of Synthetic Clinical Benchmarks Under Utility Constraints",
+      "url": "https://arxiv.org/abs/2608.06265v1",
+      "reason": "only generic AI vocabulary matched (ai, dataset), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06264v1",
+      "title": "OTLesMix: Wasserstein Barycenter and Optimal Transport Map for Synthetic Lesion Generation with Diverse Shapes and Locations",
+      "url": "https://arxiv.org/abs/2608.06264v1",
+      "reason": "only generic AI vocabulary matched (deep learning, model, dataset), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06262v1",
+      "title": "Hypothesis Testing with Conditional Queries: Learnability and the Value of Interaction",
+      "url": "https://arxiv.org/abs/2608.06262v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    },
+    {
+      "id": "arxiv:2608.06259v1",
+      "title": "RxnCLF: Contrastive Transformation-Aware Reaction Foundation Model for Improved Reactivity Prediction",
+      "url": "https://arxiv.org/abs/2608.06259v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-09T12:37:08.603Z",
+      "cycleId": "9e870a8a-af3b-4350-8414-b636f4ee282c"
+    }
+  ]
 }
