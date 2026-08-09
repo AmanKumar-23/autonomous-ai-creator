@@ -369,3 +369,15 @@ body {
   color: var(--text);
   font-weight: 600;
 }
+
+.stance-tag {
+  margin-left: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+}

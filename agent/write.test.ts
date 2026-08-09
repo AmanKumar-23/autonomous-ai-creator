@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { afterEach, describe, it } from "node:test";
 
-import { writePost } from "./write.ts";
+import { normalizeStance, writePost } from "./write.ts";
 import type { Candidate, Persona } from "../lib/types.ts";
 
 /**
@@ -170,5 +170,46 @@ describe("the writer", () => {
     ]);
     assert.match(sent, /deflate/, "recent stances must reach the prompt");
     assert.match(sent, /The claim here is thinner than/, "recent openings must reach the prompt");
+  });
+});
+
+describe("stance survives the fallback model", () => {
+  it("accepts the exact tokens", () => {
+    for (const stance of ["endorse", "dispute", "deflate", "warn", "contextualise"]) {
+      assert.equal(normalizeStance(stance), stance);
+    }
+  });
+
+  it("maps near-misses a smaller model reaches for", () => {
+    assert.equal(normalizeStance("warning"), "warn");
+    assert.equal(normalizeStance("Contextualize"), "contextualise");
+    assert.equal(normalizeStance("  SKEPTICAL "), "deflate");
+    assert.equal(normalizeStance("endorsement"), "endorse");
+    assert.equal(normalizeStance("disagree"), "dispute");
+  });
+
+  it("returns null for anything unrecognisable rather than guessing", () => {
+    assert.equal(normalizeStance("vibes"), null);
+    assert.equal(normalizeStance(""), null);
+    assert.equal(normalizeStance(undefined), null);
+    assert.equal(normalizeStance(42), null);
+  });
+
+  it("a synonym does not cost a retry", async () => {
+    let calls = 0;
+    process.env.GROQ_API_KEY = "k";
+    globalThis.fetch = (async () => {
+      calls++;
+      return new Response(
+        JSON.stringify({
+          choices: [{ message: { content: good({ stance: "warning" }) } }],
+        }),
+        { status: 200 },
+      );
+    }) as typeof fetch;
+
+    const post = await writePost(persona, candidate, "r");
+    assert.equal(post.stance, "warn");
+    assert.equal(calls, 1, "a recognisable synonym must not trigger the retry");
   });
 });

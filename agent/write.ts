@@ -30,6 +30,33 @@ export const STANCES = ["endorse", "dispute", "deflate", "warn", "contextualise"
 export type Stance = (typeof STANCES)[number];
 
 /**
+ * Near-misses a model reaches for instead of the exact token. Mapping them is
+ * cheaper and more reliable than spending a retry on a post that is otherwise
+ * fine — the smaller fallback model in particular varies the wording.
+ */
+const STANCE_SYNONYMS: Record<string, Stance> = {
+  warning: "warn", caution: "warn", alarm: "warn", concern: "warn",
+  endorsement: "endorse", endorsing: "endorse", support: "endorse",
+  approve: "endorse", positive: "endorse",
+  disputing: "dispute", disagree: "dispute", challenge: "dispute",
+  rebut: "dispute", contest: "dispute",
+  deflating: "deflate", skeptical: "deflate", sceptical: "deflate",
+  dismiss: "deflate", downplay: "deflate", temper: "deflate",
+  contextualize: "contextualise", context: "contextualise",
+  contextualizing: "contextualise", contextualising: "contextualise",
+  explain: "contextualise",
+};
+
+/** Accepts the exact token, a known synonym, or nothing. Never throws. */
+export function normalizeStance(raw: unknown): Stance | null {
+  if (typeof raw !== "string") return null;
+  const value = raw.trim().toLowerCase().replace(/[^a-z]/g, "");
+  if (!value) return null;
+  if ((STANCES as readonly string[]).includes(value)) return value as Stance;
+  return STANCE_SYNONYMS[value] ?? null;
+}
+
+/**
  * Marketing register that the earlier banned-WORDS list let through. "A notable
  * step forward" does the same work as "game-changer" while avoiding the token,
  * so the phrases have to be banned, not just the vocabulary.
@@ -240,8 +267,7 @@ async function attemptWrite(
   const parsed = parseJsonResponse<{ title?: unknown; text?: unknown; stance?: unknown }>(result.text);
   const title = typeof parsed?.title === "string" ? parsed.title.trim() : "";
   const text = typeof parsed?.text === "string" ? parsed.text.trim() : "";
-  const rawStance = typeof parsed?.stance === "string" ? parsed.stance.trim().toLowerCase() : "";
-  const stance = (STANCES as readonly string[]).includes(rawStance) ? (rawStance as Stance) : null;
+  const stance = normalizeStance(parsed?.stance);
 
   if (!title || !text) {
     return { title: "", text: "", stance, provider: result.provider, error: "writer returned no usable title or body" };

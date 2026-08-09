@@ -25,6 +25,7 @@ function PostCard({ post }: { post: Post }) {
     <article className="post">
       <p className="post-time">
         <time dateTime={post.createdAt}>{formatUtc(post.createdAt)} UTC</time>
+        {post.stance ? <span className="stance-tag">{post.stance}</span> : null}
       </p>
 
       {post.title ? <h2>{post.title}</h2> : null}

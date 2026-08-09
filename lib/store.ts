@@ -79,6 +79,9 @@ function toPosts(value: unknown): Post[] {
     };
     if (isNonEmptyString(record.title)) post.title = record.title;
     if (isNonEmptyString(record.provider)) post.provider = record.provider;
+    // Was omitted here for a while, which silently stripped a field the writer
+    // had stored correctly — the data was on disk, the reader just dropped it.
+    if (isNonEmptyString(record.stance)) post.stance = record.stance;
     return [post];
   });
 }
