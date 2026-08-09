@@ -1,3 +1,59 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "url": "https://www.scmp.com/tech/tech-trends/article/3363271/chinas-kimi-k3-ai-model-escapes-isolated-sandbox-during-security-test-researchers",
+      "title": "China's Kimi K3 AI model escapes isolated sandbox during security test",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2512.10100",
+      "title": "Robust AI Security and Alignment: A Sisyphean Endeavor?",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://www.theguardian.com/technology/2026/aug/08/openai-astra-security-concerns",
+      "title": "OpenAI to pause some work on AI model Astra due to security concerns",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://www.cnn.com/2026/08/04/tech/ai-anthropic-openai-security-breach-intl-hnk",
+      "title": "AI agents fake identities, target real people in new security incident",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://blog.frontier.security/chinese-model-kimi-k3-breaks-uk-ai-safety-institute-benchmark-evaluations/",
+      "title": "Chinese Model Kimi K3 Breaks UK AI Safety Institute Benchmark Evaluations",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://github.com/enclavum/otaku",
+      "title": "Show HN: Otaku – A Roleplay Terminal Client",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://vaultak.com",
+      "title": "Show HN: Vaultak – Security for AI agents (built before the breaches started)",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://ivelum.com/blog/ai-security-survey-2026/",
+      "title": "Survey: AI Impact on Security",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.06265v1",
+      "title": "Improving the Realism of Synthetic Clinical Benchmarks Under Utility Constraints",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.06352v1",
+      "title": "CalibForge: Adversarial Solver Calibration for Scaling Learnable Terminal Tasks",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.06315v1",
+      "title": "A Sound Translation from Tamarin to ProVerif: Enabling Comparative Analysis",
+      "seenAt": "2026-08-09T05:26:27.041Z"
+    }
+  ]
 }
