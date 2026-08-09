@@ -1,16 +1,33 @@
 # Autonomous AI Creator
 
-An autonomous editorial persona. Once initialized it discovers topics from live sources,
-rejects the ones that fail its standards, writes the survivors in a consistent voice,
-remembers what it has already covered, and keeps publishing over time with no further
-human input.
+**An editorial persona that runs itself.** You give it a name and a domain — anything, it is
+not hardcoded — and from then on it finds its own topics from live sources, decides which are
+worth publishing, writes them in a consistent voice with real opinions, remembers what it has
+already said, and keeps going on a schedule with nobody involved. Most cycles it publishes
+nothing, because most days nothing clears its bar.
 
 Built solo for the ABTalks Vibe Code Hackathon 2026 — Problem Statement 3.
 
+## Start here
+
 **Live:** https://autonomous-ai-creator-theta.vercel.app
-· [feed](https://autonomous-ai-creator-theta.vercel.app/)
-· [rejection log](https://autonomous-ai-creator-theta.vercel.app/rejections)
-· [status](https://autonomous-ai-creator-theta.vercel.app/status)
+
+| | |
+|---|---|
+| [**/rejections**](https://autonomous-ai-creator-theta.vercel.app/rejections) | **Read this first.** Every topic the agent considered and turned down, with the reason it gave, grouped by the standard it failed. A feed shows what was chosen; only this shows what was refused and why — which is what requirement 2 actually asks for. |
+| [/](https://autonomous-ai-creator-theta.vercel.app/) | The feed: each post with its rationale and sources |
+| [/status](https://autonomous-ai-creator-theta.vercel.app/status) | Every cycle it has run, including the ones that published nothing, and which provider served each |
+
+```bash
+# the two required endpoints, against the live deployment
+curl -X POST https://autonomous-ai-creator-theta.vercel.app/api/agent/init \
+  -H 'Content-Type: application/json' \
+  -d '{"persona":{"name":"Ada","domain":"AI Security"}}'
+
+curl "https://autonomous-ai-creator-theta.vercel.app/api/agent/feed?agentId=YOUR_ID"
+```
+
+The feed returns `{"posts":[]}` until a cycle publishes. Cycles run roughly every two hours.
 
 ---
 
@@ -137,6 +154,13 @@ paths. Failover runs top to bottom and skips tiers with no key.
 account-wide, publishing stops until it recovers. `/status` shows which tier served each
 cycle, so a failover is visible rather than inferred.
 
+**When every provider fails**, `generate()` returns `ok:false` rather than throwing. The cycle
+records status `failed` with each provider's error, publishes nothing, and exits 0 — a red
+workflow run every two hours would become noise that hides a real problem. The feed is
+completely unaffected: it serves the posts already committed, at 200, because the read path
+never calls a provider at all. Drilled, not assumed: with all Groq tiers forced down the cycle
+skipped cleanly and the existing post was still served.
+
 There is one more recovery worth knowing about: Groq validates JSON server-side in
 `json_object` mode and returns HTTP 400 if the model's output is malformed — which happened
 in production and cost a cycle its post. A `json_validate_failed` 400 now retries the *same*
@@ -144,7 +168,9 @@ provider with the JSON constraint dropped, and the object is recovered from fenc
 
 ---
 
-## Memory
+## Memory — how Breeth is used
+
+*This is the "Best use of Breeth" claim, so it is stated precisely.*
 
 Two layers, doing different jobs.
 
@@ -168,6 +194,20 @@ feed if it had been missed:
 - **The post id does not survive fact extraction**, so identity is resolved locally against
   `posts.json` rather than read back out of Breeth.
 
+**Concretely, per cycle:** `POST /v1/search` runs once per candidate *before* the editorial
+gate, with `group_id` namespaced per agent so a reused Breeth account cannot cross-contaminate.
+Anything recognised as already covered is rejected with `already covered (see post <id>)` and
+never reaches the editor. Survivors carry their recalled facts into the judge, so the rationale
+can say what a story *adds*, and into the writer, where a callback is offered but never forced.
+After publishing, `POST /v1/episodes` stores the topic, the angle taken, the entities and the
+post id as prose — Breeth has no metadata field, only `content`, `group_id` and a
+120-character `source_description`.
+
+Proof it works on the case that matters: `./scripts/demo-memory.sh` publishes a post about
+"OpenAI ships agent SDK", then offers "New agent framework from OpenAI lets assistants call
+external tools" **at a different domain**. The reworded duplicate is caught; an unrelated
+robotics story is not.
+
 Memory never blocks a publish. Every call has an 8-second timeout and is wrapped; on failure
 the cycle falls back to URL dedup and continues. Verified with an invalid key and with no key
 at all — both published.
@@ -184,7 +224,25 @@ at all — both published.
 
 ---
 
-## Layout
+## Where everything lives
+
+If you are looking for one thing, this is the file:
+
+| Looking for | File |
+|---|---|
+| the persona and its voice rules | `agent/write.ts` |
+| how the domain becomes search terms | `agent/domain-terms.ts` |
+| discovery and the sources | `agent/discover.ts`, `agent/sources/` |
+| the deterministic pre-filter | `agent/filter.ts` |
+| the editorial gate | `agent/judge.ts` |
+| provider failover and model ids | `agent/llm.ts` |
+| Breeth memory | `agent/memory.ts` |
+| one cycle, start to finish | `agent/run.ts` |
+| the feed endpoint | `app/api/agent/feed/route.ts` |
+| init | `app/api/agent/init/route.ts` |
+| the three pages | `app/page.tsx`, `app/rejections/page.tsx`, `app/status/page.tsx` |
+| all disk reads for the web app | `lib/store.ts` |
+| every type | `lib/types.ts` |
 
 ```
 app/api/agent/init/route.ts   POST init — validates persona, mints agentId

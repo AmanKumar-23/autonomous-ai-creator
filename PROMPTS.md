@@ -1,10 +1,48 @@
 # AI usage log
 
-A record of the prompts used to build this project, what they produced, and what I
-changed afterwards. Maintained as the work happens so any feature in the live demo can
-be traced back to the prompt that built it.
+Every feature in the live demo, the prompt that produced it, and what I changed afterwards.
 
-Tooling: Claude Code (Opus 5).
+Tooling: Claude Code (Opus 5). Written as the work happened, not reconstructed — which is
+why the failures are here too. Several sections exist only because something broke and the
+fix is more interesting than the build.
+
+## Find a feature
+
+| If you are looking at… | Read |
+|---|---|
+| the feed, `/api/agent/feed`, the never-5xx guarantee | [Phase 1](#phase-1--feed-skeleton) |
+| init persisting so the cron can see it | [Phase 1b](#phase-1b--durable-init-state) |
+| where topics come from, the pre-filter | [Phase 2](#phase-2--topic-discovery) |
+| the editorial gate, provider failover, the cron | [Phase 3](#phase-3--editorial-gate-provider-failover-and-the-cron) |
+| the persona voice, stances, post format | [Phase 4](#phase-4--the-persona-writer-the-agent-publishes) |
+| Breeth semantic memory | [Phase 5](#phase-5--memory-via-breeth) |
+| `/rejections` and `/status`, unattended survival | [Phase 6](#phase-6--hardening-and-evidence-surfaces) |
+| submission verification | [Phase 7](#phase-7--submission-readiness) |
+
+## The failures, if you only read one thing
+
+These are the sections where the interesting work is. Each is a real defect found by
+running the system, not by reading it:
+
+- **A safety net that was itself the failure mode** — a static JSON import made the feed
+  return 500 on a corrupt data file, the exact eligibility failure it was meant to prevent.
+  [Phase 1](#phase-1--feed-skeleton)
+- **Substring matching poisoned relevance** — `"ai"` matched inside *training* and *domain*,
+  so an AI Security feed kept a heart-failure paper. [Phase 2](#phase-2--topic-discovery)
+- **One paper relevant to every domain at once** — a generic phrase counted as
+  domain-specific, so the same study ranked for AI Security, Robotics and Quantum
+  Computing. [Phase 2](#follow-up-cross-domain-contamination-found-by-reading-the-cli-output)
+- **The agent published the press release and rejected the disclosure** — reproducibly,
+  until the standards were reordered. [Phase 3 audit](#phase-3-audit--six-defects-found-and-fixed)
+- **Strict JSON mode killed half the cycles** — Groq rejected the model's own output before
+  our parser could recover it. [Phase 4](#the-bug-that-was-eating-cycles)
+- **Memory that would have stopped all publishing** — Breeth returns facts regardless of
+  relevance, so "any hit means duplicate" would have rejected everything.
+  [Phase 5](#phase-5--memory-via-breeth)
+- **A key check that asked the wrong question** — three rounds lost to a probe that proved
+  authentication when we needed generation. [Phase 7](#phase-7--submission-readiness)
+- **A model retired mid-build**, and an id duplicated in two places.
+  [Phase 6](#part-c--unattended-survival)
 
 ---
 
@@ -367,6 +405,44 @@ drifted, since `gh secret set` alone does not touch the local file.
 
 ---
 
+### Phase 3 audit — six defects found and fixed
+
+**Prompt given:** *"Do not write any new features. This is an audit of Phase 3 only. Read
+CLAUDE.md, then audit agent/judge.ts against brief requirement 2 and requirement 6… Rate the
+rejection reasons yourself: are they substantive editorial judgments, or generic filler like
+'not relevant enough'? Be blunt."*
+
+Running the judge three times on an identical shortlist and reading the raw output exposed
+six problems. The important one was not a crash:
+
+1. **Timeliness was double-counted.** The pre-filter clears items at 48h, then the judge
+   failed them *again* for being "from two days ago". Two of seven rejections were "passed
+   the age gate, failing it anyway".
+2. **Recency outranked substance, reproducibly.** The agent rejected a disclosed prompt-injection
+   vulnerability in three named systems because it was two days old, and published
+   *"OpenAI to pause some work"* — a statement of intent — because it was 19 hours newer.
+   **It was rejecting the disclosure and publishing the press release, every single run.**
+3. **4 of 12 candidates were never judged and never logged**, so the rejection log was not a
+   complete record of what was considered.
+4. **The pre-filter log was truncated** to 20 of 40 drops.
+5. **Nothing read `data/rejections.json`** — the judgment existed but was invisible.
+6. **No quality floor on reasons** — "not relevant" would have been stored as editorial reasoning.
+
+The fix to 1 and 2 was one prompt edit: substance became explicitly the heaviest standard,
+statements of intent were named as press releases, and timeliness was redefined as *why a
+reader needs this now* with an explicit instruction that age is not the editor's to judge.
+On the identical shortlist the verdict inverted — it now publishes the disclosure and rejects
+the OpenAI story as *"a statement of intent… no concrete technical details"*, with zero
+age-based rejections.
+
+**A correction I had to make in the same audit.** I had claimed the judge "flips on rerun on
+the same inputs" and called it the thing that worried me most. That was wrong. Three
+consecutive runs on an identical shortlist produced the same selection; the earlier apparent
+flip was between two *different discovery batches*. I had compared different inputs and
+blamed the model.
+
+---
+
 ## Phase 4 — The persona writer: the agent publishes
 
 **Prompt given:** "GO" — build the writer so the agent actually publishes.
@@ -421,6 +497,49 @@ Everything was then reset to empty so the evaluator's own init is the first one 
 
 43/43 tests pass, including one asserting the supplied persona reaches the prompt and no
 other persona leaks in.
+
+---
+
+### Phase 4 audit — six voice defects, and the bug that was eating cycles
+
+**Prompt given:** *"Is the persona built from the name and domain the evaluator sends at
+POST /api/agent/init, or is any part of it hardcoded?… Then prove it: run a full cycle with
+persona Ada/AI Security, and a second with Kenji/Robotics. Paste both posts in full."*
+
+The hardcoding check passed: `agent/write.ts` interpolates `persona.name` and `persona.domain`
+in exactly one place and nowhere else. Running both personas produced completely disjoint
+subject matter, sources and vocabulary — the Robotics post contained no LLM talk at all.
+
+But reading the two posts side by side showed the voice was **consistent in a way that
+exposed it as a template**. Both used the same skepticism formula in the same paragraph
+position and closed with the same watching-brief move. That is a rhetorical scaffold with the
+nouns swapped, not a personality.
+
+Six fixes: a required stance (endorse / dispute / deflate / warn / contextualise) shown
+against recently used ones; a rule that the last sentence must *be* the judgment, with seven
+retreat closers detected and retried; six banned register patterns because the banned-*words*
+list let "a notable step forward" through; richer memory carrying stances and opening clauses
+rather than titles; stance stored on the post so persona state accumulates; and title length
+enforced. Measured across four consecutive posts afterwards: 3 distinct stances, 4 distinct
+openings, 0 retreat closers, 0 marketing register.
+
+#### The bug that was eating cycles
+
+Verifying those fixes, the fourth post failed on **all three providers**. Groq returned
+`HTTP 400 json_validate_failed` with `failed_generation` beginning with a backtick — the model
+had wrapped its JSON in a markdown code fence, and Groq validates JSON server-side in
+`json_object` mode, so it rejected the completion *before* `parseJsonResponse` (which strips
+fences) could ever see it.
+
+Production data later showed the real cost: of the two scheduled cycles that ran while
+initialized, **one published and one lost its post entirely** — a 50% failure rate that every
+green workflow run concealed.
+
+The second cause was my own paragraph instruction, which asked for a blank line inside a JSON
+string value; when the model emitted a literal newline the JSON became invalid. Fixed at both
+ends: the prompt now demands the two-character escape and warns that a real line break
+discards the post, and `generate()` treats a `json_validate_failed` 400 as recoverable by
+retrying the *same* provider with the JSON constraint dropped.
 
 ---
 
@@ -556,3 +675,63 @@ models have separate per-model quotas and the 8B is untouched until the 70B fail
    unchanged.
 
 70/70 tests still pass and the feed endpoint was not touched.
+
+---
+
+## Phase 7 — Submission readiness
+
+**Prompt given:** *"Read CLAUDE.md, then execute Phase 7: submission readiness… Verify each
+of these from outside my machine and my session… Scan the ENTIRE git history… Give me a
+single go/no-go verdict."*
+
+No features. Verification, and making the work legible to a judge with fifteen minutes.
+
+### Stage 1, verified unauthenticated
+
+Every check run with the GitHub token unset, against the public URLs:
+
+- repo `HTTP 200`, API reports `visibility=public private=false`
+- live demo `HTTP 200` cold with cache-busting, 1.4s, 7,621 bytes
+- `GET /api/agent/feed` → `HTTP 200` `{"posts":[]}`
+- `POST /api/agent/init` → `HTTP 200` `{"agentId":"77399455-…"}`
+- `PROMPTS.md` raw → `HTTP 200`
+
+### The full init-to-publish loop, proven on production
+
+The Stage 1 init used persona `Stage1 / Verification`. The cycle after it published
+**nothing** — the editor reviewed the single candidate that nonsense domain produced and
+rejected it. That is correct behaviour but proves nothing about publishing, so it was redone
+with `Ada / AI Security`: the next cycle published *"Kimi K3 AI Model Breach Exposes Security
+Risk"* with a rationale, a real source URL and stance `warn`, served by
+`groq:llama-3.3-70b-versatile`. State was then reset so the evaluator's init is the first.
+
+A cycle run before init publishes nothing and never calls a provider at all.
+
+### Secret sweep
+
+Zero matches across **every blob in every commit** for Groq, Gemini, Breeth or GitHub token
+patterns. The three live key values appear nowhere in the repo or its history. The one hit in
+`PROMPTS.md` is `Bearer ck_live_...` — the Breeth docs auth-format placeholder, ellipsis
+included. No `.env` file has ever been committed.
+
+### A key check that asked the wrong question
+
+The largest single time sink in this build, and worth recording because the lesson generalises.
+
+`add-key.sh` verified a Gemini key by calling the **models list**. That proves the key
+authenticates. It does not prove the project can generate. A key passed that check three
+separate times and then returned `429 limit: 0` on every generation attempt — across two
+different keys from two different Google projects on the same account, which is an
+account-level restriction no new key can escape.
+
+Worse, the Groq probe had the identical flaw: it hit `/v1/models`, so a key with an exhausted
+daily quota would have passed exactly the same way. It only ever looked correct by luck.
+
+Both probes now exercise the capability the agent actually depends on — `chat/completions` and
+`generateContent` — and read their model ids out of `agent/llm.ts` so they cannot drift from
+the real chain. `verify-keys.sh` distinguishes a dead optional tier from a broken required
+one: Gemini failing reports the diagnosis and exits 0, because publishing works without it.
+
+This is the same class of mistake as the stance bug in Phase 4, where I inspected a post
+through the feed endpoint, saw the field stripped by the reader, and blamed the writer. Both
+times the fix was to test the thing itself rather than something adjacent to it.
