@@ -66,6 +66,17 @@ function gapHours(cycles: CycleRecord[], index: number): string {
   return `${(delta / 3_600_000).toFixed(1)}h after the previous cycle`;
 }
 
+/** How long since an instant, in the coarsest useful unit. */
+function since(iso: string | null): string {
+  if (!iso) return "never";
+  const ms = Date.now() - Date.parse(iso);
+  if (Number.isNaN(ms) || ms < 0) return "unknown";
+  const hours = ms / 3_600_000;
+  if (hours < 1) return `${Math.round(ms / 60_000)} minutes ago`;
+  if (hours < 48) return `${hours.toFixed(1)} hours ago`;
+  return `${Math.round(hours / 24)} days ago`;
+}
+
 function tierOf(provider: string | undefined): { index: number; failedOver: boolean } {
   if (!provider) return { index: -1, failedOver: false };
   const index = TIERS.indexOf(provider);
@@ -85,7 +96,12 @@ export default async function StatusPage() {
     return acc;
   }, {});
 
-  const failovers = cycles.filter((cycle) => tierOf(cycle.provider).failedOver).length;
+  const failoverCycles = cycles.filter((cycle) => tierOf(cycle.provider).failedOver);
+  const failovers = failoverCycles.length;
+  const publishedCycles = cycles.filter((cycle) => cycle.status === "published");
+  const lastPublished = publishedCycles[0]?.finishedAt ?? null;
+  const firstCycle = cycles[cycles.length - 1]?.startedAt ?? null;
+  const lastCycle = cycles[0]?.startedAt ?? null;
   const sourceFailures = cycles.flatMap((cycle) => cycle.failures);
   const memoryCycles = cycles.filter((cycle) => cycle.memory);
   const memoryDegraded = memoryCycles.filter((cycle) => !cycle.memory?.available).length;
@@ -101,12 +117,40 @@ export default async function StatusPage() {
           it is actually running — and an honest record of when it was not.
         </p>
         <div className="meta-row">
-          <span>{cycles.length} cycles recorded</span>
-          <span>Status: {state.initialized ? "running" : "awaiting init"}</span>
           <Link href="/">Feed</Link>
           <Link href="/rejections">Rejections</Link>
         </div>
       </header>
+
+      <section>
+        <h3 className="section-title">At a glance</h3>
+        <div className="tiles">
+          <div className="tile">
+            <span className="tile-number">{state.initialized ? "Yes" : "No"}</span>
+            <span className="tile-label">
+              initialized{state.initializedAt ? ` · ${formatUtc(state.initializedAt)} UTC` : ""}
+            </span>
+          </div>
+          <div className="tile">
+            <span className="tile-number">{cycles.length}</span>
+            <span className="tile-label">cycles attempted</span>
+          </div>
+          <div className="tile">
+            <span className="tile-number">{publishedCycles.length}</span>
+            <span className="tile-label">published</span>
+          </div>
+          <div className="tile">
+            <span className="tile-number">{cycles.length - publishedCycles.length}</span>
+            <span className="tile-label">skipped or failed</span>
+          </div>
+        </div>
+        <p className="section-empty" style={{ marginTop: "0.75rem" }}>
+          Last successful publish: <strong>{since(lastPublished)}</strong>
+          {lastPublished ? ` (${formatUtc(lastPublished)} UTC)` : ""}.
+          {firstCycle ? ` First cycle ${formatUtc(firstCycle)} UTC` : ""}
+          {lastCycle ? `, most recent ${formatUtc(lastCycle)} UTC.` : ""}
+        </p>
+      </section>
 
       {cycles.length === 0 ? (
         <div className="empty">
@@ -159,6 +203,21 @@ export default async function StatusPage() {
                 })}
               </ul>
             )}
+            {failoverCycles.length > 0 ? (
+              <ul className="rejection-list" style={{ marginTop: "0.75rem" }}>
+                {failoverCycles.slice(0, 8).map((cycle) => (
+                  <li className="rejection" key={`fo-${cycle.id}`}>
+                    <div className="rejection-head">
+                      <span className="stage stage-editor">failover</span>
+                      <time dateTime={cycle.startedAt}>{formatUtc(cycle.startedAt)} UTC</time>
+                    </div>
+                    <p className="reason">
+                      Tier 1 did not serve this cycle; {cycle.provider} did. {readableReason(cycle.reason)}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
             <p className="section-empty" style={{ marginTop: "0.75rem" }}>
               {failovers === 0
                 ? "No failovers: the first-choice provider served every cycle."
