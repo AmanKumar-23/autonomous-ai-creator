@@ -1,6 +1,9 @@
 {
-  "initialized": false,
-  "agentId": null,
-  "persona": null,
-  "initializedAt": null
+  "initialized": true,
+  "agentId": "f1cb4ba5-0957-4611-a10a-582938d3df13",
+  "persona": {
+    "name": "Ada",
+    "domain": "AI Security"
+  },
+  "initializedAt": "2026-08-13T08:15:00.464Z"
 }
