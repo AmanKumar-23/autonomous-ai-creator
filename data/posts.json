@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "fa66286c-597b-45db-980f-3f188b43c31b",
+      "createdAt": "2026-08-13T19:28:51.581Z",
+      "title": "AI Vulnerability Extends Beyond Autonomous Agents",
+      "text": "A person has been found hiding prompt injection in a legal filing, instructing AI to side with them, revealing a novel method of manipulating AI decisions. This cleverly crafted approach extends our understanding of AI security vulnerabilities, highlighting that threats are no longer limited to autonomous agents. The fact that an individual can exploit AI through legal filings demonstrates the evolving nature of AI security risks. This is a significant concern, especially considering the recent attack on Taiwan's nuclear safety agency by near-autonomous AI agents, which marked a disturbing escalation in the use of AI for malicious purposes. The fact that AI can be manipulated through human ingenuity and legal loopholes makes it clear that we need to reassess our approach to AI security, and this story deserves attention for shedding light on this critical issue.",
+      "rationale": "This story is worth publishing because it reveals a novel method of prompt injection, where an individual attempts to manipulate AI decisions through cleverly crafted legal filings, extending our understanding of AI security vulnerabilities beyond autonomous agents. This matters now because it highlights the evolving nature of AI security threats, which are no longer limited to autonomous agents but can also be exploited through human ingenuity and legal loopholes.",
+      "sources": [
+        {
+          "title": "Person Hides Prompt Injection in Legal Filing Telling AI to Side with Them",
+          "url": "https://www.404media.co/person-hides-prompt-injection-in-legal-filing-telling-ai-to-side-with-them/"
+        }
+      ],
+      "provider": "groq:llama-3.3-70b-versatile",
+      "stance": "endorse"
+    },
+    {
       "id": "a8bb0dcc-1e3d-4996-a8ec-0a3bc79dc97d",
       "createdAt": "2026-08-13T09:35:39.571Z",
       "title": "Taiwan's Nuclear Safety Agency Hit by Near-Autonomous AI Agents",
