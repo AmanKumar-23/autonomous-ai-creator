@@ -1,3 +1,355 @@
 {
-  "rejections": []
+  "rejections": [
+    {
+      "id": "hackernews:49261800",
+      "title": "China warns of \"security backdoor\" in Anthropic AI coding tool [July 8, 2026]",
+      "url": "https://www.cbsnews.com/news/china-security-backdoor-anthropic-ai-coding-tool/",
+      "reason": "This story, while related to AI security, is more of a press release about a warning from China regarding a potential security backdoor in an AI coding tool, lacking concrete technical details or developments.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12246v1",
+      "title": "VICBench: A Multi-Language Benchmark for Code Vulnerability Detection",
+      "url": "https://arxiv.org/abs/2608.12246v1",
+      "reason": "Although this research paper is relevant to AI security, it does not present a concrete development or incident but rather introduces a benchmark for code vulnerability detection, which, while important, does not have the same level of urgency or direct impact as a reported attack.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12198v1",
+      "title": "Learning-Based Behavior Planning for Automated Driving: Real-World Integration and Deployment",
+      "url": "https://arxiv.org/abs/2608.12198v1",
+      "reason": "This paper is not directly relevant to AI security as it focuses on learning-based behavior planning for automated driving, which is more related to robotics and automation than to security.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49275350",
+      "title": "Can AI do novel security research? Meet the HTTP Terminator",
+      "url": "https://portswigger.net/research/can-ai-do-novel-security-research",
+      "reason": "This story, discussing whether AI can do novel security research, is too speculative and lacks concrete substance or a specific development to make it worth publishing over other candidates.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12253v1",
+      "title": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
+      "url": "https://arxiv.org/abs/2608.12253v1",
+      "reason": "This research paper, focusing on simulator collapse in multi-agent reinforcement learning, is not directly relevant to AI security but rather to the broader field of AI research.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49272217",
+      "title": "I pointed my AI security plugin at my own prod app – it refused to invent a bug",
+      "url": "https://github.com/kenjichristopherv-del/securitymaxxing",
+      "reason": "The story about an AI security plugin not inventing a bug in a prod app lacks the substance and impact of a reported security incident or a concrete development in AI security.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49275088",
+      "title": "Prompt Injection Experiments with Opus-5 in Claude Code – Auto-Mode Edition",
+      "url": "https://itmeetsot.eu/posts/2026-08-12-opus5_automode/",
+      "reason": "The experiments with prompt injection, while related to AI and potentially to security, do not constitute a significant development or incident in AI security to warrant publication over other candidates.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12236v1",
+      "title": "How Organizations Use AI: Evidence from ChatGPT",
+      "url": "https://arxiv.org/abs/2608.12236v1",
+      "reason": "This study on how organizations use AI, based on evidence from ChatGPT, is more about the adoption and use of AI in general rather than specifically about AI security.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12231v1",
+      "title": "An Efficient Near-Optimal Algorithm for Adversarial $m$-Set Bandits",
+      "url": "https://arxiv.org/abs/2608.12231v1",
+      "reason": "The algorithm for adversarial $m$-set bandits, while relevant to AI research, does not directly pertain to AI security and lacks the concrete development or incident required for publication.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49273549",
+      "title": "Prompt Injection as Defense",
+      "url": "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
+      "reason": "The concept of prompt injection as defense is interesting but lacks the concrete development, incident, or significant technical detail needed to make it a priority for publication.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12196v1",
+      "title": "M-Net: Integrating Spectral Features and Physical Field Operators into Deep Learning for Medical Image Segmentation",
+      "url": "https://arxiv.org/abs/2608.12196v1",
+      "reason": "This medical image segmentation research, integrating spectral features and physical field operators into deep learning, is not relevant to AI security.",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49257980",
+      "title": "Show HN: AI Village: AI security, tested in public.",
+      "url": "https://aivillage.org/",
+      "reason": "not read this cycle: ranked 13 of 14 by the pre-filter, below the top 12 the editor reviews",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12273v1",
+      "title": "Convergent Detour Hijacking: Task-Preserving Resource Amplification in Skill-Based LLM Agents",
+      "url": "https://arxiv.org/abs/2608.12273v1",
+      "reason": "not read this cycle: ranked 14 of 14 by the pre-filter, below the top 12 the editor reviews",
+      "stage": "editor",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49260240",
+      "title": "Show HN: Username.md – a signed, agent-readable identity page you own",
+      "url": "https://username.md/",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49259021",
+      "title": "Show HN: SquadCue – local-first mission control for AI CLI agents",
+      "url": "https://github.com/hsienchuc/squadcue",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "hackernews:49257824",
+      "title": "Show HN: Parley – your coding agent can talk to a teammate's agent",
+      "url": "https://parley.weldra.dev",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12308v1",
+      "title": "DreamFly: Causal Memory and Receding-Horizon Diffusion Planning for Aerial Vision-Language Navigation",
+      "url": "https://arxiv.org/abs/2608.12308v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12307v1",
+      "title": "AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses",
+      "url": "https://arxiv.org/abs/2608.12307v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12306v1",
+      "title": "Redistribution-based Cost Inference Improves Sparse Safe Offline RL",
+      "url": "https://arxiv.org/abs/2608.12306v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12304v1",
+      "title": "Constructing Dynamic Master Logic Models as Knowledge Graphs for Complex System Diagnostics Using Retrieval-Augmented Large Language Models",
+      "url": "https://arxiv.org/abs/2608.12304v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12302v1",
+      "title": "A Framework for Designing Reward Functions: From Objectives to Features to Human-Aligned Reward Functions",
+      "url": "https://arxiv.org/abs/2608.12302v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12299v1",
+      "title": "Class Activation Mapping in Explainable Computer Vision: A Method-Centered Review of CNN, Transformer, and Foundation-Model-Era Visual Explanations",
+      "url": "https://arxiv.org/abs/2608.12299v1",
+      "reason": "only generic AI vocabulary matched (artificial intelligence, model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12290v1",
+      "title": "Beyond Trial-and-Error: Agentic Optimization for Image-to-Video Adherence",
+      "url": "https://arxiv.org/abs/2608.12290v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12282v1",
+      "title": "VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies",
+      "url": "https://arxiv.org/abs/2608.12282v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12278v1",
+      "title": "Structural Silence: When AI Infrastructure Fails Speakers of Underrepresented Languages",
+      "url": "https://arxiv.org/abs/2608.12278v1",
+      "reason": "only generic AI vocabulary matched (ai, artificial intelligence, model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12274v1",
+      "title": "A Neighborhood Attention Transformer Network for Enhanced 3D Segmentation of the Left Anterior Descending Artery",
+      "url": "https://arxiv.org/abs/2608.12274v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12271v1",
+      "title": "Earth observation embeddings are effective sub-grid descriptors for probabilistic weather downscaling",
+      "url": "https://arxiv.org/abs/2608.12271v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12262v1",
+      "title": "Diagram-MMU: A Multi-Modal Benchmark for Scientific Diagrams",
+      "url": "https://arxiv.org/abs/2608.12262v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12259v1",
+      "title": "Calibration Bets on the Past: Post-Training Quantization for Financial Time-Series Forecasting",
+      "url": "https://arxiv.org/abs/2608.12259v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12251v1",
+      "title": "Regime-Gated Residual Mixture-of-Experts for Cross-Sectional Volatility Forecasting",
+      "url": "https://arxiv.org/abs/2608.12251v1",
+      "reason": "only generic AI vocabulary matched (model, neural network), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12249v1",
+      "title": "An Agentic Workflow for Legacy HPC Modernization: Converting the Two-Electron-Integral Core of GAMESS",
+      "url": "https://arxiv.org/abs/2608.12249v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12239v1",
+      "title": "HAMP-LIC: Hessian-Aware Mixed-Precision Post-Training Quantization for Learned Image Compression",
+      "url": "https://arxiv.org/abs/2608.12239v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12230v1",
+      "title": "Few-Shot Ordinal Learning for Day-Wise Freshness Estimation with Hyperspectral Fish Images",
+      "url": "https://arxiv.org/abs/2608.12230v1",
+      "reason": "only generic AI vocabulary matched (deep learning), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12227v1",
+      "title": "Domain-Aware Lightweight Spectral-Grouped Convolutions for Hyperspectral Fish Freshness Classification",
+      "url": "https://arxiv.org/abs/2608.12227v1",
+      "reason": "only generic AI vocabulary matched (deep learning), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12220v1",
+      "title": "SCOUT: Unlocking Enhanced Spatial Reasoning via Structured Chain-of-Thought and Multi-Objective Process Reward",
+      "url": "https://arxiv.org/abs/2608.12220v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12219v1",
+      "title": "ScreenShot: A Foundation Model for Few-Shot Combination Drug Screening",
+      "url": "https://arxiv.org/abs/2608.12219v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12218v1",
+      "title": "Information Abundance Paradox: Long-Context Training Undermines Parametric Knowledge",
+      "url": "https://arxiv.org/abs/2608.12218v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12197v1",
+      "title": "NetlistBench: Evaluating LLM Reliability in SPICE Netlist Recognition and Manipulation",
+      "url": "https://arxiv.org/abs/2608.12197v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    },
+    {
+      "id": "arxiv:2608.12194v1",
+      "title": "HYDRA: Hyperbolic Dynamic Representation Architecture for Kolmogorov-Arnold Networks",
+      "url": "https://arxiv.org/abs/2608.12194v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-13T09:35:38.547Z",
+      "cycleId": "cad28591-01e2-4561-9b31-b2808de3cd04"
+    }
+  ]
 }

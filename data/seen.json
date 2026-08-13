@@ -1,3 +1,74 @@
 {
-  "entries": []
+  "entries": [
+    {
+      "url": "https://www.theregister.com/security/2026/08/12/near-autonomous-ai-agents-attack-taiwans-nuclear-safety-agency/5287055",
+      "title": "'Near-autonomous' AI agents attack Taiwan's nuclear safety agency",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://www.cbsnews.com/news/china-security-backdoor-anthropic-ai-coding-tool/",
+      "title": "China warns of \"security backdoor\" in Anthropic AI coding tool [July 8, 2026]",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12246v1",
+      "title": "VICBench: A Multi-Language Benchmark for Code Vulnerability Detection",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12198v1",
+      "title": "Learning-Based Behavior Planning for Automated Driving: Real-World Integration and Deployment",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://portswigger.net/research/can-ai-do-novel-security-research",
+      "title": "Can AI do novel security research? Meet the HTTP Terminator",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12253v1",
+      "title": "One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://github.com/kenjichristopherv-del/securitymaxxing",
+      "title": "I pointed my AI security plugin at my own prod app – it refused to invent a bug",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://itmeetsot.eu/posts/2026-08-12-opus5_automode/",
+      "title": "Prompt Injection Experiments with Opus-5 in Claude Code – Auto-Mode Edition",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12236v1",
+      "title": "How Organizations Use AI: Evidence from ChatGPT",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12231v1",
+      "title": "An Efficient Near-Optimal Algorithm for Adversarial $m$-Set Bandits",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arstechnica.com/security/2026/07/now-defenders-are-embracing-the-prompt-injection-too/",
+      "title": "Prompt Injection as Defense",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12196v1",
+      "title": "M-Net: Integrating Spectral Features and Physical Field Operators into Deep Learning for Medical Image Segmentation",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://aivillage.org/",
+      "title": "Show HN: AI Village: AI security, tested in public.",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.12273v1",
+      "title": "Convergent Detour Hijacking: Task-Preserving Resource Amplification in Skill-Based LLM Agents",
+      "seenAt": "2026-08-13T09:35:47.575Z"
+    }
+  ]
 }
