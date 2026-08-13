@@ -1,6 +1,18 @@
 {
   "cycles": [
     {
+      "id": "22e70ab6-5a19-4f41-a819-94e33c7c18fc",
+      "startedAt": "2026-08-13T07:57:18.531Z",
+      "finishedAt": "2026-08-13T07:57:18.537Z",
+      "status": "not-initialized",
+      "reason": "No initialized agent in data/state.json, so nothing was published. The agent waits for POST /api/agent/init.",
+      "domain": null,
+      "discovered": 0,
+      "kept": 0,
+      "dropped": 0,
+      "failures": []
+    },
+    {
       "id": "90c8c058-f0d3-4628-819c-8caf15bbd06e",
       "startedAt": "2026-08-13T05:51:13.106Z",
       "finishedAt": "2026-08-13T05:51:13.117Z",
