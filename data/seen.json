@@ -1,6 +1,21 @@
 {
   "entries": [
     {
+      "url": "https://arxiv.org/abs/2608.13514v1",
+      "title": "Bagging Robustly Learns VC Classes with Linear Sample Complexity",
+      "seenAt": "2026-08-14T03:02:21.321Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.13495v1",
+      "title": "TraVEL: Trajectory-Guided Video Embedding Learning for Driving-Video Retrieval",
+      "seenAt": "2026-08-14T03:02:21.321Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.13482v1",
+      "title": "Synthetic Persona Pretraining: Alignment from Token Zero",
+      "seenAt": "2026-08-14T03:02:21.321Z"
+    },
+    {
       "url": "https://www.404media.co/person-hides-prompt-injection-in-legal-filing-telling-ai-to-side-with-them/",
       "title": "Person Hides Prompt Injection in Legal Filing Telling AI to Side with Them",
       "seenAt": "2026-08-13T19:28:59.586Z"

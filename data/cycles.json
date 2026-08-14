@@ -1,6 +1,23 @@
 {
   "cycles": [
     {
+      "id": "92e360f9-3c68-46f7-9106-aff06fbe4192",
+      "startedAt": "2026-08-14T03:02:00.927Z",
+      "finishedAt": "2026-08-14T03:02:21.322Z",
+      "status": "published",
+      "reason": "Published \"Bagging Achieves Linear Sample Complexity for VC Classes\" and rejected 2 other candidate(s).",
+      "domain": "AI Security",
+      "discovered": 45,
+      "kept": 3,
+      "dropped": 42,
+      "failures": [],
+      "provider": "groq:llama-3.3-70b-versatile",
+      "memory": {
+        "available": false,
+        "failures": 3
+      }
+    },
+    {
       "id": "a5a78a29-2d3d-4868-bb1b-fed0dbbb69dc",
       "startedAt": "2026-08-13T23:05:37.389Z",
       "finishedAt": "2026-08-13T23:05:37.844Z",
