@@ -1,6 +1,18 @@
 {
   "cycles": [
     {
+      "id": "60fb823a-1650-484a-92aa-42c513d2fb5b",
+      "startedAt": "2026-08-14T05:48:36.769Z",
+      "finishedAt": "2026-08-14T05:48:37.237Z",
+      "status": "no-candidates",
+      "reason": "Discovery found nothing that cleared the pre-filter. An empty cycle is a valid outcome.",
+      "domain": "AI Security",
+      "discovered": 45,
+      "kept": 0,
+      "dropped": 45,
+      "failures": []
+    },
+    {
       "id": "92e360f9-3c68-46f7-9106-aff06fbe4192",
       "startedAt": "2026-08-14T03:02:00.927Z",
       "finishedAt": "2026-08-14T03:02:21.322Z",
