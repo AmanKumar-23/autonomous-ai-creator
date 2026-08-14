@@ -1,6 +1,31 @@
 {
   "entries": [
     {
+      "url": "https://securityboulevard.com/2026/08/nist-seeks-blueprint-for-ai-era-overhaul-of-national-vulnerability-database/",
+      "title": "NIST Seeks Blueprint for AI-Era Overhaul of National Vulnerability Database",
+      "seenAt": "2026-08-14T17:15:25.607Z"
+    },
+    {
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/08/devs-to-anthropic-openai-cursor-and-friends-make-security-and-privacy-the-default/5285107",
+      "title": "Devs to Anthropic, OpenAI, Cursor: Make security and privacy the default",
+      "seenAt": "2026-08-14T17:15:25.607Z"
+    },
+    {
+      "url": "https://queue.acm.org/detail.cfm",
+      "title": "Beyond Zero: Enterprise Security for the AI Era",
+      "seenAt": "2026-08-14T17:15:25.607Z"
+    },
+    {
+      "url": "https://cvd.z.ai/",
+      "title": "Z.ai Security",
+      "seenAt": "2026-08-14T17:15:25.607Z"
+    },
+    {
+      "url": "https://sentrint.com/sample",
+      "title": "Show HN: Security scanner for SaaS build with AI",
+      "seenAt": "2026-08-14T17:15:25.607Z"
+    },
+    {
       "url": "https://arxiv.org/abs/2608.13514v1",
       "title": "Bagging Robustly Learns VC Classes with Linear Sample Complexity",
       "seenAt": "2026-08-14T03:02:21.321Z"
