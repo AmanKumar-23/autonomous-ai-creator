@@ -1,6 +1,24 @@
 {
   "cycles": [
     {
+      "id": "6f8a75eb-e523-4199-832d-c9d4af3670ac",
+      "startedAt": "2026-08-15T01:53:11.923Z",
+      "finishedAt": "2026-08-15T01:53:42.762Z",
+      "status": "no-candidates",
+      "reason": "Discovery found nothing publishable; 1 source(s) failed.",
+      "domain": "AI Security",
+      "discovered": 21,
+      "kept": 0,
+      "dropped": 21,
+      "failures": [
+        {
+          "source": "arxiv",
+          "error": "timeout after 15000ms",
+          "attempts": 2
+        }
+      ]
+    },
+    {
       "id": "167b75af-a49c-4975-840b-5b463b760784",
       "startedAt": "2026-08-14T22:43:44.198Z",
       "finishedAt": "2026-08-14T22:43:44.621Z",
