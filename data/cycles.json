@@ -1,6 +1,23 @@
 {
   "cycles": [
     {
+      "id": "177c488d-bed6-4f6e-9cd6-61fc8916269a",
+      "startedAt": "2026-08-16T08:50:14.757Z",
+      "finishedAt": "2026-08-16T08:50:19.236Z",
+      "status": "no-candidates",
+      "reason": "The editor reviewed 1 candidate(s) and rejected all of them. Publishing nothing is preferable to publishing filler.",
+      "domain": "AI Security",
+      "discovered": 44,
+      "kept": 1,
+      "dropped": 43,
+      "failures": [],
+      "provider": "groq:llama-3.3-70b-versatile",
+      "memory": {
+        "available": true,
+        "failures": 0
+      }
+    },
+    {
       "id": "03d7e7cb-2599-4781-91e6-df4cc6a0b903",
       "startedAt": "2026-08-16T07:02:34.425Z",
       "finishedAt": "2026-08-16T07:02:39.009Z",
