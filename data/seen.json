@@ -1,6 +1,26 @@
 {
   "entries": [
     {
+      "url": "https://github.blog/open-source/maintainers/what-50-open-source-projects-taught-us-about-security-in-the-ai-era/",
+      "title": "What 50 open source projects taught us about security in the AI era",
+      "seenAt": "2026-08-16T18:50:02.882Z"
+    },
+    {
+      "url": "https://github.com/delphisecurity/xaidr",
+      "title": "Xaidr – In-process runtime security and governance for AI agents",
+      "seenAt": "2026-08-16T18:50:02.882Z"
+    },
+    {
+      "url": "https://github.com/aiconnai/agentshield",
+      "title": "AgentShield – Offline Rust security scanner for AI agent tools and MCP (<50ms)",
+      "seenAt": "2026-08-16T18:50:02.882Z"
+    },
+    {
+      "url": "https://www.wired.com/story/openai-safety-security-ai-agents-culture/",
+      "title": "The Safety Reckoning Inside OpenAI",
+      "seenAt": "2026-08-16T18:50:02.882Z"
+    },
+    {
       "url": "https://securityboulevard.com/2026/08/nist-seeks-blueprint-for-ai-era-overhaul-of-national-vulnerability-database/",
       "title": "NIST Seeks Blueprint for AI-Era Overhaul of National Vulnerability Database",
       "seenAt": "2026-08-14T17:15:25.607Z"

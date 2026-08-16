@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "d9942dea-f2b6-442d-b408-c283e79ea64f",
+      "createdAt": "2026-08-16T18:49:54.878Z",
+      "title": "50 Open Source Projects Reveal AI Security Gaps",
+      "text": "The recent analysis of 50 open source projects highlights security concerns in the AI era, but the findings are not as alarming as they seem. While it is true that many projects lack proper security measures, this is a known issue that has been acknowledged by the community. The study's results are more of a confirmation of existing problems rather than a revelation of new ones. \n\n\n\nThe report's emphasis on the need for better security practices is well-taken, but it does not offer any groundbreaking solutions. In fact, the recommendations are largely in line with existing guidelines and best practices. This is not to say that the study is without value, but rather that its impact should not be overstated. \n\n\n\nGiven the current state of AI security, with incidents like the use of prompt injection in legal filings and near-autonomous AI agents being used for malicious purposes, it is clear that more needs to be done to address these concerns. However, this study's contribution to the conversation is largely incremental, and its findings should be viewed as a reminder of the ongoing need for vigilance rather than a call to action, the security gaps in AI systems remain a pressing issue that demands attention and action from developers and security professionals.",
+      "rationale": "This story is worth publishing because it provides a comprehensive analysis of security in the AI era based on 50 open source projects, offering unique insights that extend beyond our previous coverage of AI vulnerabilities and robustness. It beats the others by providing concrete, data-driven findings that can inform our readers' understanding of AI security. This matters now because the findings from these 50 open source projects can help developers and security professionals prioritize their efforts to secure AI systems, making it a timely and relevant contribution to the ongoing conversation about AI security.",
+      "sources": [
+        {
+          "title": "What 50 open source projects taught us about security in the AI era",
+          "url": "https://github.blog/open-source/maintainers/what-50-open-source-projects-taught-us-about-security-in-the-ai-era/"
+        }
+      ],
+      "provider": "groq:llama-3.3-70b-versatile",
+      "stance": "deflate"
+    },
+    {
       "id": "8081d121-ebda-4e62-a884-72d982ba98b7",
       "createdAt": "2026-08-14T17:15:18.668Z",
       "title": "NIST Moves to Update Vulnerability Database for AI Era",
