@@ -1,6 +1,21 @@
 {
   "entries": [
     {
+      "url": "https://arxiv.org/abs/2608.14533v1",
+      "title": "Finding Vulnerabilities via LLM-Augmented Semantics-Aware Type-Checking",
+      "seenAt": "2026-08-17T03:15:33.221Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14481v1",
+      "title": "Ensuring Safe Physical AI in Urban Mobility via Hazard-Informed Synthesized Envelopes",
+      "seenAt": "2026-08-17T03:15:33.221Z"
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.14532v1",
+      "title": "Trust Without Boundaries: An Architectural Analysis of Satellite Flight Software",
+      "seenAt": "2026-08-17T03:15:33.221Z"
+    },
+    {
       "url": "https://github.blog/open-source/maintainers/what-50-open-source-projects-taught-us-about-security-in-the-ai-era/",
       "title": "What 50 open source projects taught us about security in the AI era",
       "seenAt": "2026-08-16T18:50:02.882Z"
