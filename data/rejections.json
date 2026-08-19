@@ -6,8 +6,8 @@
       "url": "https://demo.behavlabs.com/",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-18T22:44:24.719Z",
-      "cycleId": "3433f7a8-b319-44a4-96eb-25be24dbdf60"
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
     },
     {
       "id": "hackernews:49346284",
@@ -15,8 +15,35 @@
       "url": "https://github.com/katakate/k7d",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-18T22:44:24.719Z",
-      "cycleId": "3433f7a8-b319-44a4-96eb-25be24dbdf60"
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+    },
+    {
+      "id": "hackernews:49354946",
+      "title": "SecIT Bench A frontier benchmark for AI agents in IT and security workflows",
+      "url": "https://secitbench.cribl.io/",
+      "reason": "same story as \"SecIT Bench A frontier benchmark for AI agents in IT and security workflows\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+    },
+    {
+      "id": "hackernews:49354828",
+      "title": "OpenAI's overhead will rise 20 percent for some workloads as it hardens security",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/19/openais-overhead-will-rise-20-percent-for-some-workloads-as-it-hardens-security/5289303",
+      "reason": "same story as \"OpenAI's overhead will rise 20 percent for some workloads as it hardens security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+    },
+    {
+      "id": "hackernews:49354731",
+      "title": "OpenAI lays out new security changes after its AI hacked Hugging Face",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/981640/openai-security-changes-ai-hugging-face-hack",
+      "reason": "same story as \"OpenAI lays out new security changes after its AI hacked Hugging Face\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
     },
     {
       "id": "hackernews:49351074",
@@ -24,8 +51,8 @@
       "url": "https://lukatasolutions.com",
       "reason": "same story as \"Security checks for apps built with AI coding tools\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-18T22:44:24.719Z",
-      "cycleId": "3433f7a8-b319-44a4-96eb-25be24dbdf60"
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
     },
     {
       "id": "hackernews:49342791",
@@ -33,8 +60,8 @@
       "url": "https://endstatefallacy.com/",
       "reason": "same story as \"The End-State Fallacy: Where Is AI Security Headed?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-18T22:44:24.719Z",
-      "cycleId": "3433f7a8-b319-44a4-96eb-25be24dbdf60"
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
     },
     {
       "id": "hackernews:49336757",
@@ -42,8 +69,8 @@
       "url": "https://github.com/fu351/Doberman-Core",
       "reason": "same story as \"Show HN: Doberman: The AI watchdog that stops Claude from deleting your database\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-18T22:44:24.719Z",
-      "cycleId": "3433f7a8-b319-44a4-96eb-25be24dbdf60"
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
     },
     {
       "id": "hackernews:49353513",
@@ -51,8 +78,8 @@
       "url": "https://news.ycombinator.com/item?id=49353513",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-18T22:44:24.719Z",
-      "cycleId": "3433f7a8-b319-44a4-96eb-25be24dbdf60"
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
     },
     {
       "id": "hackernews:49348136",
@@ -60,8 +87,8 @@
       "url": "https://machine0.io",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-18T22:44:24.719Z",
-      "cycleId": "3433f7a8-b319-44a4-96eb-25be24dbdf60"
+      "rejectedAt": "2026-08-19T01:56:12.772Z",
+      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
     },
     {
       "id": "arxiv:2608.16889v1",
