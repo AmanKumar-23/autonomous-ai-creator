@@ -6,8 +6,8 @@
       "url": "https://demo.behavlabs.com/",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
     },
     {
       "id": "hackernews:49346284",
@@ -15,44 +15,8 @@
       "url": "https://github.com/katakate/k7d",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
-    },
-    {
-      "id": "hackernews:49354946",
-      "title": "SecIT Bench A frontier benchmark for AI agents in IT and security workflows",
-      "url": "https://secitbench.cribl.io/",
-      "reason": "same story as \"SecIT Bench A frontier benchmark for AI agents in IT and security workflows\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
-    },
-    {
-      "id": "hackernews:49354828",
-      "title": "OpenAI's overhead will rise 20 percent for some workloads as it hardens security",
-      "url": "https://www.theregister.com/ai-and-ml/2026/08/19/openais-overhead-will-rise-20-percent-for-some-workloads-as-it-hardens-security/5289303",
-      "reason": "same story as \"OpenAI's overhead will rise 20 percent for some workloads as it hardens security\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
-    },
-    {
-      "id": "hackernews:49354731",
-      "title": "OpenAI lays out new security changes after its AI hacked Hugging Face",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/981640/openai-security-changes-ai-hugging-face-hack",
-      "reason": "same story as \"OpenAI lays out new security changes after its AI hacked Hugging Face\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
-    },
-    {
-      "id": "hackernews:49351074",
-      "title": "Security checks for apps built with AI coding tools",
-      "url": "https://lukatasolutions.com",
-      "reason": "same story as \"Security checks for apps built with AI coding tools\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
     },
     {
       "id": "hackernews:49342791",
@@ -60,8 +24,44 @@
       "url": "https://endstatefallacy.com/",
       "reason": "same story as \"The End-State Fallacy: Where Is AI Security Headed?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "hackernews:49354946",
+      "title": "SecIT Bench A frontier benchmark for AI agents in IT and security workflows",
+      "url": "https://secitbench.cribl.io/",
+      "reason": "same story as \"SecIT Bench A frontier benchmark for AI agents in IT and security workflows\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "hackernews:49354828",
+      "title": "OpenAI's overhead will rise 20 percent for some workloads as it hardens security",
+      "url": "https://www.theregister.com/ai-and-ml/2026/08/19/openais-overhead-will-rise-20-percent-for-some-workloads-as-it-hardens-security/5289303",
+      "reason": "same story as \"OpenAI's overhead will rise 20 percent for some workloads as it hardens security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "hackernews:49354731",
+      "title": "OpenAI lays out new security changes after its AI hacked Hugging Face",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/981640/openai-security-changes-ai-hugging-face-hack",
+      "reason": "same story as \"OpenAI lays out new security changes after its AI hacked Hugging Face\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "hackernews:49351074",
+      "title": "Security checks for apps built with AI coding tools",
+      "url": "https://lukatasolutions.com",
+      "reason": "same story as \"Security checks for apps built with AI coding tools\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
     },
     {
       "id": "hackernews:49336757",
@@ -69,8 +69,8 @@
       "url": "https://github.com/fu351/Doberman-Core",
       "reason": "same story as \"Show HN: Doberman: The AI watchdog that stops Claude from deleting your database\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
     },
     {
       "id": "hackernews:49353513",
@@ -78,8 +78,8 @@
       "url": "https://news.ycombinator.com/item?id=49353513",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
     },
     {
       "id": "hackernews:49348136",
@@ -87,8 +87,260 @@
       "url": "https://machine0.io",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-19T01:56:12.772Z",
-      "cycleId": "398b2365-0b73-4359-b2d3-e5d0e650d2fe"
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18076v1",
+      "title": "From Corpora to Co-Evolving Capabilities: Capability-Centric Data Design for Generalist Image Generation",
+      "url": "https://arxiv.org/abs/2608.18076v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18066v1",
+      "title": "On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification",
+      "url": "https://arxiv.org/abs/2608.18066v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18062v1",
+      "title": "TokEval: A Tokenizer Evaluation Suite",
+      "url": "https://arxiv.org/abs/2608.18062v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18061v1",
+      "title": "The concentration game: Bayesian updating, regret, and information",
+      "url": "https://arxiv.org/abs/2608.18061v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18058v1",
+      "title": "Delegation Asymmetry in Agentic Recommender Systems: Measuring Two-Sided Receptivity in Online Dating",
+      "url": "https://arxiv.org/abs/2608.18058v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18056v1",
+      "title": "HLSR: Hybrid Live Forecast Selective Dynamic Vehicle Rerouting for Real-Time Congestion Avoidance",
+      "url": "https://arxiv.org/abs/2608.18056v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18055v1",
+      "title": "Primitive Representation Learning for Unsupervised Dynamic Contrast Enhanced MRI Reconstruction",
+      "url": "https://arxiv.org/abs/2608.18055v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18050v1",
+      "title": "StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents",
+      "url": "https://arxiv.org/abs/2608.18050v1",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18040v1",
+      "title": "Optimize Your Sampling: Tuned Diffusion Sampling with Bayesian Optimization",
+      "url": "https://arxiv.org/abs/2608.18040v1",
+      "reason": "only generic AI vocabulary matched (model, neural network), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18036v1",
+      "title": "Harnessing Magnitude-Only and Complex Measurements for Improved Dynamic MRI Reconstruction with Learned Priors",
+      "url": "https://arxiv.org/abs/2608.18036v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18033v1",
+      "title": "Where A Small Language Model Helps in Invoice Categorisation, Understood Through Embedding Geometry",
+      "url": "https://arxiv.org/abs/2608.18033v1",
+      "reason": "only generic AI vocabulary matched (ai, model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18026v1",
+      "title": "TabNSM: Neural Sparse Mixer for Tabular Regression",
+      "url": "https://arxiv.org/abs/2608.18026v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18025v1",
+      "title": "Why GPT-Style Models Do Not Directly Transfer to Symbolic Music: Compression in the Wrong Coordinate System",
+      "url": "https://arxiv.org/abs/2608.18025v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18021v1",
+      "title": "Revisiting WEASEL 2.0: Reproduction, Sensitivity, and an Adaptive Ensemble-Size Rule",
+      "url": "https://arxiv.org/abs/2608.18021v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18008v1",
+      "title": "Policy-Invariant Reward Shaping from LLM Feedback: A Framework for Hybrid RL Agents",
+      "url": "https://arxiv.org/abs/2608.18008v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.18004v1",
+      "title": "Composing Flow-Matching Energies with Known Physics: Generation, OOD Detection, and Inversion on PDE Fields",
+      "url": "https://arxiv.org/abs/2608.18004v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17998v1",
+      "title": "Multivalued Consensus: General Adversaries Require More Communication",
+      "url": "https://arxiv.org/abs/2608.17998v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17997v1",
+      "title": "Traceable Trust for action-ready artificial intelligence in bioscience",
+      "url": "https://arxiv.org/abs/2608.17997v1",
+      "reason": "only generic AI vocabulary matched (ai, artificial intelligence, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17987v1",
+      "title": "Against Political Polarization: A Unified Framework for Tracing Evolving Political Ideologies on Social Media",
+      "url": "https://arxiv.org/abs/2608.17987v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17983v1",
+      "title": "Dual Co-Train: Cross-Dataset Ultrasound Tongue Segmentation Under Extreme Data Scarcity",
+      "url": "https://arxiv.org/abs/2608.17983v1",
+      "reason": "only generic AI vocabulary matched (model, dataset), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17981v1",
+      "title": "Recirculation",
+      "url": "https://arxiv.org/abs/2608.17981v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17971v1",
+      "title": "Evaluating and improving crop-yield forecasting methods during extreme drought",
+      "url": "https://arxiv.org/abs/2608.17971v1",
+      "reason": "only generic AI vocabulary matched (machine learning, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17965v1",
+      "title": "Too Sure to Be Safe: Model Calibration for Reliable Log Anomaly Detection",
+      "url": "https://arxiv.org/abs/2608.17965v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17959v1",
+      "title": "Towards Zero-Shot Task Transfer with Neurosymbolic World Models",
+      "url": "https://arxiv.org/abs/2608.17959v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17957v1",
+      "title": "Understanding the Surprising Generalization Properties of Tabular Foundation Models",
+      "url": "https://arxiv.org/abs/2608.17957v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17956v1",
+      "title": "An Omitted Mode Is a Rare Rule: The Sampling-Verification Danger Law in Continuous Code World Models",
+      "url": "https://arxiv.org/abs/2608.17956v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17949v1",
+      "title": "Tail exponents of conditional guesswork via the method of types",
+      "url": "https://arxiv.org/abs/2608.17949v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
+    },
+    {
+      "id": "arxiv:2608.17948v1",
+      "title": "SIGMA: SHAP-Guided Implicit-Trajectory Generation for Metadata-Free LLM-Based AutoFE",
+      "url": "https://arxiv.org/abs/2608.17948v1",
+      "reason": "only generic AI vocabulary matched (models, research), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-19T03:13:24.053Z",
+      "cycleId": "52af162a-6719-40b5-b210-7e94f62661d1"
     },
     {
       "id": "arxiv:2608.16889v1",
