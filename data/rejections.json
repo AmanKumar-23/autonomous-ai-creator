@@ -1,13 +1,22 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49398399",
+      "title": "Security assessment found open model near frontiers",
+      "url": "https://www.aikido.dev/blog/ai-model-benchmarks-aug-21-2026",
+      "reason": "already covered (see post d9942dea-f2b6-442d-b408-c283e79ea64f): memory recalls \"50 Open Source Projects Reveal AI Security Gaps is based on security concerns in open source projects\"",
+      "stage": "editor",
+      "rejectedAt": "2026-08-23T02:02:39.880Z",
+      "cycleId": "6ee7208d-1eba-4baf-b01f-09f9db251d7c"
+    },
+    {
       "id": "hackernews:49384306",
       "title": "AWS Bedrock AgentCore enforces user context to prevent hijacked AI agents",
       "url": "https://techupdate24.com/aws-bedrock-agentcore-hijacked-ai-security/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-22T22:42:00.917Z",
-      "cycleId": "ea8bf71d-7f15-4f48-b444-1b561cd83bfc"
+      "rejectedAt": "2026-08-23T02:02:39.880Z",
+      "cycleId": "6ee7208d-1eba-4baf-b01f-09f9db251d7c"
     },
     {
       "id": "hackernews:49402768",
@@ -15,17 +24,8 @@
       "url": "https://www.theregister.com/security/2026/08/22/if-youre-not-using-ai-to-attack-your-own-systems-your-adversaries-will/5291346",
       "reason": "same story as \"If you're not using AI to attack your own systems, your adversaries will\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-22T22:42:00.917Z",
-      "cycleId": "ea8bf71d-7f15-4f48-b444-1b561cd83bfc"
-    },
-    {
-      "id": "hackernews:49398399",
-      "title": "Security assessment found open model near frontiers",
-      "url": "https://www.aikido.dev/blog/ai-model-benchmarks-aug-21-2026",
-      "reason": "same story as \"Security assessment found open model near frontiers\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-22T22:42:00.917Z",
-      "cycleId": "ea8bf71d-7f15-4f48-b444-1b561cd83bfc"
+      "rejectedAt": "2026-08-23T02:02:39.880Z",
+      "cycleId": "6ee7208d-1eba-4baf-b01f-09f9db251d7c"
     },
     {
       "id": "hackernews:49398125",
@@ -33,8 +33,8 @@
       "url": "https://github.com/CyberStrikeus/CyberStrike",
       "reason": "same story as \"CyberStrike – open-source AI harness for offensive security (AGPL)\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-22T22:42:00.917Z",
-      "cycleId": "ea8bf71d-7f15-4f48-b444-1b561cd83bfc"
+      "rejectedAt": "2026-08-23T02:02:39.880Z",
+      "cycleId": "6ee7208d-1eba-4baf-b01f-09f9db251d7c"
     },
     {
       "id": "hackernews:49390933",
@@ -42,14 +42,32 @@
       "url": "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/",
       "reason": "same story as \"Where Security Fits in an AI Agent Stack\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-22T22:42:00.917Z",
-      "cycleId": "ea8bf71d-7f15-4f48-b444-1b561cd83bfc"
+      "rejectedAt": "2026-08-23T02:02:39.880Z",
+      "cycleId": "6ee7208d-1eba-4baf-b01f-09f9db251d7c"
     },
     {
       "id": "hackernews:49385366",
       "title": "Bounded Agents: Delegation Security for Multi-Agent AI Systems",
       "url": "https://arxiv.org/abs/2608.15888",
       "reason": "same story as \"Bounded Agents: Delegation Security for Multi-Agent AI Systems\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-23T02:02:39.880Z",
+      "cycleId": "6ee7208d-1eba-4baf-b01f-09f9db251d7c"
+    },
+    {
+      "id": "hackernews:49405405",
+      "title": "Show HN: Hands-Rust MCP/CLI that sees the Windows desktop and clicks real Chrome",
+      "url": "https://news.ycombinator.com/item?id=49405405",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-23T02:02:39.880Z",
+      "cycleId": "6ee7208d-1eba-4baf-b01f-09f9db251d7c"
+    },
+    {
+      "id": "hackernews:49398399",
+      "title": "Security assessment found open model near frontiers",
+      "url": "https://www.aikido.dev/blog/ai-model-benchmarks-aug-21-2026",
+      "reason": "same story as \"Security assessment found open model near frontiers\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-08-22T22:42:00.917Z",
       "cycleId": "ea8bf71d-7f15-4f48-b444-1b561cd83bfc"
@@ -296,15 +314,6 @@
       "stage": "prefilter",
       "rejectedAt": "2026-08-22T20:43:14.650Z",
       "cycleId": "86d782af-79cc-4abc-91ce-c647d7194636"
-    },
-    {
-      "id": "hackernews:49398399",
-      "title": "Security assessment found open model near frontiers",
-      "url": "https://www.aikido.dev/blog/ai-model-benchmarks-aug-21-2026",
-      "reason": "already covered (see post d9942dea-f2b6-442d-b408-c283e79ea64f): memory recalls \"50 Open Source Projects Reveal AI Security Gaps is based on security concerns in open source projects\"",
-      "stage": "editor",
-      "rejectedAt": "2026-08-22T18:51:35.951Z",
-      "cycleId": "4243055d-24a1-420c-8b7f-552cdb4e3f71"
     },
     {
       "id": "hackernews:49378903",
@@ -1868,15 +1877,6 @@
       "title": "Concept Drift Detection and Adaptive Retraining of Malware Classification Models",
       "url": "https://arxiv.org/abs/2608.13465v1",
       "reason": "only generic AI vocabulary matched (machine learning, model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-16T18:49:53.533Z",
-      "cycleId": "e6d32462-ff78-4ad6-98e1-4fceb81e5f9a"
-    },
-    {
-      "id": "arxiv:2608.13463v1",
-      "title": "MLLM-Routed Heterogeneous Ensembles for Robust Cross-Dataset Image Classification",
-      "url": "https://arxiv.org/abs/2608.13463v1",
-      "reason": "only generic AI vocabulary matched (model, models, neural network), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-08-16T18:49:53.533Z",
       "cycleId": "e6d32462-ff78-4ad6-98e1-4fceb81e5f9a"
