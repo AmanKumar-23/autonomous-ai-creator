@@ -6,8 +6,8 @@
       "url": "https://datatracker.ietf.org/doc/html/draft-das-execution-finality-ai-interoperability-00",
       "reason": "same story as \"IETF Publication- Closing Apple-Siri EU Deadlock Without Sacrificing Security\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
     },
     {
       "id": "hackernews:49402768",
@@ -15,8 +15,242 @@
       "url": "https://www.theregister.com/security/2026/08/22/if-youre-not-using-ai-to-attack-your-own-systems-your-adversaries-will/5291346",
       "reason": "same story as \"If you're not using AI to attack your own systems, your adversaries will\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "hackernews:49405405",
+      "title": "Show HN: Hands-Rust MCP/CLI that sees the Windows desktop and clicks real Chrome",
+      "url": "https://news.ycombinator.com/item?id=49405405",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21359v1",
+      "title": "Primal Acceleration of Newton's Method",
+      "url": "https://arxiv.org/abs/2608.21359v1",
+      "reason": "only generic AI vocabulary matched (algorithm), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21357v1",
+      "title": "VIALS: A Benchmark for Visual Interpretation of Artifacts in the Life Sciences",
+      "url": "https://arxiv.org/abs/2608.21357v1",
+      "reason": "only generic AI vocabulary matched (research), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21356v1",
+      "title": "AI with Authority, from Application to Silicon",
+      "url": "https://arxiv.org/abs/2608.21356v1",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21349v1",
+      "title": "PerturbRx: Learning Treatment-Conditioned Latent Transitions for Patient Drug Response Prediction",
+      "url": "https://arxiv.org/abs/2608.21349v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21348v1",
+      "title": "Truthful Calibration Measures for Sequential Prediction",
+      "url": "https://arxiv.org/abs/2608.21348v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21345v1",
+      "title": "Asymmetric Capacity Allocation in Self-Refinement Pipelines",
+      "url": "https://arxiv.org/abs/2608.21345v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21343v1",
+      "title": "TurboBias 2.0: Streaming Context-Biasing for Production-Efficient ASR Systems",
+      "url": "https://arxiv.org/abs/2608.21343v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21334v1",
+      "title": "Across-Design Uncertainty in Short Pricing Panels: Evidence from Simulated Price Trajectories",
+      "url": "https://arxiv.org/abs/2608.21334v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21332v1",
+      "title": "Anatomy-Informed Neural Networks: Encoding Anatomic Priors in Loss and Architecture, with an SE(3) Formulation of Guidewire-Induced Aortoiliac Deformation",
+      "url": "https://arxiv.org/abs/2608.21332v1",
+      "reason": "only generic AI vocabulary matched (models, neural network), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21324v1",
+      "title": "Time-Aware Tranformer-Based Prediction Model for AECOPD",
+      "url": "https://arxiv.org/abs/2608.21324v1",
+      "reason": "only generic AI vocabulary matched (machine learning, model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21319v1",
+      "title": "Unified Branch-and-Bound Search for the Steiner Traveling Salesman Problem on Graphs of Convex Sets",
+      "url": "https://arxiv.org/abs/2608.21319v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21308v1",
+      "title": "Rethinking Expressivity and Efficiency in Test-Time Training",
+      "url": "https://arxiv.org/abs/2608.21308v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21307v1",
+      "title": "SPARCL: Spectral Partitioned Analytic Continual Learning",
+      "url": "https://arxiv.org/abs/2608.21307v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21305v1",
+      "title": "Re$^3$Cap: Retrieval-Guided Refinement for Image Captioning Enhancement via Reinforcement Learning",
+      "url": "https://arxiv.org/abs/2608.21305v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21292v1",
+      "title": "AUSO: Action-Level Unified Skill Optimization from Internalization to Utilization",
+      "url": "https://arxiv.org/abs/2608.21292v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21277v1",
+      "title": "ConceptTS: LLM-Guided Concept Bottlenecks for Interpretable Multivariate Time-Series Forecasting",
+      "url": "https://arxiv.org/abs/2608.21277v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21254v1",
+      "title": "On the Transferability of Agricultural Weed Detection Under Cross-Field Distribution Shift",
+      "url": "https://arxiv.org/abs/2608.21254v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21252v1",
+      "title": "EnSI-RAG: Entity-Structure-Indexed Retrieval-Augmented Generation for Long-Document Question Answering",
+      "url": "https://arxiv.org/abs/2608.21252v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21251v1",
+      "title": "TRACE-C: Rank-Calibrated Relational Anomaly Detection for Multi-Stream Operational Telemetry",
+      "url": "https://arxiv.org/abs/2608.21251v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21243v1",
+      "title": "Adapting Knowledge Graphs for Behavior Denoising in Sequential Recommendation",
+      "url": "https://arxiv.org/abs/2608.21243v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21241v1",
+      "title": "Eavesdropper-Blind Remote State Preparation and Applications to Quantum Public-Key Encryption",
+      "url": "https://arxiv.org/abs/2608.21241v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21234v1",
+      "title": "Advanced Linear Algebra with Applications - Part I (Numerical linear algebra for PDEs, machine learning, and data assimilation)",
+      "url": "https://arxiv.org/abs/2608.21234v1",
+      "reason": "only generic AI vocabulary matched (machine learning), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21233v1",
+      "title": "Fine-Grain GPU Parallelization of the Generalized Partition Crossover for Large-Scale Traveling Salesman Problems",
+      "url": "https://arxiv.org/abs/2608.21233v1",
+      "reason": "only generic AI vocabulary matched (algorithm), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21224v1",
+      "title": "Ontology-supported AI Model and Dataset Management",
+      "url": "https://arxiv.org/abs/2608.21224v1",
+      "reason": "only generic AI vocabulary matched (ai, model, research), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
+    },
+    {
+      "id": "arxiv:2608.21223v1",
+      "title": "Event-triggered Implicit Perturbation for Zeroth-Order Fine-Tuning of Spiking Transformers",
+      "url": "https://arxiv.org/abs/2608.21223v1",
+      "reason": "only generic AI vocabulary matched (neural network), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-24T10:56:36.299Z",
+      "cycleId": "d72e6fbb-fb65-48b5-8d24-c70d3cb93059"
     },
     {
       "id": "hackernews:49398399",
@@ -32,240 +266,6 @@
       "title": "CyberStrike – open-source AI harness for offensive security (AGPL)",
       "url": "https://github.com/CyberStrikeus/CyberStrike",
       "reason": "same story as \"CyberStrike – open-source AI harness for offensive security (AGPL)\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "hackernews:49405405",
-      "title": "Show HN: Hands-Rust MCP/CLI that sees the Windows desktop and clicks real Chrome",
-      "url": "https://news.ycombinator.com/item?id=49405405",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21359v1",
-      "title": "Primal Acceleration of Newton's Method",
-      "url": "https://arxiv.org/abs/2608.21359v1",
-      "reason": "only generic AI vocabulary matched (algorithm), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21357v1",
-      "title": "VIALS: A Benchmark for Visual Interpretation of Artifacts in the Life Sciences",
-      "url": "https://arxiv.org/abs/2608.21357v1",
-      "reason": "only generic AI vocabulary matched (research), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21356v1",
-      "title": "AI with Authority, from Application to Silicon",
-      "url": "https://arxiv.org/abs/2608.21356v1",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21349v1",
-      "title": "PerturbRx: Learning Treatment-Conditioned Latent Transitions for Patient Drug Response Prediction",
-      "url": "https://arxiv.org/abs/2608.21349v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21348v1",
-      "title": "Truthful Calibration Measures for Sequential Prediction",
-      "url": "https://arxiv.org/abs/2608.21348v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21345v1",
-      "title": "Asymmetric Capacity Allocation in Self-Refinement Pipelines",
-      "url": "https://arxiv.org/abs/2608.21345v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21343v1",
-      "title": "TurboBias 2.0: Streaming Context-Biasing for Production-Efficient ASR Systems",
-      "url": "https://arxiv.org/abs/2608.21343v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21334v1",
-      "title": "Across-Design Uncertainty in Short Pricing Panels: Evidence from Simulated Price Trajectories",
-      "url": "https://arxiv.org/abs/2608.21334v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21332v1",
-      "title": "Anatomy-Informed Neural Networks: Encoding Anatomic Priors in Loss and Architecture, with an SE(3) Formulation of Guidewire-Induced Aortoiliac Deformation",
-      "url": "https://arxiv.org/abs/2608.21332v1",
-      "reason": "only generic AI vocabulary matched (models, neural network), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21324v1",
-      "title": "Time-Aware Tranformer-Based Prediction Model for AECOPD",
-      "url": "https://arxiv.org/abs/2608.21324v1",
-      "reason": "only generic AI vocabulary matched (machine learning, model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21319v1",
-      "title": "Unified Branch-and-Bound Search for the Steiner Traveling Salesman Problem on Graphs of Convex Sets",
-      "url": "https://arxiv.org/abs/2608.21319v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21308v1",
-      "title": "Rethinking Expressivity and Efficiency in Test-Time Training",
-      "url": "https://arxiv.org/abs/2608.21308v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21307v1",
-      "title": "SPARCL: Spectral Partitioned Analytic Continual Learning",
-      "url": "https://arxiv.org/abs/2608.21307v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21305v1",
-      "title": "Re$^3$Cap: Retrieval-Guided Refinement for Image Captioning Enhancement via Reinforcement Learning",
-      "url": "https://arxiv.org/abs/2608.21305v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21292v1",
-      "title": "AUSO: Action-Level Unified Skill Optimization from Internalization to Utilization",
-      "url": "https://arxiv.org/abs/2608.21292v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21277v1",
-      "title": "ConceptTS: LLM-Guided Concept Bottlenecks for Interpretable Multivariate Time-Series Forecasting",
-      "url": "https://arxiv.org/abs/2608.21277v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21254v1",
-      "title": "On the Transferability of Agricultural Weed Detection Under Cross-Field Distribution Shift",
-      "url": "https://arxiv.org/abs/2608.21254v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21252v1",
-      "title": "EnSI-RAG: Entity-Structure-Indexed Retrieval-Augmented Generation for Long-Document Question Answering",
-      "url": "https://arxiv.org/abs/2608.21252v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21251v1",
-      "title": "TRACE-C: Rank-Calibrated Relational Anomaly Detection for Multi-Stream Operational Telemetry",
-      "url": "https://arxiv.org/abs/2608.21251v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21243v1",
-      "title": "Adapting Knowledge Graphs for Behavior Denoising in Sequential Recommendation",
-      "url": "https://arxiv.org/abs/2608.21243v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21241v1",
-      "title": "Eavesdropper-Blind Remote State Preparation and Applications to Quantum Public-Key Encryption",
-      "url": "https://arxiv.org/abs/2608.21241v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21234v1",
-      "title": "Advanced Linear Algebra with Applications - Part I (Numerical linear algebra for PDEs, machine learning, and data assimilation)",
-      "url": "https://arxiv.org/abs/2608.21234v1",
-      "reason": "only generic AI vocabulary matched (machine learning), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21233v1",
-      "title": "Fine-Grain GPU Parallelization of the Generalized Partition Crossover for Large-Scale Traveling Salesman Problems",
-      "url": "https://arxiv.org/abs/2608.21233v1",
-      "reason": "only generic AI vocabulary matched (algorithm), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21224v1",
-      "title": "Ontology-supported AI Model and Dataset Management",
-      "url": "https://arxiv.org/abs/2608.21224v1",
-      "reason": "only generic AI vocabulary matched (ai, model, research), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-24T09:07:42.019Z",
-      "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
-    },
-    {
-      "id": "arxiv:2608.21223v1",
-      "title": "Event-triggered Implicit Perturbation for Zeroth-Order Fine-Tuning of Spiking Transformers",
-      "url": "https://arxiv.org/abs/2608.21223v1",
-      "reason": "only generic AI vocabulary matched (neural network), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-08-24T09:07:42.019Z",
       "cycleId": "02d8a3d5-03f8-41f9-8ee0-182995431e21"
