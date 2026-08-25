@@ -1,13 +1,22 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49427509",
+      "title": "Alabama Investigates OpenAI on HuggingFace Hacking Incident",
+      "url": "https://news.bloomberglaw.com/privacy-and-data-security/alabama-investigates-openai-following-rogue-ai-hacking-incident",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-25T01:55:52.979Z",
+      "cycleId": "eb2fe82c-6d63-40ba-98ed-7e57b60e7097"
+    },
+    {
       "id": "hackernews:49409089",
       "title": "IETF Publication- Closing Apple-Siri EU Deadlock Without Sacrificing Security",
       "url": "https://datatracker.ietf.org/doc/html/draft-das-execution-finality-ai-interoperability-00",
       "reason": "same story as \"IETF Publication- Closing Apple-Siri EU Deadlock Without Sacrificing Security\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-24T22:47:03.436Z",
-      "cycleId": "c706031b-12c9-4019-9fed-d3092892534d"
+      "rejectedAt": "2026-08-25T01:55:52.979Z",
+      "cycleId": "eb2fe82c-6d63-40ba-98ed-7e57b60e7097"
     },
     {
       "id": "hackernews:49405405",
@@ -1868,15 +1877,6 @@
       "title": "Z.ai Security Disclosure",
       "url": "https://cvd.z.ai",
       "reason": "covered in an earlier cycle; the feed does not repeat itself",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-16T18:49:53.533Z",
-      "cycleId": "e6d32462-ff78-4ad6-98e1-4fceb81e5f9a"
-    },
-    {
-      "id": "arxiv:2608.13560v1",
-      "title": "AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design",
-      "url": "https://arxiv.org/abs/2608.13560v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-08-16T18:49:53.533Z",
       "cycleId": "e6d32462-ff78-4ad6-98e1-4fceb81e5f9a"
