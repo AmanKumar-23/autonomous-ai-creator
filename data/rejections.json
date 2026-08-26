@@ -1,13 +1,22 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49429118",
+      "title": "Darkbloom (decentralized AI inference on Macs)-community security audit findings",
+      "url": "https://github.com/Layr-Labs/d-inference/issues/705",
+      "reason": "already covered: memory recalls \"50 Open Source Projects Reveal AI Security Gaps offers data-driven findings\"",
+      "stage": "editor",
+      "rejectedAt": "2026-08-26T02:01:18.092Z",
+      "cycleId": "47528409-4cbf-49cf-aebc-68d4aba02d27"
+    },
+    {
       "id": "hackernews:49440805",
       "title": "Show HN: Ecdeos – P2P Web/Native Distributed OS on Entity Core Protocol",
       "url": "https://ecdeos.org",
       "reason": "only generic AI vocabulary matched (research), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-25T22:48:22.820Z",
-      "cycleId": "3d9d262b-89a4-4fb1-8fe2-e00520a685a3"
+      "rejectedAt": "2026-08-26T02:01:18.092Z",
+      "cycleId": "47528409-4cbf-49cf-aebc-68d4aba02d27"
     },
     {
       "id": "hackernews:49435251",
@@ -15,8 +24,8 @@
       "url": "https://www.learnfrom.co/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-25T22:48:22.820Z",
-      "cycleId": "3d9d262b-89a4-4fb1-8fe2-e00520a685a3"
+      "rejectedAt": "2026-08-26T02:01:18.092Z",
+      "cycleId": "47528409-4cbf-49cf-aebc-68d4aba02d27"
     },
     {
       "id": "hackernews:49427509",
@@ -24,8 +33,8 @@
       "url": "https://news.bloomberglaw.com/privacy-and-data-security/alabama-investigates-openai-following-rogue-ai-hacking-incident",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-25T22:48:22.820Z",
-      "cycleId": "3d9d262b-89a4-4fb1-8fe2-e00520a685a3"
+      "rejectedAt": "2026-08-26T02:01:18.092Z",
+      "cycleId": "47528409-4cbf-49cf-aebc-68d4aba02d27"
     },
     {
       "id": "hackernews:49435908",
@@ -33,8 +42,8 @@
       "url": "https://www.zeroroot.ai",
       "reason": "same story as \"Show HN: Gibson ADK and Zero Trust Runtime\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-25T22:48:22.820Z",
-      "cycleId": "3d9d262b-89a4-4fb1-8fe2-e00520a685a3"
+      "rejectedAt": "2026-08-26T02:01:18.092Z",
+      "cycleId": "47528409-4cbf-49cf-aebc-68d4aba02d27"
     },
     {
       "id": "hackernews:49429118",
