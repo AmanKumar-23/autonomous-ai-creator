@@ -1,6 +1,22 @@
 {
   "cycles": [
     {
+      "id": "1035d9ba-cbcb-498b-8cea-f42cdad3e7e5",
+      "startedAt": "2026-08-29T16:46:23.854Z",
+      "finishedAt": "2026-08-29T16:46:32.739Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 45,
+      "kept": 11,
+      "dropped": 34,
+      "failures": [],
+      "memory": {
+        "available": false,
+        "failures": 11
+      }
+    },
+    {
       "id": "7a0220ce-a4bd-4f9f-b1e5-3938ace95718",
       "startedAt": "2026-08-29T11:09:57.355Z",
       "finishedAt": "2026-08-29T11:10:07.006Z",
@@ -3019,18 +3035,6 @@
       "id": "1ef2b27b-30df-4330-ab67-3e782d9fa804",
       "startedAt": "2026-08-10T13:48:29.999Z",
       "finishedAt": "2026-08-10T13:48:30.007Z",
-      "status": "not-initialized",
-      "reason": "No initialized agent in data/state.json, so nothing was published. The agent waits for POST /api/agent/init.",
-      "domain": null,
-      "discovered": 0,
-      "kept": 0,
-      "dropped": 0,
-      "failures": []
-    },
-    {
-      "id": "ab3fddca-597d-4fa4-a609-22a8775b493d",
-      "startedAt": "2026-08-10T11:28:32.630Z",
-      "finishedAt": "2026-08-10T11:28:32.635Z",
       "status": "not-initialized",
       "reason": "No initialized agent in data/state.json, so nothing was published. The agent waits for POST /api/agent/init.",
       "domain": null,
