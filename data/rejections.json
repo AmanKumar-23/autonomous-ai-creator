@@ -6,8 +6,8 @@
       "url": "https://securitycryptographywhatever.com/2026/08/26/ai-lattice-proofs-with-chris-peikert/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-29T20:59:03.912Z",
-      "cycleId": "93d775fa-7296-4fdd-aec6-0633df480b2b"
+      "rejectedAt": "2026-08-30T00:25:23.528Z",
+      "cycleId": "f765d799-b551-455f-b136-4691a0639abb"
     },
     {
       "id": "hackernews:49486870",
@@ -15,8 +15,8 @@
       "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility-ai-agent",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-29T20:59:03.912Z",
-      "cycleId": "93d775fa-7296-4fdd-aec6-0633df480b2b"
+      "rejectedAt": "2026-08-30T00:25:23.528Z",
+      "cycleId": "f765d799-b551-455f-b136-4691a0639abb"
     },
     {
       "id": "hackernews:49485447",
@@ -24,8 +24,17 @@
       "url": "https://www.ibtimes.com/anthropic-just-beat-pentagon-court-judge-said-national-security-was-used-punish-its-ai-rules-3806895",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-29T20:59:03.912Z",
-      "cycleId": "93d775fa-7296-4fdd-aec6-0633df480b2b"
+      "rejectedAt": "2026-08-30T00:25:23.528Z",
+      "cycleId": "f765d799-b551-455f-b136-4691a0639abb"
+    },
+    {
+      "id": "hackernews:49494097",
+      "title": "Show HN: VibeGuard – security linter for AI-generated code",
+      "url": "https://github.com/zeroFhacker/vibeguard",
+      "reason": "same story as \"Show HN: VibeGuard – security linter for AI-generated code\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-08-30T00:25:23.528Z",
+      "cycleId": "f765d799-b551-455f-b136-4691a0639abb"
     },
     {
       "id": "hackernews:49490082",
@@ -33,8 +42,8 @@
       "url": "https://uwaterloo.ca/news/media/major-security-weaknesses-found-leading-open-ai-models",
       "reason": "same story as \"Major security weaknesses found in leading open AI models\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-29T20:59:03.912Z",
-      "cycleId": "93d775fa-7296-4fdd-aec6-0633df480b2b"
+      "rejectedAt": "2026-08-30T00:25:23.528Z",
+      "cycleId": "f765d799-b551-455f-b136-4691a0639abb"
     },
     {
       "id": "hackernews:49487773",
@@ -42,8 +51,8 @@
       "url": "https://www.truefoundry.com/blog/llm-agent-security-runtime-control-planes",
       "reason": "same story as \"Agent Security Is a Systems Problem: What 247 Papers Say About Secure AI Agents\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-29T20:59:03.912Z",
-      "cycleId": "93d775fa-7296-4fdd-aec6-0633df480b2b"
+      "rejectedAt": "2026-08-30T00:25:23.528Z",
+      "cycleId": "f765d799-b551-455f-b136-4691a0639abb"
     },
     {
       "id": "hackernews:49479349",
@@ -51,8 +60,8 @@
       "url": "https://grith.ai/blog/grith-is-live",
       "reason": "same story as \"Grith is live – security proxy for AI coding agents\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-08-29T20:59:03.912Z",
-      "cycleId": "93d775fa-7296-4fdd-aec6-0633df480b2b"
+      "rejectedAt": "2026-08-30T00:25:23.528Z",
+      "cycleId": "f765d799-b551-455f-b136-4691a0639abb"
     },
     {
       "id": "arxiv:2608.27454v1",
@@ -1859,15 +1868,6 @@
       "title": "Pre-Compiled Pipeline Shards for Distributed LLM Inference on Intel AI PC Fleets",
       "url": "https://arxiv.org/abs/2608.19147v1",
       "reason": "only generic AI vocabulary matched (ai, model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-20T22:48:13.975Z",
-      "cycleId": "c16d2b80-82a8-47a4-8d00-fe915c764c00"
-    },
-    {
-      "id": "arxiv:2608.19141v1",
-      "title": "Geometric Iterative Retrieval for Neural Audio Codec Resynthesis",
-      "url": "https://arxiv.org/abs/2608.19141v1",
-      "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
       "rejectedAt": "2026-08-20T22:48:13.975Z",
       "cycleId": "c16d2b80-82a8-47a4-8d00-fe915c764c00"
