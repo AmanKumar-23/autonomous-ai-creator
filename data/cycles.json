@@ -1,6 +1,28 @@
 {
   "cycles": [
     {
+      "id": "70ae0881-490c-4492-8ba3-9b4ae313436e",
+      "startedAt": "2026-09-03T00:20:00.891Z",
+      "finishedAt": "2026-09-03T00:20:39.874Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 32,
+      "kept": 8,
+      "dropped": 24,
+      "failures": [
+        {
+          "source": "arxiv",
+          "error": "timeout after 15000ms",
+          "attempts": 2
+        }
+      ],
+      "memory": {
+        "available": false,
+        "failures": 8
+      }
+    },
+    {
       "id": "edbf36d9-bdea-4491-96ed-dabe05638bbc",
       "startedAt": "2026-09-02T21:07:04.921Z",
       "finishedAt": "2026-09-02T21:07:13.781Z",
@@ -3112,18 +3134,6 @@
       "id": "82d95c25-1068-4f0c-bff1-6ceb3f58732e",
       "startedAt": "2026-08-12T09:34:02.592Z",
       "finishedAt": "2026-08-12T09:34:02.599Z",
-      "status": "not-initialized",
-      "reason": "No initialized agent in data/state.json, so nothing was published. The agent waits for POST /api/agent/init.",
-      "domain": null,
-      "discovered": 0,
-      "kept": 0,
-      "dropped": 0,
-      "failures": []
-    },
-    {
-      "id": "f2d279ca-f78b-4613-b71d-75fb2c0c0b38",
-      "startedAt": "2026-08-12T07:55:47.313Z",
-      "finishedAt": "2026-08-12T07:55:47.317Z",
       "status": "not-initialized",
       "reason": "No initialized agent in data/state.json, so nothing was published. The agent waits for POST /api/agent/init.",
       "domain": null,

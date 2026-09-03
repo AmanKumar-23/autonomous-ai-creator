@@ -1,13 +1,13 @@
 {
   "rejections": [
     {
-      "id": "arxiv:2609.01604v1",
-      "title": "Beyond Scores: Understanding LLM-as-a-Judge Mechanisms in Summarization Evaluation",
-      "url": "https://arxiv.org/abs/2609.01604v1",
-      "reason": "not read this cycle: ranked 13 of 13 by the pre-filter, below the top 12 the editor reviews",
-      "stage": "editor",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "id": "hackernews:49543923",
+      "title": "Did Vibe Coders win? Is this our end?",
+      "url": "https://news.ycombinator.com/item?id=49543923",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49540094",
@@ -15,8 +15,8 @@
       "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49533331",
@@ -24,8 +24,8 @@
       "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49520813",
@@ -33,8 +33,8 @@
       "url": "https://www.wired.com/story/security-news-this-week-the-cybersecurity-apocalypse-is-coming-in-months-ai-giants-warn/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49518683",
@@ -42,8 +42,8 @@
       "url": "https://zeroquarry.com/research/security-vulnerabilities-in-ai-reviewed-code/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49518593",
@@ -51,8 +51,8 @@
       "url": "https://meelang.com/",
       "reason": "only generic AI vocabulary matched (ai, research), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49517916",
@@ -60,8 +60,8 @@
       "url": "https://github.com/MartinCrespoC/Security-Team---Workspace-",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49517740",
@@ -69,8 +69,8 @@
       "url": "https://www.seatlr.com/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49541714",
@@ -78,8 +78,8 @@
       "url": "https://www.schneier.com/blog/archives/2026/09/ai-agents-are-now-emailing-me-with-their-security-concerns.html",
       "reason": "same story as \"\"AI Agents Are Now Emailing Me with Their Security Concerns\"\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49540177",
@@ -87,8 +87,8 @@
       "url": "https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/",
       "reason": "same story as \"OWASP Top for Agentic Applications – The Benchmark for Agentic Security\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49534487",
@@ -96,8 +96,8 @@
       "url": "https://github.com/zeroFhacker/vibeguard",
       "reason": "same story as \"VibeGuard – security linter for AI-generated code\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49532462",
@@ -105,8 +105,8 @@
       "url": "https://www.theguardian.com/australia-news/2026/sep/02/we-have-had-enough-thousands-of-staff-at-the-university-of-sydney-walk-off-the-job-over-ai-job-security",
       "reason": "same story as \"Thousands of University of Sydney staff on strike over AI and job security\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49528570",
@@ -114,8 +114,8 @@
       "url": "https://bartholomew.info",
       "reason": "same story as \"In-memory security gate for autonomous AI agent tools\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-02T21:07:13.775Z",
-      "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
     },
     {
       "id": "hackernews:49523190",
@@ -123,6 +123,15 @@
       "url": "https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/",
       "reason": "same story as \"Instinct's powerful AI assistant is raising privacy and security concerns\" from hackernews",
       "stage": "prefilter",
+      "rejectedAt": "2026-09-03T00:20:39.869Z",
+      "cycleId": "70ae0881-490c-4492-8ba3-9b4ae313436e"
+    },
+    {
+      "id": "arxiv:2609.01604v1",
+      "title": "Beyond Scores: Understanding LLM-as-a-Judge Mechanisms in Summarization Evaluation",
+      "url": "https://arxiv.org/abs/2609.01604v1",
+      "reason": "not read this cycle: ranked 13 of 13 by the pre-filter, below the top 12 the editor reviews",
+      "stage": "editor",
       "rejectedAt": "2026-09-02T21:07:13.775Z",
       "cycleId": "edbf36d9-bdea-4491-96ed-dabe05638bbc"
     },
@@ -1895,15 +1904,6 @@
       "title": "Prime Agent: A Self-Improving RLM Harness",
       "url": "https://arxiv.org/abs/2608.23552v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-25T22:48:22.820Z",
-      "cycleId": "3d9d262b-89a4-4fb1-8fe2-e00520a685a3"
-    },
-    {
-      "id": "arxiv:2608.23551v1",
-      "title": "ConvergeFlow: Language Flow with Provable Convergence to Token Embeddings",
-      "url": "https://arxiv.org/abs/2608.23551v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-08-25T22:48:22.820Z",
       "cycleId": "3d9d262b-89a4-4fb1-8fe2-e00520a685a3"
