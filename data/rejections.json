@@ -1,6 +1,123 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49548737",
+      "title": "Requirements are intentions QA is the proof",
+      "url": "https://news.ycombinator.com/item?id=49548737",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49548304",
+      "title": "GitSpawn: Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, Grok",
+      "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49547125",
+      "title": "Anker's new MindBase is an AI-powered brain for your smart home",
+      "url": "https://www.theverge.com/tech/987936/anker-eufy-mindbase-ai-security-camera-system-matter",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49543923",
+      "title": "Did Vibe Coders win? Is this our end?",
+      "url": "https://news.ycombinator.com/item?id=49543923",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49540094",
+      "title": "Google's Fairwind Program: Cyber defense tools for trusted partners",
+      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49552687",
+      "title": "Show HN: AI Cybersecurity Awareness Game for Cybersecurity Awareness Month",
+      "url": "https://ocam.fablesecurity.com/7a573656-3fac-485c-aaa4-a1f56452539f?id=22f5effc-8f44-4d91-b2d2-0151466f8d9a",
+      "reason": "same story as \"Show HN: AI Cybersecurity Awareness Game for Cybersecurity Awareness Month\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49548892",
+      "title": "Show HN: Oconee Runtime – Policy enforcement for browser AI and coding agents",
+      "url": "https://www.oconeeruntime.com/news/policy-enforcement-for-browser-ai-and-coding-agents",
+      "reason": "same story as \"Show HN: Oconee Runtime – Policy enforcement for browser AI and coding agents\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49546822",
+      "title": "AI agents carried out every step of this ransomware attack – then left",
+      "url": "https://www.theregister.com/security/2026/09/02/ai-agents-carried-out-every-step-of-this-ransomware-attack-then-left-the-victim-an-80-page-security-audit/5294009",
+      "reason": "same story as \"AI agents carried out every step of this ransomware attack – then left\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49545513",
+      "title": "AI security that assumes the attacker has root",
+      "url": "https://thenewstack.io/tide-raziel-emergent-authority/",
+      "reason": "same story as \"AI security that assumes the attacker has root\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49541714",
+      "title": "\"AI Agents Are Now Emailing Me with Their Security Concerns\"",
+      "url": "https://www.schneier.com/blog/archives/2026/09/ai-agents-are-now-emailing-me-with-their-security-concerns.html",
+      "reason": "same story as \"\"AI Agents Are Now Emailing Me with Their Security Concerns\"\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49540177",
+      "title": "OWASP Top for Agentic Applications – The Benchmark for Agentic Security",
+      "url": "https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/",
+      "reason": "same story as \"OWASP Top for Agentic Applications – The Benchmark for Agentic Security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49534487",
+      "title": "VibeGuard – security linter for AI-generated code",
+      "url": "https://github.com/zeroFhacker/vibeguard",
+      "reason": "same story as \"VibeGuard – security linter for AI-generated code\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
+      "id": "hackernews:49532462",
+      "title": "Thousands of University of Sydney staff on strike over AI and job security",
+      "url": "https://www.theguardian.com/australia-news/2026/sep/02/we-have-had-enough-thousands-of-staff-at-the-university-of-sydney-walk-off-the-job-over-ai-job-security",
+      "reason": "same story as \"Thousands of University of Sydney staff on strike over AI and job security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-04T00:16:37.078Z",
+      "cycleId": "ebdc8f07-77b8-48ce-af64-e3926c624594"
+    },
+    {
       "id": "arxiv:2609.02880v1",
       "title": "Overcoming the Randomness-Utility Trade-off in Answering Differentially Private Linear Queries",
       "url": "https://arxiv.org/abs/2609.02880v1",
@@ -33,123 +150,6 @@
       "url": "https://bartholomew.info",
       "reason": "not read this cycle: ranked 16 of 16 by the pre-filter, below the top 12 the editor reviews",
       "stage": "editor",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49548737",
-      "title": "Requirements are intentions QA is the proof",
-      "url": "https://news.ycombinator.com/item?id=49548737",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49548304",
-      "title": "GitSpawn: Flaw Lets Untrusted Repos Run Code in Claude Code, Codex, Cursor, Grok",
-      "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49547125",
-      "title": "Anker's new MindBase is an AI-powered brain for your smart home",
-      "url": "https://www.theverge.com/tech/987936/anker-eufy-mindbase-ai-security-camera-system-matter",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49543923",
-      "title": "Did Vibe Coders win? Is this our end?",
-      "url": "https://news.ycombinator.com/item?id=49543923",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49540094",
-      "title": "Google's Fairwind Program: Cyber defense tools for trusted partners",
-      "url": "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49552687",
-      "title": "Show HN: AI Cybersecurity Awareness Game for Cybersecurity Awareness Month",
-      "url": "https://ocam.fablesecurity.com/7a573656-3fac-485c-aaa4-a1f56452539f?id=22f5effc-8f44-4d91-b2d2-0151466f8d9a",
-      "reason": "same story as \"Show HN: AI Cybersecurity Awareness Game for Cybersecurity Awareness Month\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49548892",
-      "title": "Show HN: Oconee Runtime – Policy enforcement for browser AI and coding agents",
-      "url": "https://www.oconeeruntime.com/news/policy-enforcement-for-browser-ai-and-coding-agents",
-      "reason": "same story as \"Show HN: Oconee Runtime – Policy enforcement for browser AI and coding agents\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49546822",
-      "title": "AI agents carried out every step of this ransomware attack – then left",
-      "url": "https://www.theregister.com/security/2026/09/02/ai-agents-carried-out-every-step-of-this-ransomware-attack-then-left-the-victim-an-80-page-security-audit/5294009",
-      "reason": "same story as \"AI agents carried out every step of this ransomware attack – then left\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49545513",
-      "title": "AI security that assumes the attacker has root",
-      "url": "https://thenewstack.io/tide-raziel-emergent-authority/",
-      "reason": "same story as \"AI security that assumes the attacker has root\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49541714",
-      "title": "\"AI Agents Are Now Emailing Me with Their Security Concerns\"",
-      "url": "https://www.schneier.com/blog/archives/2026/09/ai-agents-are-now-emailing-me-with-their-security-concerns.html",
-      "reason": "same story as \"\"AI Agents Are Now Emailing Me with Their Security Concerns\"\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49540177",
-      "title": "OWASP Top for Agentic Applications – The Benchmark for Agentic Security",
-      "url": "https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/",
-      "reason": "same story as \"OWASP Top for Agentic Applications – The Benchmark for Agentic Security\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49534487",
-      "title": "VibeGuard – security linter for AI-generated code",
-      "url": "https://github.com/zeroFhacker/vibeguard",
-      "reason": "same story as \"VibeGuard – security linter for AI-generated code\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "hackernews:49532462",
-      "title": "Thousands of University of Sydney staff on strike over AI and job security",
-      "url": "https://www.theguardian.com/australia-news/2026/sep/02/we-have-had-enough-thousands-of-staff-at-the-university-of-sydney-walk-off-the-job-over-ai-job-security",
-      "reason": "same story as \"Thousands of University of Sydney staff on strike over AI and job security\" from hackernews",
-      "stage": "prefilter",
       "rejectedAt": "2026-09-03T21:06:53.267Z",
       "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
     },
