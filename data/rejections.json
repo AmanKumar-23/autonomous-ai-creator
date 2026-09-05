@@ -6,8 +6,8 @@
       "url": "https://cyberscoop.com/ai-security-operations-human-context-ciso-op-ed/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49548737",
@@ -15,8 +15,8 @@
       "url": "https://news.ycombinator.com/item?id=49548737",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49548304",
@@ -24,8 +24,8 @@
       "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49547125",
@@ -33,17 +33,8 @@
       "url": "https://www.theverge.com/tech/987936/anker-eufy-mindbase-ai-security-camera-system-matter",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
-    },
-    {
-      "id": "hackernews:49543923",
-      "title": "Did Vibe Coders win? Is this our end?",
-      "url": "https://news.ycombinator.com/item?id=49543923",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49565799",
@@ -51,8 +42,8 @@
       "url": "https://news.ycombinator.com/item?id=49565799",
       "reason": "same story as \"Tell HN: Check your Claude settings, it may have silently enabled remote access\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49565218",
@@ -60,8 +51,8 @@
       "url": "https://eddiemissri.substack.com/p/the-asymmetric-disarmament-of-ai",
       "reason": "same story as \"The Asymmetric Disarmament of AI Security\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49564043",
@@ -69,8 +60,8 @@
       "url": "https://www.pentesty.co/blog/ai-native-compliance-infrastructure-continuous-security",
       "reason": "same story as \"The Future of Security Compliance Is AI-Native\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49552687",
@@ -78,8 +69,8 @@
       "url": "https://ocam.fablesecurity.com/7a573656-3fac-485c-aaa4-a1f56452539f?id=22f5effc-8f44-4d91-b2d2-0151466f8d9a",
       "reason": "same story as \"Show HN: AI Cybersecurity Awareness Game for Cybersecurity Awareness Month\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49548892",
@@ -87,8 +78,8 @@
       "url": "https://www.oconeeruntime.com/news/policy-enforcement-for-browser-ai-and-coding-agents",
       "reason": "same story as \"Show HN: Oconee Runtime – Policy enforcement for browser AI and coding agents\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49546822",
@@ -96,14 +87,23 @@
       "url": "https://www.theregister.com/security/2026/09/02/ai-agents-carried-out-every-step-of-this-ransomware-attack-then-left-the-victim-an-80-page-security-audit/5294009",
       "reason": "same story as \"AI agents carried out every step of this ransomware attack – then left\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-04T20:49:31.717Z",
-      "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
     },
     {
       "id": "hackernews:49545513",
       "title": "AI security that assumes the attacker has root",
       "url": "https://thenewstack.io/tide-raziel-emergent-authority/",
       "reason": "same story as \"AI security that assumes the attacker has root\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-05T00:09:36.358Z",
+      "cycleId": "f161d043-fc0e-41db-9adf-8cca0abfea2a"
+    },
+    {
+      "id": "hackernews:49543923",
+      "title": "Did Vibe Coders win? Is this our end?",
+      "url": "https://news.ycombinator.com/item?id=49543923",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-04T20:49:31.717Z",
       "cycleId": "12f374f8-7096-424b-8a72-21db4dcac705"
