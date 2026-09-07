@@ -1,6 +1,22 @@
 {
   "cycles": [
     {
+      "id": "f95c1db5-7d2b-4936-a623-7b6f625af808",
+      "startedAt": "2026-09-07T12:43:20.553Z",
+      "finishedAt": "2026-09-07T12:43:30.442Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 43,
+      "kept": 13,
+      "dropped": 30,
+      "failures": [],
+      "memory": {
+        "available": false,
+        "failures": 13
+      }
+    },
+    {
       "id": "dc494dc9-eb31-48ec-86b2-34d091ca2927",
       "startedAt": "2026-09-07T04:50:48.603Z",
       "finishedAt": "2026-09-07T04:50:57.497Z",
@@ -3197,23 +3213,6 @@
       "discovered": 47,
       "kept": 2,
       "dropped": 45,
-      "failures": [],
-      "provider": "groq:llama-3.3-70b-versatile",
-      "memory": {
-        "available": true,
-        "failures": 0
-      }
-    },
-    {
-      "id": "2756606f-1342-4a59-9a3b-183e23a71c2b",
-      "startedAt": "2026-08-14T11:11:19.578Z",
-      "finishedAt": "2026-08-14T11:11:24.937Z",
-      "status": "no-candidates",
-      "reason": "The editor reviewed 2 candidate(s) and rejected all of them. Publishing nothing is preferable to publishing filler.",
-      "domain": "AI Security",
-      "discovered": 49,
-      "kept": 2,
-      "dropped": 47,
       "failures": [],
       "provider": "groq:llama-3.3-70b-versatile",
       "memory": {
