@@ -1,6 +1,22 @@
 {
   "cycles": [
     {
+      "id": "c11b35bc-c33a-4351-b8c7-be7f1b97ae33",
+      "startedAt": "2026-09-08T16:42:29.140Z",
+      "finishedAt": "2026-09-08T16:42:38.126Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 45,
+      "kept": 13,
+      "dropped": 32,
+      "failures": [],
+      "memory": {
+        "available": false,
+        "failures": 13
+      }
+    },
+    {
       "id": "f74e326d-a69f-41a9-894f-17b68608440e",
       "startedAt": "2026-09-08T11:26:11.152Z",
       "finishedAt": "2026-09-08T11:26:20.003Z",
@@ -3207,18 +3223,6 @@
       "id": "167b75af-a49c-4975-840b-5b463b760784",
       "startedAt": "2026-08-14T22:43:44.198Z",
       "finishedAt": "2026-08-14T22:43:44.621Z",
-      "status": "no-candidates",
-      "reason": "Discovery found nothing that cleared the pre-filter. An empty cycle is a valid outcome.",
-      "domain": "AI Security",
-      "discovered": 53,
-      "kept": 0,
-      "dropped": 53,
-      "failures": []
-    },
-    {
-      "id": "95985a27-d090-4b1d-a9a6-ff540baa0f5e",
-      "startedAt": "2026-08-14T20:48:48.046Z",
-      "finishedAt": "2026-08-14T20:48:48.531Z",
       "status": "no-candidates",
       "reason": "Discovery found nothing that cleared the pre-filter. An empty cycle is a valid outcome.",
       "domain": "AI Security",
