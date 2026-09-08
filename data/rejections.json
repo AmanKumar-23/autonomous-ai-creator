@@ -1,6 +1,78 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49589674",
+      "title": "Security vulnerabilities of AI data centers flagged at intelligence hearing",
+      "url": "https://insidecybersecurity.com/daily-news/security-vulnerabilities-ai-data-centers-flagged-house-intelligence-hearing",
+      "reason": "already covered: memory recalls \"50 Open Source Projects Reveal AI Security Gaps is published because it provides insights extending beyond previous coverage of AI vulnerabilities\"",
+      "stage": "editor",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
+      "id": "hackernews:49598822",
+      "title": "Capping bug bounty submissions is the wrong response in the AI era",
+      "url": "https://9to5mac.com/2026/09/05/capping-bug-bounty-submissions-is-the-wrong-response-in-the-ai-era-of-security-threats/",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
+      "id": "hackernews:49583757",
+      "title": "Ask HN: Do you route only certain websites through a VPN?",
+      "url": "https://news.ycombinator.com/item?id=49583757",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
+      "id": "hackernews:49604092",
+      "title": "ASCII smuggling crosses over from AI prompt injection to phishing evasion",
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/09/03/ascii-smuggling-crosses-over-from-ai-prompt-injection-to-phishing-evasion/",
+      "reason": "same story as \"ASCII smuggling crosses over from AI prompt injection to phishing evasion\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
+      "id": "hackernews:49596428",
+      "title": "Ask HN: How to roll out Agents for knowledge workers?",
+      "url": "https://news.ycombinator.com/item?id=49596428",
+      "reason": "same story as \"Ask HN: How to roll out Agents for knowledge workers?\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
+      "id": "hackernews:49591901",
+      "title": "Have the frontier labs mixed up AI safety and security?",
+      "url": "https://martinalderson.com/posts/ai-safety-vs-security/",
+      "reason": "same story as \"Have the frontier labs mixed up AI safety and security?\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
+      "id": "hackernews:49591547",
+      "title": "Emma: The GP's AI Receptionist doesn't understand Yorkshire or security",
+      "url": "https://floorjellyboot.infinityfree.io/?u=/2026/09/05/emma-the-gps-ai-receptionist-doesnt-understand-yorkshire-or-security/",
+      "reason": "same story as \"Emma: The GP's AI Receptionist doesn't understand Yorkshire or security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
+      "id": "hackernews:49586069",
+      "title": "Ask HN: Are we normalizing surveillance in the name of safety?",
+      "url": "https://news.ycombinator.com/item?id=49586069",
+      "reason": "same story as \"Ask HN: Are we normalizing surveillance in the name of safety?\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-08T04:47:15.615Z",
+      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
+    },
+    {
       "id": "arxiv:2609.05340v1",
       "title": "Trust-Aware Adaptive Disclosure for Inference Privacy Preservation in Multi-Agent Networks",
       "url": "https://arxiv.org/abs/2609.05340v1",
@@ -10,64 +82,10 @@
       "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
     },
     {
-      "id": "hackernews:49598822",
-      "title": "Capping bug bounty submissions is the wrong response in the AI era",
-      "url": "https://9to5mac.com/2026/09/05/capping-bug-bounty-submissions-is-the-wrong-response-in-the-ai-era-of-security-threats/",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-07T22:52:31.897Z",
-      "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
-    },
-    {
-      "id": "hackernews:49583757",
-      "title": "Ask HN: Do you route only certain websites through a VPN?",
-      "url": "https://news.ycombinator.com/item?id=49583757",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-07T22:52:31.897Z",
-      "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
-    },
-    {
-      "id": "hackernews:49596428",
-      "title": "Ask HN: How to roll out Agents for knowledge workers?",
-      "url": "https://news.ycombinator.com/item?id=49596428",
-      "reason": "same story as \"Ask HN: How to roll out Agents for knowledge workers?\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-07T22:52:31.897Z",
-      "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
-    },
-    {
-      "id": "hackernews:49591901",
-      "title": "Have the frontier labs mixed up AI safety and security?",
-      "url": "https://martinalderson.com/posts/ai-safety-vs-security/",
-      "reason": "same story as \"Have the frontier labs mixed up AI safety and security?\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-07T22:52:31.897Z",
-      "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
-    },
-    {
-      "id": "hackernews:49591547",
-      "title": "Emma: The GP's AI Receptionist doesn't understand Yorkshire or security",
-      "url": "https://floorjellyboot.infinityfree.io/?u=/2026/09/05/emma-the-gps-ai-receptionist-doesnt-understand-yorkshire-or-security/",
-      "reason": "same story as \"Emma: The GP's AI Receptionist doesn't understand Yorkshire or security\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-07T22:52:31.897Z",
-      "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
-    },
-    {
       "id": "hackernews:49589674",
       "title": "Security vulnerabilities of AI data centers flagged at intelligence hearing",
       "url": "https://insidecybersecurity.com/daily-news/security-vulnerabilities-ai-data-centers-flagged-house-intelligence-hearing",
       "reason": "same story as \"Security vulnerabilities of AI data centers flagged at intelligence hearing\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-07T22:52:31.897Z",
-      "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
-    },
-    {
-      "id": "hackernews:49586069",
-      "title": "Ask HN: Are we normalizing surveillance in the name of safety?",
-      "url": "https://news.ycombinator.com/item?id=49586069",
-      "reason": "same story as \"Ask HN: Are we normalizing surveillance in the name of safety?\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-09-07T22:52:31.897Z",
       "cycleId": "7d699fc6-2edb-4c3c-8f3f-91bd48bc1e9b"
@@ -1904,15 +1922,6 @@
       "title": "AI Lattice Proofs with Chris Peikert",
       "url": "https://securitycryptographywhatever.com/2026/08/26/ai-lattice-proofs-with-chris-peikert/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-08-31T14:01:27.256Z",
-      "cycleId": "bfc7c6e2-9411-491d-89cc-6156d0b31914"
-    },
-    {
-      "id": "hackernews:49490082",
-      "title": "Major security weaknesses found in leading open AI models",
-      "url": "https://uwaterloo.ca/news/media/major-security-weaknesses-found-leading-open-ai-models",
-      "reason": "same story as \"Major security weaknesses found in leading open AI models\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-08-31T14:01:27.256Z",
       "cycleId": "bfc7c6e2-9411-491d-89cc-6156d0b31914"
