@@ -6,17 +6,17 @@
       "url": "https://www.theregister.com/security/2026/03/12/rogue-ai-agents-can-work-together-to-hack-systems/5228926",
       "reason": "already covered (see post fa66286c-597b-45db-980f-3f188b43c31b): memory recalls \"50 Open Source Projects Reveal AI Security Gaps is published because it provides insights extending beyond previous coverage of AI vulnerabilities\"",
       "stage": "editor",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
-      "id": "hackernews:49658682",
+      "id": "hackernews:49669161",
       "title": "Anthropic Says Iran Used Its American AI Model to Target U.S. Navy Warships",
       "url": "https://www.wsj.com/politics/national-security/anthropic-says-iran-used-its-american-ai-model-to-target-u-s-navy-warships-67583e05",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49655130",
@@ -24,8 +24,8 @@
       "url": "https://www.techtimes.co.uk/anthropic-security-strategy-threats-activism-1808634",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49651492",
@@ -33,8 +33,8 @@
       "url": "https://www.nbcnews.com/tech/security/two-ai-researchers-leave-anthropic-google-safety-concerns-rcna597086",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49644238",
@@ -42,8 +42,8 @@
       "url": "https://github.com/Kidus-M/MaruCheck",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49644175",
@@ -51,8 +51,8 @@
       "url": "https://huggingface.co/security.txt",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49649185",
@@ -60,8 +60,8 @@
       "url": "https://simonroses.com/2026/09/systems-that-can-hack-anything-an-ai-safety-resignation-read-from-the-security-chair/",
       "reason": "same story as \"An AI-Safety Resignation, Read from the Security Chair\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49642340",
@@ -69,8 +69,8 @@
       "url": "https://www.rewarelabs.com/blog/introducing-security-cards/",
       "reason": "same story as \"Show HN: Security Cards – Reducing insecure AI-generated code by 72%\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49641616",
@@ -78,8 +78,8 @@
       "url": "https://news.ycombinator.com/item?id=49641616",
       "reason": "same story as \"Ask HN: What is the proper way of preventing AI labs to use your private data\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T00:22:01.261Z",
-      "cycleId": "e5db6b27-d601-47d9-a8e1-0eaf61ac1d08"
+      "rejectedAt": "2026-09-12T07:12:44.769Z",
+      "cycleId": "998cdcb9-ed18-4e5b-8f75-d57a8758c94f"
     },
     {
       "id": "hackernews:49646376",
