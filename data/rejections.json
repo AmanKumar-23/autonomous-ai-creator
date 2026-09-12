@@ -6,8 +6,8 @@
       "url": "https://www.wsj.com/politics/national-security/anthropic-says-iran-used-its-american-ai-model-to-target-u-s-navy-warships-67583e05",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T18:28:08.701Z",
-      "cycleId": "059fa036-ccf1-4c51-bc74-e6717b41af33"
+      "rejectedAt": "2026-09-12T22:22:58.142Z",
+      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
     },
     {
       "id": "hackernews:49655130",
@@ -15,8 +15,8 @@
       "url": "https://www.techtimes.co.uk/anthropic-security-strategy-threats-activism-1808634",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T18:28:08.701Z",
-      "cycleId": "059fa036-ccf1-4c51-bc74-e6717b41af33"
+      "rejectedAt": "2026-09-12T22:22:58.142Z",
+      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
     },
     {
       "id": "hackernews:49651492",
@@ -24,8 +24,17 @@
       "url": "https://www.nbcnews.com/tech/security/two-ai-researchers-leave-anthropic-google-safety-concerns-rcna597086",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T18:28:08.701Z",
-      "cycleId": "059fa036-ccf1-4c51-bc74-e6717b41af33"
+      "rejectedAt": "2026-09-12T22:22:58.142Z",
+      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
+    },
+    {
+      "id": "hackernews:49676869",
+      "title": "When AI Safety become market capture",
+      "url": "https://news.ycombinator.com/item?id=49676869",
+      "reason": "same story as \"When AI Safety become market capture\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-12T22:22:58.142Z",
+      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
     },
     {
       "id": "hackernews:49674396",
@@ -33,8 +42,8 @@
       "url": "https://news.ycombinator.com/item?id=49674396",
       "reason": "same story as \"How SaaS startup guys get first 100 customers first, make fkn $500k ARR fast?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T18:28:08.701Z",
-      "cycleId": "059fa036-ccf1-4c51-bc74-e6717b41af33"
+      "rejectedAt": "2026-09-12T22:22:58.142Z",
+      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
     },
     {
       "id": "hackernews:49669858",
@@ -42,8 +51,8 @@
       "url": "https://news.ycombinator.com/item?id=49669858",
       "reason": "same story as \"Ask HN: What is the most overlooked risk in the AI security domain?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T18:28:08.701Z",
-      "cycleId": "059fa036-ccf1-4c51-bc74-e6717b41af33"
+      "rejectedAt": "2026-09-12T22:22:58.142Z",
+      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
     },
     {
       "id": "hackernews:49649185",
@@ -1913,15 +1922,6 @@
       "title": "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills",
       "url": "https://arxiv.org/abs/2609.02749v1",
       "reason": "only generic AI vocabulary matched (model, research), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "arxiv:2609.02746v1",
-      "title": "HiPoly: a hierarchical polymer-native AI framework for property prediction and generative design",
-      "url": "https://arxiv.org/abs/2609.02746v1",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-03T21:06:53.267Z",
       "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
