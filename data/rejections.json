@@ -1,13 +1,22 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49679685",
+      "title": "Anthropic CEO says AI swarm could 'take over the Internet' in 6-12 months",
+      "url": "https://venturebeat.com/security/anthropic-ceo-says-ai-swarm-could-take-over-the-entire-internet-in-6-12-months-commits-to-ai-slowdown-plan",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-13T04:56:13.912Z",
+      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
+    },
+    {
       "id": "hackernews:49669161",
       "title": "Anthropic Says Iran Used Its American AI Model to Target U.S. Navy Warships",
       "url": "https://www.wsj.com/politics/national-security/anthropic-says-iran-used-its-american-ai-model-to-target-u-s-navy-warships-67583e05",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T22:22:58.142Z",
-      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
+      "rejectedAt": "2026-09-13T04:56:13.912Z",
+      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
     },
     {
       "id": "hackernews:49655130",
@@ -15,17 +24,8 @@
       "url": "https://www.techtimes.co.uk/anthropic-security-strategy-threats-activism-1808634",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T22:22:58.142Z",
-      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
-    },
-    {
-      "id": "hackernews:49651492",
-      "title": "AI researchers leave Anthropic and Google: 'There are no adults in the room'",
-      "url": "https://www.nbcnews.com/tech/security/two-ai-researchers-leave-anthropic-google-safety-concerns-rcna597086",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-12T22:22:58.142Z",
-      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
+      "rejectedAt": "2026-09-13T04:56:13.912Z",
+      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
     },
     {
       "id": "hackernews:49676869",
@@ -33,8 +33,8 @@
       "url": "https://news.ycombinator.com/item?id=49676869",
       "reason": "same story as \"When AI Safety become market capture\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T22:22:58.142Z",
-      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
+      "rejectedAt": "2026-09-13T04:56:13.912Z",
+      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
     },
     {
       "id": "hackernews:49674396",
@@ -42,14 +42,23 @@
       "url": "https://news.ycombinator.com/item?id=49674396",
       "reason": "same story as \"How SaaS startup guys get first 100 customers first, make fkn $500k ARR fast?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-12T22:22:58.142Z",
-      "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
+      "rejectedAt": "2026-09-13T04:56:13.912Z",
+      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
     },
     {
       "id": "hackernews:49669858",
       "title": "Ask HN: What is the most overlooked risk in the AI security domain?",
       "url": "https://news.ycombinator.com/item?id=49669858",
       "reason": "same story as \"Ask HN: What is the most overlooked risk in the AI security domain?\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-13T04:56:13.912Z",
+      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
+    },
+    {
+      "id": "hackernews:49651492",
+      "title": "AI researchers leave Anthropic and Google: 'There are no adults in the room'",
+      "url": "https://www.nbcnews.com/tech/security/two-ai-researchers-leave-anthropic-google-safety-concerns-rcna597086",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-12T22:22:58.142Z",
       "cycleId": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0"
@@ -1913,15 +1922,6 @@
       "title": "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems",
       "url": "https://arxiv.org/abs/2609.02750v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "arxiv:2609.02749v1",
-      "title": "Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills",
-      "url": "https://arxiv.org/abs/2609.02749v1",
-      "reason": "only generic AI vocabulary matched (model, research), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-03T21:06:53.267Z",
       "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
