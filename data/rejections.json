@@ -6,8 +6,8 @@
       "url": "https://venturebeat.com/security/anthropic-ceo-says-ai-swarm-could-take-over-the-entire-internet-in-6-12-months-commits-to-ai-slowdown-plan",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-13T04:56:13.912Z",
-      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
+      "rejectedAt": "2026-09-13T11:59:45.638Z",
+      "cycleId": "7fa0b2a5-f679-4541-86f3-3d54ee72fba6"
     },
     {
       "id": "hackernews:49669161",
@@ -15,17 +15,26 @@
       "url": "https://www.wsj.com/politics/national-security/anthropic-says-iran-used-its-american-ai-model-to-target-u-s-navy-warships-67583e05",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-13T04:56:13.912Z",
-      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
+      "rejectedAt": "2026-09-13T11:59:45.638Z",
+      "cycleId": "7fa0b2a5-f679-4541-86f3-3d54ee72fba6"
     },
     {
-      "id": "hackernews:49655130",
-      "title": "Anthropic to Track Anti-AI Activists Before Crime Using Predictive Surveillance",
-      "url": "https://www.techtimes.co.uk/anthropic-security-strategy-threats-activism-1808634",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "id": "hackernews:49682988",
+      "title": "Codename MDASH brings agentic AI security scanning to US Government",
+      "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/08/codename-mdash-brings-agentic-ai-security-scanning-to-us-government/",
+      "reason": "same story as \"Codename MDASH brings agentic AI security scanning to US Government\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-13T04:56:13.912Z",
-      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
+      "rejectedAt": "2026-09-13T11:59:45.638Z",
+      "cycleId": "7fa0b2a5-f679-4541-86f3-3d54ee72fba6"
+    },
+    {
+      "id": "hackernews:49682858",
+      "title": "Security through obscurity is dead, and AI delivered the fatal blow",
+      "url": "https://www.theregister.com/security/2026/09/13/security-through-obscurity-is-dead-and-ai-delivered-the-fatal-blow/5296000",
+      "reason": "same story as \"Security through obscurity is dead, and AI delivered the fatal blow\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-13T11:59:45.638Z",
+      "cycleId": "7fa0b2a5-f679-4541-86f3-3d54ee72fba6"
     },
     {
       "id": "hackernews:49676869",
@@ -33,8 +42,8 @@
       "url": "https://news.ycombinator.com/item?id=49676869",
       "reason": "same story as \"When AI Safety become market capture\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-13T04:56:13.912Z",
-      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
+      "rejectedAt": "2026-09-13T11:59:45.638Z",
+      "cycleId": "7fa0b2a5-f679-4541-86f3-3d54ee72fba6"
     },
     {
       "id": "hackernews:49674396",
@@ -42,14 +51,23 @@
       "url": "https://news.ycombinator.com/item?id=49674396",
       "reason": "same story as \"How SaaS startup guys get first 100 customers first, make fkn $500k ARR fast?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-13T04:56:13.912Z",
-      "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
+      "rejectedAt": "2026-09-13T11:59:45.638Z",
+      "cycleId": "7fa0b2a5-f679-4541-86f3-3d54ee72fba6"
     },
     {
       "id": "hackernews:49669858",
       "title": "Ask HN: What is the most overlooked risk in the AI security domain?",
       "url": "https://news.ycombinator.com/item?id=49669858",
       "reason": "same story as \"Ask HN: What is the most overlooked risk in the AI security domain?\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-13T11:59:45.638Z",
+      "cycleId": "7fa0b2a5-f679-4541-86f3-3d54ee72fba6"
+    },
+    {
+      "id": "hackernews:49655130",
+      "title": "Anthropic to Track Anti-AI Activists Before Crime Using Predictive Surveillance",
+      "url": "https://www.techtimes.co.uk/anthropic-security-strategy-threats-activism-1808634",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-13T04:56:13.912Z",
       "cycleId": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c"
@@ -1904,24 +1922,6 @@
       "title": "Measurement-Driven Sub-Network Selection for On-Premise Retrieval-Augmented Factory Agents",
       "url": "https://arxiv.org/abs/2609.02760v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "arxiv:2609.02754v1",
-      "title": "Untangling the Mechanisms of Misleading Context in Medical Question Answering",
-      "url": "https://arxiv.org/abs/2609.02754v1",
-      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "arxiv:2609.02750v1",
-      "title": "Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems",
-      "url": "https://arxiv.org/abs/2609.02750v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-03T21:06:53.267Z",
       "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
