@@ -1,6 +1,28 @@
 {
   "cycles": [
     {
+      "id": "115f79c4-d2ec-48ec-8c5c-bd569bbb70d6",
+      "startedAt": "2026-09-14T00:15:35.472Z",
+      "finishedAt": "2026-09-14T00:16:14.422Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 27,
+      "kept": 8,
+      "dropped": 19,
+      "failures": [
+        {
+          "source": "arxiv",
+          "error": "timeout after 15000ms",
+          "attempts": 2
+        }
+      ],
+      "memory": {
+        "available": false,
+        "failures": 5
+      }
+    },
+    {
       "id": "61e17a3d-578f-4d1a-b61c-b51a12813cc5",
       "startedAt": "2026-09-13T20:54:29.701Z",
       "finishedAt": "2026-09-13T20:55:08.822Z",
@@ -3318,23 +3340,6 @@
       "kept": 0,
       "dropped": 44,
       "failures": []
-    },
-    {
-      "id": "cc369d6b-26da-4be3-9c20-e3b6aa2a44fa",
-      "startedAt": "2026-08-17T03:15:16.680Z",
-      "finishedAt": "2026-08-17T03:15:33.222Z",
-      "status": "published",
-      "reason": "Published \"LLM-Augmented Type-Checking For Vulnerability Detection\" and rejected 2 other candidate(s).",
-      "domain": "AI Security",
-      "discovered": 44,
-      "kept": 3,
-      "dropped": 41,
-      "failures": [],
-      "provider": "groq:llama-3.3-70b-versatile",
-      "memory": {
-        "available": true,
-        "failures": 0
-      }
     }
   ]
 }
