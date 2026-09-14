@@ -6,8 +6,8 @@
       "url": "https://vaaya.ai/credit-against-securities-for-agents",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49686113",
@@ -15,8 +15,8 @@
       "url": "https://www.justice.gov/usao-sdny/pr/founder-and-former-ceo-artificial-intelligence-company-pleads-guilty-securities-fraud",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49684774",
@@ -24,8 +24,8 @@
       "url": "https://www.tomshardware.com/tech-industry/cargo-thieves-rammed-security-escorts-to-hijack-ai-hardware-shipments-in-california",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49679685",
@@ -33,17 +33,17 @@
       "url": "https://venturebeat.com/security/anthropic-ceo-says-ai-swarm-could-take-over-the-entire-internet-in-6-12-months-commits-to-ai-slowdown-plan",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
-      "id": "hackernews:49669161",
-      "title": "Anthropic Says Iran Used Its American AI Model to Target U.S. Navy Warships",
-      "url": "https://www.wsj.com/politics/national-security/anthropic-says-iran-used-its-american-ai-model-to-target-u-s-navy-warships-67583e05",
-      "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
+      "id": "hackernews:49695191",
+      "title": "Show HN: AI-Native dependency upgrades through codemods",
+      "url": "https://apiweiser-cli-fe.vercel.app/",
+      "reason": "same story as \"Show HN: AI-Native dependency upgrades through codemods\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49689905",
@@ -51,8 +51,8 @@
       "url": "https://news.ycombinator.com/item?id=49689905",
       "reason": "same story as \"Ask HN: How is AI actively a threat to humanity if it's only online?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49688437",
@@ -60,8 +60,8 @@
       "url": "https://floorjellyboot.infinityfree.io/?u=/2026/09/05/emma-the-gps-ai-receptionist-doesnt-understand-yorkshire-or-security/",
       "reason": "same story as \"Emma: The GP's AI Receptionist doesn't understand Yorkshire or security\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49684180",
@@ -69,8 +69,8 @@
       "url": "https://www.theregister.com/security/2026/09/13/security-through-obscurity-is-dead-and-ai-delivered-the-fatal-blow/",
       "reason": "same story as \"Security through obscurity is dead, and AI delivered the fatal blow\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49682988",
@@ -78,8 +78,8 @@
       "url": "https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/08/codename-mdash-brings-agentic-ai-security-scanning-to-us-government/",
       "reason": "same story as \"Codename MDASH brings agentic AI security scanning to US Government\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49682858",
@@ -87,8 +87,8 @@
       "url": "https://www.theregister.com/security/2026/09/13/security-through-obscurity-is-dead-and-ai-delivered-the-fatal-blow/5296000",
       "reason": "same story as \"Security through obscurity is dead, and AI delivered the fatal blow\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49676869",
@@ -96,14 +96,23 @@
       "url": "https://news.ycombinator.com/item?id=49676869",
       "reason": "same story as \"When AI Safety become market capture\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-14T05:08:28.403Z",
-      "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
     },
     {
       "id": "hackernews:49674396",
       "title": "How SaaS startup guys get first 100 customers first, make fkn $500k ARR fast?",
       "url": "https://news.ycombinator.com/item?id=49674396",
       "reason": "same story as \"How SaaS startup guys get first 100 customers first, make fkn $500k ARR fast?\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-14T12:58:26.471Z",
+      "cycleId": "b9fba0a0-e5d3-4b7b-adae-671811f33f94"
+    },
+    {
+      "id": "hackernews:49669161",
+      "title": "Anthropic Says Iran Used Its American AI Model to Target U.S. Navy Warships",
+      "url": "https://www.wsj.com/politics/national-security/anthropic-says-iran-used-its-american-ai-model-to-target-u-s-navy-warships-67583e05",
+      "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-14T05:08:28.403Z",
       "cycleId": "8290eef6-d748-474c-8193-0416cfc4fc93"
@@ -1912,15 +1921,6 @@
       "id": "arxiv:2609.02817v1",
       "title": "Cliff: Learning Process Rewards from the First Mistake",
       "url": "https://arxiv.org/abs/2609.02817v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-03T21:06:53.267Z",
-      "cycleId": "4cf37d7a-5389-4517-ac36-30e3738c909e"
-    },
-    {
-      "id": "arxiv:2609.02804v1",
-      "title": "frb100-40 After Two Decades: An Optimality Certificate and a Preregistered Search Study",
-      "url": "https://arxiv.org/abs/2609.02804v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-03T21:06:53.267Z",
