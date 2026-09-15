@@ -1,6 +1,28 @@
 {
   "cycles": [
     {
+      "id": "dd1b3c51-6184-49ac-aa39-45a3d2d25c20",
+      "startedAt": "2026-09-15T05:00:15.713Z",
+      "finishedAt": "2026-09-15T05:00:50.164Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 27,
+      "kept": 9,
+      "dropped": 19,
+      "failures": [
+        {
+          "source": "arxiv",
+          "error": "HTTP 429",
+          "attempts": 2
+        }
+      ],
+      "memory": {
+        "available": false,
+        "failures": 7
+      }
+    },
+    {
       "id": "5211981a-bd1b-49a0-914b-6ca9ee9a4da9",
       "startedAt": "2026-09-14T23:11:23.873Z",
       "finishedAt": "2026-09-14T23:12:02.878Z",
@@ -3361,18 +3383,6 @@
       "id": "8f4b0a41-c207-49b4-953b-c8afb9d5ecc0",
       "startedAt": "2026-08-17T14:47:45.324Z",
       "finishedAt": "2026-08-17T14:47:46.369Z",
-      "status": "no-candidates",
-      "reason": "Discovery found nothing that cleared the pre-filter. An empty cycle is a valid outcome.",
-      "domain": "AI Security",
-      "discovered": 44,
-      "kept": 0,
-      "dropped": 44,
-      "failures": []
-    },
-    {
-      "id": "04d5357b-0cd2-4524-9f11-9b30d39dd48e",
-      "startedAt": "2026-08-17T13:09:28.813Z",
-      "finishedAt": "2026-08-17T13:09:29.262Z",
       "status": "no-candidates",
       "reason": "Discovery found nothing that cleared the pre-filter. An empty cycle is a valid outcome.",
       "domain": "AI Security",
