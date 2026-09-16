@@ -1,13 +1,22 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49726762",
+      "title": "US gov't orders Kalshi halt AI compute price tracker over natl security concerns",
+      "url": "https://www.semafor.com/article/09/15/2026/commerce-dept-ordered-kalshi-to-take-down-ai-compute-futures-product",
+      "reason": "already covered: memory recalls \"50 Open Source Projects Reveal AI Security Gaps is based on security concerns in open source projects\"",
+      "stage": "editor",
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
+    },
+    {
       "id": "hackernews:49729492",
       "title": "With 1 Extension: $20K in Bounties from Anthropic, Perplexity, Google, Microsoft",
       "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
     },
     {
       "id": "hackernews:49721869",
@@ -15,8 +24,8 @@
       "url": "https://news.ycombinator.com/item?id=49721869",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
     },
     {
       "id": "hackernews:49720815",
@@ -24,8 +33,8 @@
       "url": "https://github.com/alex-zaporozhan/leo",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
     },
     {
       "id": "hackernews:49719458",
@@ -33,8 +42,8 @@
       "url": "https://noma.security/noma-labs/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
     },
     {
       "id": "hackernews:49712278",
@@ -42,8 +51,44 @@
       "url": "https://withcapsule.app/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
+    },
+    {
+      "id": "hackernews:49730494",
+      "title": "Lawsuit accuses AI security company of publishing hallucinated findings",
+      "url": "https://www.theregister.com/legal/2026/07/02/startup-sues-palo-alto-networks-koi-security-saying-an-ai-hallucinated-report-falsely-linked-it-to-chinese-espionage/5266201",
+      "reason": "same story as \"Lawsuit accuses AI security company of publishing hallucinated findings\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
+    },
+    {
+      "id": "hackernews:49729203",
+      "title": "Show HN: Stopping AI agent swarms from hacking our systems",
+      "url": "https://www.inwom.com/",
+      "reason": "same story as \"Show HN: Stopping AI agent swarms from hacking our systems\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
+    },
+    {
+      "id": "hackernews:49712694",
+      "title": "VibeSafe Builder – build and launch AI apps with security checks",
+      "url": "https://vibesafebuilder.com/",
+      "reason": "same story as \"VibeSafe Builder – build and launch AI apps with security checks\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
+    },
+    {
+      "id": "hackernews:49712059",
+      "title": "The Security Risks in 100k Enterprise AI Sessions",
+      "url": "https://a16y.ai/blog/the-hidden-security-risks-in-100k-enterprise-ai-sessions",
+      "reason": "same story as \"The Security Risks in 100k Enterprise AI Sessions\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-16T21:24:18.226Z",
+      "cycleId": "97eb427f-6a37-4c20-adc7-891f993878a9"
     },
     {
       "id": "hackernews:49702339",
@@ -55,46 +100,10 @@
       "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
     },
     {
-      "id": "hackernews:49730494",
-      "title": "Lawsuit accuses AI security company of publishing hallucinated findings",
-      "url": "https://www.theregister.com/legal/2026/07/02/startup-sues-palo-alto-networks-koi-security-saying-an-ai-hallucinated-report-falsely-linked-it-to-chinese-espionage/5266201",
-      "reason": "same story as \"Lawsuit accuses AI security company of publishing hallucinated findings\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
-    },
-    {
-      "id": "hackernews:49729203",
-      "title": "Show HN: Stopping AI agent swarms from hacking our systems",
-      "url": "https://www.inwom.com/",
-      "reason": "same story as \"Show HN: Stopping AI agent swarms from hacking our systems\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
-    },
-    {
       "id": "hackernews:49726762",
       "title": "US gov't orders Kalshi halt AI compute price tracker over natl security concerns",
       "url": "https://www.semafor.com/article/09/15/2026/commerce-dept-ordered-kalshi-to-take-down-ai-compute-futures-product",
       "reason": "same story as \"US gov't orders Kalshi halt AI compute price tracker over natl security concerns\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
-    },
-    {
-      "id": "hackernews:49712694",
-      "title": "VibeSafe Builder – build and launch AI apps with security checks",
-      "url": "https://vibesafebuilder.com/",
-      "reason": "same story as \"VibeSafe Builder – build and launch AI apps with security checks\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-16T18:13:38.831Z",
-      "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
-    },
-    {
-      "id": "hackernews:49712059",
-      "title": "The Security Risks in 100k Enterprise AI Sessions",
-      "url": "https://a16y.ai/blog/the-hidden-security-risks-in-100k-enterprise-ai-sessions",
-      "reason": "same story as \"The Security Risks in 100k Enterprise AI Sessions\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-09-16T18:13:38.831Z",
       "cycleId": "f2ab751b-b4ef-468d-a404-e99e0b67e9a4"
