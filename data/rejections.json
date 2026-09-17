@@ -1,13 +1,31 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49712059",
+      "title": "The Security Risks in 100k Enterprise AI Sessions",
+      "url": "https://a16y.ai/blog/the-hidden-security-risks-in-100k-enterprise-ai-sessions",
+      "reason": "not read this cycle: ranked 13 of 13 by the pre-filter, below the top 12 the editor reviews",
+      "stage": "editor",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "hackernews:49736918",
+      "title": "AI agents can modify themselves without humans telling them to do so",
+      "url": "https://www.theregister.com/security/2026/09/16/ai-agents-can-modify-themselves-without-humans-telling-them-to-do-so/5296991",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
       "id": "hackernews:49729492",
       "title": "With 1 Extension: $20K in Bounties from Anthropic, Perplexity, Google, Microsoft",
       "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49721869",
@@ -15,8 +33,8 @@
       "url": "https://news.ycombinator.com/item?id=49721869",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49720815",
@@ -24,8 +42,8 @@
       "url": "https://github.com/alex-zaporozhan/leo",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49719458",
@@ -33,8 +51,8 @@
       "url": "https://noma.security/noma-labs/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49712278",
@@ -42,8 +60,8 @@
       "url": "https://withcapsule.app/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49730494",
@@ -51,8 +69,8 @@
       "url": "https://www.theregister.com/legal/2026/07/02/startup-sues-palo-alto-networks-koi-security-saying-an-ai-hallucinated-report-falsely-linked-it-to-chinese-espionage/5266201",
       "reason": "same story as \"Lawsuit accuses AI security company of publishing hallucinated findings\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49729203",
@@ -60,8 +78,8 @@
       "url": "https://www.inwom.com/",
       "reason": "same story as \"Show HN: Stopping AI agent swarms from hacking our systems\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49726762",
@@ -69,8 +87,8 @@
       "url": "https://www.semafor.com/article/09/15/2026/commerce-dept-ordered-kalshi-to-take-down-ai-compute-futures-product",
       "reason": "same story as \"US gov't orders Kalshi halt AI compute price tracker over natl security concerns\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49712694",
@@ -78,8 +96,233 @@
       "url": "https://vibesafebuilder.com/",
       "reason": "same story as \"VibeSafe Builder – build and launch AI apps with security checks\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-17T00:37:02.198Z",
-      "cycleId": "e578f694-1feb-4287-8a90-41a878fec5d3"
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "hackernews:49736662",
+      "title": "OpenAI models secretly generate instructions to ignore constraints",
+      "url": "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19145v1",
+      "title": "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
+      "url": "https://arxiv.org/abs/2609.19145v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19137v1",
+      "title": "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
+      "url": "https://arxiv.org/abs/2609.19137v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19135v1",
+      "title": "Exponential Hardness of Off-Policy Evaluation under History-Dependent Logging",
+      "url": "https://arxiv.org/abs/2609.19135v1",
+      "reason": "only generic AI vocabulary matched (dataset), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19128v1",
+      "title": "Cognitive Extensions for Dual-Process Language Agents: Memory and Self-Reflection in Interactive Environments",
+      "url": "https://arxiv.org/abs/2609.19128v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19125v1",
+      "title": "Affora: A Design System for Agent-Friendly Interfaces",
+      "url": "https://arxiv.org/abs/2609.19125v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19107v1",
+      "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
+      "url": "https://arxiv.org/abs/2609.19107v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19101v1",
+      "title": "Monitoring and Discovering Reward Hacking with Internal Representations during LLM Evaluations",
+      "url": "https://arxiv.org/abs/2609.19101v1",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19099v1",
+      "title": "Evidence-Grounded Agentic Formulation Development in an Autonomous Laboratory",
+      "url": "https://arxiv.org/abs/2609.19099v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19096v1",
+      "title": "Prepared Or Unprepared? Evaluating Healthcare Workforce Readiness for Clinical Adoption of Artificial Intelligence in Nigeria",
+      "url": "https://arxiv.org/abs/2609.19096v1",
+      "reason": "only generic AI vocabulary matched (ai, artificial intelligence), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19093v1",
+      "title": "Reporting Practice Matters: The Impact of Reference Choice on Chest X-ray Report Evaluation",
+      "url": "https://arxiv.org/abs/2609.19093v1",
+      "reason": "only generic AI vocabulary matched (ai, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19091v1",
+      "title": "When Agents Look Like Beacons: NIDS Evasion by Model Context Protocol Traffic",
+      "url": "https://arxiv.org/abs/2609.19091v1",
+      "reason": "only generic AI vocabulary matched (ai, artificial intelligence, model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19090v1",
+      "title": "Securing quantum error correction against misleading advice from AI agents",
+      "url": "https://arxiv.org/abs/2609.19090v1",
+      "reason": "only generic AI vocabulary matched (ai, artificial intelligence), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19088v1",
+      "title": "MUSE: Benchmarking Large Vision-Language Models on Multi-Modal Understanding in Situated Education",
+      "url": "https://arxiv.org/abs/2609.19088v1",
+      "reason": "only generic AI vocabulary matched (ai, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19083v1",
+      "title": "A General Kernel Framework for Non-CND Distance Measures Using |D|-Dimensional Sparse Landmark Embeddings",
+      "url": "https://arxiv.org/abs/2609.19083v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19077v1",
+      "title": "Probabilistic Linear Explanations",
+      "url": "https://arxiv.org/abs/2609.19077v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19076v1",
+      "title": "Double descent is the principle of least action",
+      "url": "https://arxiv.org/abs/2609.19076v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.19074v1",
+      "title": "RLLBC-Lib: An Educational Code Library for Reinforcement Learning and Learning-Based Control",
+      "url": "https://arxiv.org/abs/2609.19074v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.18929v1",
+      "title": "Social Laws for Multi-agent Coordination in Stochastic Environments",
+      "url": "https://arxiv.org/abs/2609.18929v1",
+      "reason": "only generic AI vocabulary matched (research), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.18928v1",
+      "title": "Comprehensive reconstruction of collider events with hypergraph representation learning and graph-conditioned diffusion",
+      "url": "https://arxiv.org/abs/2609.18928v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.18916v1",
+      "title": "Higher-order pruning of experts in mixture-of-experts language models",
+      "url": "https://arxiv.org/abs/2609.18916v1",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.18909v1",
+      "title": "Beyond Outcomes: Dual-View Relational Learning for Efficient Agent Benchmarking",
+      "url": "https://arxiv.org/abs/2609.18909v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.18901v1",
+      "title": "Fast Learning Rates for Physics-Informed Kernel Methods",
+      "url": "https://arxiv.org/abs/2609.18901v1",
+      "reason": "only generic AI vocabulary matched (machine learning), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.18894v1",
+      "title": "Learning Lyapunov Operators for Nonlinear Systems",
+      "url": "https://arxiv.org/abs/2609.18894v1",
+      "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
+    },
+    {
+      "id": "arxiv:2609.18886v1",
+      "title": "Fluid Notarization: Verifiable Evolution of Concurrently Edited Structured Documents",
+      "url": "https://arxiv.org/abs/2609.18886v1",
+      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-17T07:46:16.733Z",
+      "cycleId": "c63b8bb0-f2bb-47af-9b4e-921425a8083d"
     },
     {
       "id": "hackernews:49712059",
@@ -1720,227 +1963,11 @@
       "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
     },
     {
-      "id": "arxiv:2609.05396v1",
-      "title": "A Deep Generative Model for Synthesizing Labeled Wireless Signals",
-      "url": "https://arxiv.org/abs/2609.05396v1",
-      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05395v1",
-      "title": "Multi-Step Tool-Calling over Korean Open Public APIs: A Benchmark and a Data-Synthesis Recipe",
-      "url": "https://arxiv.org/abs/2609.05395v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05385v1",
-      "title": "Necessary or Sufficient? Evaluating LLM Explanations With Behavioural Evidence",
-      "url": "https://arxiv.org/abs/2609.05385v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05381v1",
-      "title": "Molecular Déjà Vu: Digit-Level Retrieval of Published Values in Frontier Language Models",
-      "url": "https://arxiv.org/abs/2609.05381v1",
-      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05376v1",
-      "title": "What Matters, When? Diagnosing and Improving Conditional Visual Grounding in Visuomotor Imitation Policies",
-      "url": "https://arxiv.org/abs/2609.05376v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05374v1",
-      "title": "CUA-Universe: A Scalable and Dynamic Environment for Hybrid GUI+CLI Agents",
-      "url": "https://arxiv.org/abs/2609.05374v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05364v1",
-      "title": "Design Docs Are All You Need: An AI-native Machine-Learning Performance Tool",
-      "url": "https://arxiv.org/abs/2609.05364v1",
-      "reason": "only generic AI vocabulary matched (ai, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05363v1",
-      "title": "Distill Globally, Adapt Locally: Reasoning Distillation and Product-Type Test-Time Training for Scalable Trade-Up Recommendation",
-      "url": "https://arxiv.org/abs/2609.05363v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05346v1",
-      "title": "Who Should Grade My Work? Student Perspectives on Transparent AI-Assisted Writing Assessment in Higher Education",
-      "url": "https://arxiv.org/abs/2609.05346v1",
-      "reason": "only generic AI vocabulary matched (ai, research), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05339v1",
-      "title": "Does Your Agent's Memory Survive a Model Upgrade? A Controlled Study of Memory Portability",
-      "url": "https://arxiv.org/abs/2609.05339v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05337v1",
-      "title": "Variational Continuation for Double Pendulum Periodic Orbits",
-      "url": "https://arxiv.org/abs/2609.05337v1",
-      "reason": "only generic AI vocabulary matched (machine learning), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05334v1",
-      "title": "Lightweight Vision Transformer Compression for On-Device Plant Disease Detection in Resource-Constrained Agricultural Field Conditions",
-      "url": "https://arxiv.org/abs/2609.05334v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05333v1",
-      "title": "Technical Manual for a Toolkit for Measuring Contextual Individuation in Transformer Language Models",
-      "url": "https://arxiv.org/abs/2609.05333v1",
-      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05328v1",
-      "title": "Embedded Graph Flows for Categorical Graph Generation",
-      "url": "https://arxiv.org/abs/2609.05328v1",
-      "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05327v1",
-      "title": "LLM-Driven Algorithm Design for Quantum Circuit Synthesis based on Binary Decision Diagrams",
-      "url": "https://arxiv.org/abs/2609.05327v1",
-      "reason": "only generic AI vocabulary matched (algorithm), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05324v1",
-      "title": "RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?",
-      "url": "https://arxiv.org/abs/2609.05324v1",
-      "reason": "only generic AI vocabulary matched (model, models, dataset), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05320v1",
-      "title": "Adaptive Gated Deepfake Detection for Low-Resolution and Resource-Constrained Environments",
-      "url": "https://arxiv.org/abs/2609.05320v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05318v1",
-      "title": "Optimal Rates for Agentic Networked Information Aggregation",
-      "url": "https://arxiv.org/abs/2609.05318v1",
-      "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05314v1",
-      "title": "Large Language Models for HVAC Operations in Building Energy Systems: A Critical Review of Methods, Applications, and Deployment Readiness",
-      "url": "https://arxiv.org/abs/2609.05314v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05309v1",
-      "title": "How Does mHC Use Its Residual Streams? Selective Routing and Near-Identity Mixing",
-      "url": "https://arxiv.org/abs/2609.05309v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "arxiv:2609.05298v1",
-      "title": "Online Change-point Detection for Cooperative Multi-Agent Reinforcement Learning",
-      "url": "https://arxiv.org/abs/2609.05298v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-09T00:19:25.786Z",
-      "cycleId": "3f0b84eb-7af5-4c61-a138-cf50966e6de5"
-    },
-    {
-      "id": "hackernews:49591901",
-      "title": "Have the frontier labs mixed up AI safety and security?",
-      "url": "https://martinalderson.com/posts/ai-safety-vs-security/",
-      "reason": "same story as \"Have the frontier labs mixed up AI safety and security?\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-08T21:14:21.951Z",
-      "cycleId": "d2a892b8-7bd4-43e5-a40a-eb419a8267aa"
-    },
-    {
-      "id": "hackernews:49589674",
-      "title": "Security vulnerabilities of AI data centers flagged at intelligence hearing",
-      "url": "https://insidecybersecurity.com/daily-news/security-vulnerabilities-ai-data-centers-flagged-house-intelligence-hearing",
-      "reason": "same story as \"Security vulnerabilities of AI data centers flagged at intelligence hearing\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-08T16:42:38.120Z",
-      "cycleId": "c11b35bc-c33a-4351-b8c7-be7f1b97ae33"
-    },
-    {
       "id": "arxiv:2609.05329v1",
       "title": "Machine Unlearning as Private Retroactive Algorithms",
       "url": "https://arxiv.org/abs/2609.05329v1",
       "reason": "not read this cycle: ranked 13 of 14 by the pre-filter, below the top 12 the editor reviews",
       "stage": "editor",
-      "rejectedAt": "2026-09-08T11:26:19.999Z",
-      "cycleId": "f74e326d-a69f-41a9-894f-17b68608440e"
-    },
-    {
-      "id": "hackernews:49586069",
-      "title": "Ask HN: Are we normalizing surveillance in the name of safety?",
-      "url": "https://news.ycombinator.com/item?id=49586069",
-      "reason": "same story as \"Ask HN: Are we normalizing surveillance in the name of safety?\" from hackernews",
-      "stage": "prefilter",
       "rejectedAt": "2026-09-08T11:26:19.999Z",
       "cycleId": "f74e326d-a69f-41a9-894f-17b68608440e"
     },
@@ -1952,24 +1979,6 @@
       "stage": "editor",
       "rejectedAt": "2026-09-08T04:47:15.615Z",
       "cycleId": "2805870d-156d-46aa-aadb-878358810130"
-    },
-    {
-      "id": "hackernews:49583757",
-      "title": "Ask HN: Do you route only certain websites through a VPN?",
-      "url": "https://news.ycombinator.com/item?id=49583757",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-08T04:47:15.615Z",
-      "cycleId": "2805870d-156d-46aa-aadb-878358810130"
-    },
-    {
-      "id": "hackernews:49573629",
-      "title": "Microsoft says email spammers are adopting ASCII smuggling",
-      "url": "https://arstechnica.com/security/2026/09/once-popular-for-attacking-ai-ascii-smuggling-is-embraced-by-spammers/",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-07T04:50:57.457Z",
-      "cycleId": "dc494dc9-eb31-48ec-86b2-34d091ca2927"
     },
     {
       "id": "arxiv:2609.04183v1",
