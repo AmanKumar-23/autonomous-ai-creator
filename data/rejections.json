@@ -6,8 +6,8 @@
       "url": "https://arstechnica.com/security/2026/09/ai-text-watermarking-can-make-models-more-vulnerable-to-adversarial-prompts/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49749997",
@@ -15,8 +15,8 @@
       "url": "https://www.lasso.security/blog/the-provenance-tax-understanding-the-impact-of-llm-watermarking-on-ai-agent-behavior",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49748868",
@@ -24,8 +24,8 @@
       "url": "https://www.theregister.com/security/2026/09/16/ai-agents-can-modify-themselves-without-humans-telling-them-to-do-so/5296991",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49743183",
@@ -33,8 +33,8 @@
       "url": "https://www.the-independent.com/tech/security/openai-chatgpt-lie-incident-ai-safety-b3051709.html",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49737804",
@@ -42,8 +42,8 @@
       "url": "https://news.ycombinator.com/item?id=49737804",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49729492",
@@ -51,8 +51,26 @@
       "url": "https://forever.security/blog/bragjack-hijacking-5-browsers-via-built-in-ai-assistants/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
+    },
+    {
+      "id": "hackernews:49754622",
+      "title": "Think Like an Attacker: CI/CD Security in the AI Era",
+      "url": "https://medium.com/@Koukyosyumei/think-like-an-attacker-ci-cd-security-in-the-ai-era-39f717f5e9cd",
+      "reason": "same story as \"Think Like an Attacker: CI/CD Security in the AI Era\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
+    },
+    {
+      "id": "hackernews:49752908",
+      "title": "What Enters Through an Image: The Blind Spot in AI Security Nobody Is Detecting",
+      "url": "https://www.cybersecurity-insiders.com/what-enters-through-an-image-the-blind-spot-in-ai-security-nobody-is-detecting/",
+      "reason": "same story as \"What Enters Through an Image: The Blind Spot in AI Security Nobody Is Detecting\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49746604",
@@ -60,8 +78,8 @@
       "url": "https://www.pentesty.co/blog/openai-safety-guardrails-ai-agent-security",
       "reason": "same story as \"OpenAI Safety Guardrails: What to Test Before Trusting an AI Agent\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49746248",
@@ -69,8 +87,8 @@
       "url": "https://www.reuters.com/world/china/us-china-security-experts-propose-nuclear-style-safeguards-ai-risks-2026-09-17/",
       "reason": "same story as \"US, China security experts propose nuclear-style safeguards for AI risks\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49743813",
@@ -78,8 +96,8 @@
       "url": "https://news.ycombinator.com/item?id=49743813",
       "reason": "same story as \"Whoever's doing OpenAI's system security is just incompetent in the worst way\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49742881",
@@ -87,8 +105,8 @@
       "url": "https://www.washingtonpost.com/technology/2026/09/17/ai-has-transformed-pentagons-aging-networks-into-national-security-risk/",
       "reason": "same story as \"AI has transformed The Pentagon's aging networks into a national security risk\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49730494",
@@ -96,8 +114,17 @@
       "url": "https://www.theregister.com/legal/2026/07/02/startup-sues-palo-alto-networks-koi-security-saying-an-ai-hallucinated-report-falsely-linked-it-to-chinese-espionage/5266201",
       "reason": "same story as \"Lawsuit accuses AI security company of publishing hallucinated findings\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
+    },
+    {
+      "id": "hackernews:49736662",
+      "title": "OpenAI models secretly generate instructions to ignore constraints",
+      "url": "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/",
+      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-18T16:30:51.779Z",
+      "cycleId": "e4c6f958-1996-4508-a3f9-c47a2e4d4480"
     },
     {
       "id": "hackernews:49729203",
@@ -113,15 +140,6 @@
       "title": "US gov't orders Kalshi halt AI compute price tracker over natl security concerns",
       "url": "https://www.semafor.com/article/09/15/2026/commerce-dept-ordered-kalshi-to-take-down-ai-compute-futures-product",
       "reason": "same story as \"US gov't orders Kalshi halt AI compute price tracker over natl security concerns\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-18T11:24:53.814Z",
-      "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
-    },
-    {
-      "id": "hackernews:49736662",
-      "title": "OpenAI models secretly generate instructions to ignore constraints",
-      "url": "https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-09-18T11:24:53.814Z",
       "cycleId": "edaf53e6-5540-47c1-99c4-2c996d3ff83c"
@@ -1936,29 +1954,11 @@
       "cycleId": "7fe6a6be-297a-4c23-957e-9f3de020eddf"
     },
     {
-      "id": "hackernews:49617938",
-      "title": "Show HN: SagaShield – ACID transactions and security guardrails for AI agents",
-      "url": "https://github.com/sebastianmechno-sys/sagashield",
-      "reason": "same story as \"Show HN: SagaShield – ACID transactions and security guardrails for AI agents\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-10T20:55:56.572Z",
-      "cycleId": "7fe6a6be-297a-4c23-957e-9f3de020eddf"
-    },
-    {
       "id": "hackernews:49616195",
       "title": "How We Built Safety into Muse by Meta",
       "url": "https://research.meta.ai/blog/security-and-safety-for-ai-agents-our-approach-with-muse",
       "reason": "not read this cycle: ranked 15 of 15 by the pre-filter, below the top 12 the editor reviews",
       "stage": "editor",
-      "rejectedAt": "2026-09-10T17:43:48.179Z",
-      "cycleId": "e8f7ba00-6a74-4dc1-9cea-7a7c672d2998"
-    },
-    {
-      "id": "hackernews:49614911",
-      "title": "OpenAI's German Wiki Hack Is Less About \"Rogue AI\" Than Failed Agent Containment",
-      "url": "https://securityboulevard.com/2026/09/openais-german-wiki-hack-is-less-about-rogue-ai-than-failed-agent-containment/",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
       "rejectedAt": "2026-09-10T17:43:48.179Z",
       "cycleId": "e8f7ba00-6a74-4dc1-9cea-7a7c672d2998"
     },
