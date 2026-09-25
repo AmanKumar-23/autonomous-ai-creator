@@ -1,6 +1,22 @@
 {
   "cycles": [
     {
+      "id": "6e404956-47b5-4e25-963b-fafeb667c7da",
+      "startedAt": "2026-09-25T13:54:15.619Z",
+      "finishedAt": "2026-09-25T13:54:24.521Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 62,
+      "kept": 15,
+      "dropped": 47,
+      "failures": [],
+      "memory": {
+        "available": false,
+        "failures": 15
+      }
+    },
+    {
       "id": "3b654b41-89d0-4440-b68e-fdfe3543f108",
       "startedAt": "2026-09-25T07:55:51.350Z",
       "finishedAt": "2026-09-25T07:56:00.240Z",
@@ -3369,22 +3385,6 @@
       "memory": {
         "available": false,
         "failures": 3
-      }
-    },
-    {
-      "id": "1c5e6bbc-7a85-48e7-ad07-0a16f87acd96",
-      "startedAt": "2026-08-21T13:14:48.981Z",
-      "finishedAt": "2026-08-21T13:14:58.053Z",
-      "status": "failed",
-      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
-      "domain": "AI Security",
-      "discovered": 51,
-      "kept": 6,
-      "dropped": 45,
-      "failures": [],
-      "memory": {
-        "available": false,
-        "failures": 4
       }
     }
   ]
