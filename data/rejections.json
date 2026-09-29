@@ -1,13 +1,31 @@
 {
   "rejections": [
     {
+      "id": "hackernews:49886609",
+      "title": "We found 24 Android vulnerabilities using our open source AI security agent",
+      "url": "https://github.blog/security/how-we-found-24-android-vulnerabilities-using-our-open-source-ai-security-agent/",
+      "reason": "already covered (see post d9942dea-f2b6-442d-b408-c283e79ea64f): memory recalls \"50 Open Source Projects Reveal AI Security Gaps is based on security concerns in open source projects\"",
+      "stage": "editor",
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
+    },
+    {
+      "id": "hackernews:49879268",
+      "title": "Show HN: Yengi, a local-first AIdevelopment environment for coding,Blender/Unity",
+      "url": "https://github.com/mdaiWorks/yengi",
+      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
+    },
+    {
       "id": "hackernews:49875060",
       "title": "Detecting Compromised AI Coding Agents with Jev and Gryph",
       "url": "https://safedep.io/ai-agent-security-jev-gryph/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-28T20:35:58.518Z",
-      "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
     },
     {
       "id": "hackernews:49864875",
@@ -15,8 +33,8 @@
       "url": "https://www.axios.com/2026/09/26/openai-anthropic-thousands-ai-security-incidents",
       "reason": "same story as \"Scoop: Top AI companies probing tens of thousands of security incidents\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-28T20:35:58.518Z",
-      "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
     },
     {
       "id": "hackernews:49879006",
@@ -24,8 +42,8 @@
       "url": "https://blogs.nvidia.com/blog/ai-security-agent-stack/",
       "reason": "same story as \"Nvidia AI Agent Safety Stack\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-28T20:35:58.518Z",
-      "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
     },
     {
       "id": "hackernews:49873303",
@@ -33,17 +51,8 @@
       "url": "https://news.ycombinator.com/item?id=49873303",
       "reason": "same story as \"Ask HN: Do you think AI agents can escape human control?\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-28T20:35:58.518Z",
-      "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
-    },
-    {
-      "id": "hackernews:49860383",
-      "title": "It's Time We Talked About AI and Software Security",
-      "url": "https://deadneurons.substack.com/p/its-time-we-talked-about-ai-and-software",
-      "reason": "same story as \"It's Time We Talked About AI and Software Security\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-28T20:35:58.518Z",
-      "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
     },
     {
       "id": "hackernews:49877515",
@@ -51,8 +60,8 @@
       "url": "https://www.openappa.com/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-28T20:35:58.518Z",
-      "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
     },
     {
       "id": "hackernews:49863790",
@@ -60,14 +69,23 @@
       "url": "https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-09-28T20:35:58.518Z",
-      "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
     },
     {
       "id": "hackernews:49862920",
       "title": "Show HN: PeerTalk.ai - Let your agent talk to a friend's agent",
       "url": "https://peertalk.ai",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-09-29T02:02:57.847Z",
+      "cycleId": "66f3b661-849a-4967-9bbe-2123793190ea"
+    },
+    {
+      "id": "hackernews:49860383",
+      "title": "It's Time We Talked About AI and Software Security",
+      "url": "https://deadneurons.substack.com/p/its-time-we-talked-about-ai-and-software",
+      "reason": "same story as \"It's Time We Talked About AI and Software Security\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-09-28T20:35:58.518Z",
       "cycleId": "bb713a85-5f72-4d15-812a-0090432a56c7"
@@ -1841,15 +1859,6 @@
       "title": "Learning to Move Cities: Deep Meta-Models and Reinforcement Policies for Calibration and Control in Urban Networks",
       "url": "https://arxiv.org/abs/2609.21945v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-09-21T23:21:17.284Z",
-      "cycleId": "c56e8823-6812-4a81-97b4-da115cce111f"
-    },
-    {
-      "id": "arxiv:2609.21944v1",
-      "title": "Guiding Agents of Quantum Games to Equilibrium using Matrix Exponential Fixed-Point Iteration",
-      "url": "https://arxiv.org/abs/2609.21944v1",
-      "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
       "rejectedAt": "2026-09-21T23:21:17.284Z",
       "cycleId": "c56e8823-6812-4a81-97b4-da115cce111f"
