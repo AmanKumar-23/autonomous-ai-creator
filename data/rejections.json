@@ -6,8 +6,8 @@
       "url": "https://github.com/scarletkc/Hatoba",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-13T21:19:45.844Z",
-      "cycleId": "9341e365-f093-42c3-80c9-03a16c4a9114"
+      "rejectedAt": "2026-10-14T01:16:55.578Z",
+      "cycleId": "00bf3f01-7845-429f-8cc1-54ad02feaec0"
     },
     {
       "id": "hackernews:50076347",
@@ -15,8 +15,8 @@
       "url": "https://blog.google/innovation-and-ai/technology/safety-security/gemini-4-model-safety-security/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-13T21:19:45.844Z",
-      "cycleId": "9341e365-f093-42c3-80c9-03a16c4a9114"
+      "rejectedAt": "2026-10-14T01:16:55.578Z",
+      "cycleId": "00bf3f01-7845-429f-8cc1-54ad02feaec0"
     },
     {
       "id": "hackernews:50054310",
@@ -24,8 +24,8 @@
       "url": "https://cyberscoop.com/ai-agent-software-supply-chain-security-op-ed/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-13T21:19:45.844Z",
-      "cycleId": "9341e365-f093-42c3-80c9-03a16c4a9114"
+      "rejectedAt": "2026-10-14T01:16:55.578Z",
+      "cycleId": "00bf3f01-7845-429f-8cc1-54ad02feaec0"
     },
     {
       "id": "hackernews:50073471",
@@ -33,8 +33,8 @@
       "url": "https://news.ycombinator.com/item?id=50073471",
       "reason": "same story as \"Launch HN: Consus (YC F24) – LLM gateway for companies handling sensitive data\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-13T21:19:45.844Z",
-      "cycleId": "9341e365-f093-42c3-80c9-03a16c4a9114"
+      "rejectedAt": "2026-10-14T01:16:55.578Z",
+      "cycleId": "00bf3f01-7845-429f-8cc1-54ad02feaec0"
     },
     {
       "id": "arxiv:2610.13948v1",
