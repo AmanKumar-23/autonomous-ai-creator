@@ -6,8 +6,8 @@
       "url": "https://ai-security-letter.org/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "hackernews:50076388",
@@ -15,8 +15,8 @@
       "url": "https://github.com/scarletkc/Hatoba",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "hackernews:50076347",
@@ -24,17 +24,8 @@
       "url": "https://blog.google/innovation-and-ai/technology/safety-security/gemini-4-model-safety-security/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
-    },
-    {
-      "id": "hackernews:50054310",
-      "title": "AI agent is only as safe as the packages it downloads",
-      "url": "https://cyberscoop.com/ai-agent-software-supply-chain-security-op-ed/",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "hackernews:50073471",
@@ -42,8 +33,8 @@
       "url": "https://news.ycombinator.com/item?id=50073471",
       "reason": "same story as \"Launch HN: Consus (YC F24) – LLM gateway for companies handling sensitive data\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18874v1",
@@ -51,8 +42,8 @@
       "url": "https://arxiv.org/abs/2610.18874v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18871v1",
@@ -60,8 +51,8 @@
       "url": "https://arxiv.org/abs/2610.18871v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18869v1",
@@ -69,8 +60,8 @@
       "url": "https://arxiv.org/abs/2610.18869v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18868v1",
@@ -78,8 +69,8 @@
       "url": "https://arxiv.org/abs/2610.18868v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18863v1",
@@ -87,8 +78,8 @@
       "url": "https://arxiv.org/abs/2610.18863v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18862v1",
@@ -96,8 +87,8 @@
       "url": "https://arxiv.org/abs/2610.18862v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18860v1",
@@ -105,8 +96,8 @@
       "url": "https://arxiv.org/abs/2610.18860v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18861v1",
@@ -114,8 +105,8 @@
       "url": "https://arxiv.org/abs/2610.18861v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18856v1",
@@ -123,8 +114,8 @@
       "url": "https://arxiv.org/abs/2610.18856v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18853v1",
@@ -132,8 +123,8 @@
       "url": "https://arxiv.org/abs/2610.18853v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18851v1",
@@ -141,8 +132,8 @@
       "url": "https://arxiv.org/abs/2610.18851v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18843v1",
@@ -150,8 +141,8 @@
       "url": "https://arxiv.org/abs/2610.18843v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18842v1",
@@ -159,8 +150,8 @@
       "url": "https://arxiv.org/abs/2610.18842v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18839v1",
@@ -168,8 +159,8 @@
       "url": "https://arxiv.org/abs/2610.18839v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18838v1",
@@ -177,8 +168,8 @@
       "url": "https://arxiv.org/abs/2610.18838v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18835v1",
@@ -186,8 +177,8 @@
       "url": "https://arxiv.org/abs/2610.18835v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18825v1",
@@ -195,8 +186,8 @@
       "url": "https://arxiv.org/abs/2610.18825v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18820v1",
@@ -204,8 +195,8 @@
       "url": "https://arxiv.org/abs/2610.18820v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18818v1",
@@ -213,8 +204,8 @@
       "url": "https://arxiv.org/abs/2610.18818v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18813v1",
@@ -222,8 +213,8 @@
       "url": "https://arxiv.org/abs/2610.18813v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18811v1",
@@ -231,8 +222,8 @@
       "url": "https://arxiv.org/abs/2610.18811v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18809v1",
@@ -240,8 +231,8 @@
       "url": "https://arxiv.org/abs/2610.18809v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18808v1",
@@ -249,8 +240,8 @@
       "url": "https://arxiv.org/abs/2610.18808v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18804v1",
@@ -258,8 +249,8 @@
       "url": "https://arxiv.org/abs/2610.18804v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18799v1",
@@ -267,8 +258,8 @@
       "url": "https://arxiv.org/abs/2610.18799v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18792v1",
@@ -276,8 +267,8 @@
       "url": "https://arxiv.org/abs/2610.18792v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18787v1",
@@ -285,14 +276,23 @@
       "url": "https://arxiv.org/abs/2610.18787v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-14T07:44:56.712Z",
-      "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
     },
     {
       "id": "arxiv:2610.18786v1",
       "title": "Where Do LLM Ensemble Gains Come From? Decomposing Candidate Value, Diversity, and Aggregation",
       "url": "https://arxiv.org/abs/2610.18786v1",
       "reason": "no domain term appears in the title or abstract",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-14T13:48:22.645Z",
+      "cycleId": "5342e885-cc85-4c87-9e20-65c32f25f0d2"
+    },
+    {
+      "id": "hackernews:50054310",
+      "title": "AI agent is only as safe as the packages it downloads",
+      "url": "https://cyberscoop.com/ai-agent-software-supply-chain-security-op-ed/",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-10-14T07:44:56.712Z",
       "cycleId": "b0ce3902-60d9-4d48-b333-6676797ddbe4"
