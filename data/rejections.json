@@ -6,8 +6,8 @@
       "url": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "hackernews:50091788",
@@ -15,8 +15,8 @@
       "url": "https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "hackernews:50091167",
@@ -24,8 +24,17 @@
       "url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
       "reason": "only generic AI vocabulary matched (ai, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
+    },
+    {
+      "id": "hackernews:50118011",
+      "title": "Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents",
+      "url": "https://github.com/adikshatriyag-crypto/aegis-kernel",
+      "reason": "same story as \"Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "hackernews:50102981",
@@ -33,8 +42,8 @@
       "url": "https://app.netlumi.com",
       "reason": "same story as \"Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22372v1",
@@ -42,8 +51,8 @@
       "url": "https://arxiv.org/abs/2610.22372v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22367v1",
@@ -51,8 +60,8 @@
       "url": "https://arxiv.org/abs/2610.22367v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22364v1",
@@ -60,8 +69,8 @@
       "url": "https://arxiv.org/abs/2610.22364v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22362v1",
@@ -69,8 +78,8 @@
       "url": "https://arxiv.org/abs/2610.22362v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22358v1",
@@ -78,8 +87,8 @@
       "url": "https://arxiv.org/abs/2610.22358v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22353v1",
@@ -87,8 +96,8 @@
       "url": "https://arxiv.org/abs/2610.22353v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22350v1",
@@ -96,8 +105,8 @@
       "url": "https://arxiv.org/abs/2610.22350v1",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22344v1",
@@ -105,8 +114,8 @@
       "url": "https://arxiv.org/abs/2610.22344v1",
       "reason": "only generic AI vocabulary matched (ai, machine learning, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22343v1",
@@ -114,8 +123,8 @@
       "url": "https://arxiv.org/abs/2610.22343v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22341v1",
@@ -123,8 +132,8 @@
       "url": "https://arxiv.org/abs/2610.22341v1",
       "reason": "only generic AI vocabulary matched (research, dataset), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22340v1",
@@ -132,8 +141,8 @@
       "url": "https://arxiv.org/abs/2610.22340v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22339v1",
@@ -141,8 +150,8 @@
       "url": "https://arxiv.org/abs/2610.22339v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22336v1",
@@ -150,8 +159,8 @@
       "url": "https://arxiv.org/abs/2610.22336v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22331v1",
@@ -159,8 +168,8 @@
       "url": "https://arxiv.org/abs/2610.22331v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22330v1",
@@ -168,8 +177,8 @@
       "url": "https://arxiv.org/abs/2610.22330v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22328v1",
@@ -177,8 +186,8 @@
       "url": "https://arxiv.org/abs/2610.22328v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22327v1",
@@ -186,8 +195,8 @@
       "url": "https://arxiv.org/abs/2610.22327v1",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22322v1",
@@ -195,8 +204,8 @@
       "url": "https://arxiv.org/abs/2610.22322v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22321v1",
@@ -204,8 +213,8 @@
       "url": "https://arxiv.org/abs/2610.22321v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22319v1",
@@ -213,8 +222,8 @@
       "url": "https://arxiv.org/abs/2610.22319v1",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22316v1",
@@ -222,8 +231,8 @@
       "url": "https://arxiv.org/abs/2610.22316v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22300v1",
@@ -231,8 +240,8 @@
       "url": "https://arxiv.org/abs/2610.22300v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22298v1",
@@ -240,8 +249,8 @@
       "url": "https://arxiv.org/abs/2610.22298v1",
       "reason": "only generic AI vocabulary matched (ai, model, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22293v1",
@@ -249,8 +258,8 @@
       "url": "https://arxiv.org/abs/2610.22293v1",
       "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "arxiv:2610.22290v1",
@@ -258,8 +267,8 @@
       "url": "https://arxiv.org/abs/2610.22290v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T07:17:32.410Z",
-      "cycleId": "7e0b2d76-2f88-4a4b-8610-c5d589b31967"
+      "rejectedAt": "2026-10-16T13:18:42.287Z",
+      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
     },
     {
       "id": "hackernews:50081380",
@@ -1868,15 +1877,6 @@
       "title": "Neural Petri flows for chemical reactions",
       "url": "https://arxiv.org/abs/2610.08750v1",
       "reason": "only generic AI vocabulary matched (models, neural network), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-07T23:10:09.767Z",
-      "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
-    },
-    {
-      "id": "arxiv:2610.08745v1",
-      "title": "Linear Bandits under Exact Sliding-Window Constraints",
-      "url": "https://arxiv.org/abs/2610.08745v1",
-      "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
       "rejectedAt": "2026-10-07T23:10:09.767Z",
       "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
