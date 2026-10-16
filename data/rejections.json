@@ -6,8 +6,53 @@
       "url": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-16T13:18:42.287Z",
-      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
+      "rejectedAt": "2026-10-16T18:07:50.286Z",
+      "cycleId": "b09dce32-dd6a-46c7-9e3d-c7d9c75a9cd6"
+    },
+    {
+      "id": "hackernews:50121764",
+      "title": "China Reportedly Planning AI Export Controls, Citing National Security",
+      "url": "https://www.pcmag.com/news/china-reportedly-planning-ai-export-controls-citing-national-security",
+      "reason": "same story as \"China Reportedly Planning AI Export Controls, Citing National Security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-16T18:07:50.286Z",
+      "cycleId": "b09dce32-dd6a-46c7-9e3d-c7d9c75a9cd6"
+    },
+    {
+      "id": "hackernews:50120286",
+      "title": "Show HN: Aegis – Network Firewall for AI Security",
+      "url": "https://aegisfw.com/",
+      "reason": "same story as \"Show HN: Aegis – Network Firewall for AI Security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-16T18:07:50.286Z",
+      "cycleId": "b09dce32-dd6a-46c7-9e3d-c7d9c75a9cd6"
+    },
+    {
+      "id": "hackernews:50119881",
+      "title": "Perplexity to give away its AI security software",
+      "url": "https://www.semafor.com/article/10/15/2026/perplexity-to-give-away-its-ai-security-software",
+      "reason": "same story as \"Perplexity to give away its AI security software\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-16T18:07:50.286Z",
+      "cycleId": "b09dce32-dd6a-46c7-9e3d-c7d9c75a9cd6"
+    },
+    {
+      "id": "hackernews:50118011",
+      "title": "Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents",
+      "url": "https://github.com/adikshatriyag-crypto/aegis-kernel",
+      "reason": "same story as \"Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-16T18:07:50.286Z",
+      "cycleId": "b09dce32-dd6a-46c7-9e3d-c7d9c75a9cd6"
+    },
+    {
+      "id": "hackernews:50102981",
+      "title": "Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)",
+      "url": "https://app.netlumi.com",
+      "reason": "same story as \"Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-16T18:07:50.286Z",
+      "cycleId": "b09dce32-dd6a-46c7-9e3d-c7d9c75a9cd6"
     },
     {
       "id": "hackernews:50091788",
@@ -23,24 +68,6 @@
       "title": "Anthropic warns small AI models could self-replicate through IoT devices",
       "url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
       "reason": "only generic AI vocabulary matched (ai, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-16T13:18:42.287Z",
-      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
-    },
-    {
-      "id": "hackernews:50118011",
-      "title": "Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents",
-      "url": "https://github.com/adikshatriyag-crypto/aegis-kernel",
-      "reason": "same story as \"Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-16T13:18:42.287Z",
-      "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
-    },
-    {
-      "id": "hackernews:50102981",
-      "title": "Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)",
-      "url": "https://app.netlumi.com",
-      "reason": "same story as \"Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-10-16T13:18:42.287Z",
       "cycleId": "076edc18-7ed1-4703-a1db-19a6d580d3f9"
@@ -1850,33 +1877,6 @@
       "title": "Mission-Aware Attestation Envelopes for Time-Critical Autonomous Action: A Hardware-in-the-Loop V2I Study",
       "url": "https://arxiv.org/abs/2610.08771v1",
       "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-07T23:10:09.767Z",
-      "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
-    },
-    {
-      "id": "arxiv:2610.08764v1",
-      "title": "Rapid Fredholm stabilization of the Kuramoto--Sivashinsky equation with unrestricted, spatially-varying anti-diffusion",
-      "url": "https://arxiv.org/abs/2610.08764v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-07T23:10:09.767Z",
-      "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
-    },
-    {
-      "id": "arxiv:2610.08760v1",
-      "title": "WorldSonus: Bringing Sound to Worlds",
-      "url": "https://arxiv.org/abs/2610.08760v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-07T23:10:09.767Z",
-      "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
-    },
-    {
-      "id": "arxiv:2610.08750v1",
-      "title": "Neural Petri flows for chemical reactions",
-      "url": "https://arxiv.org/abs/2610.08750v1",
-      "reason": "only generic AI vocabulary matched (models, neural network), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-10-07T23:10:09.767Z",
       "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
