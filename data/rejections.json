@@ -1,6 +1,114 @@
 {
   "rejections": [
     {
+      "id": "hackernews:50126802",
+      "title": "Android gets AI defenses against messaging scams, fake calls",
+      "url": "https://www.bleepingcomputer.com/news/security/android-gets-ai-defenses-against-messaging-scams-fake-calls/",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50108600",
+      "title": "FTC probes Anthropic, OpenAI after Trump dismissed AI fears as \"hoax\"",
+      "url": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50127877",
+      "title": "Zeabur discontinues AI Hub after its August security breach",
+      "url": "https://zeabur.com/changelogs/aihub-shutdown",
+      "reason": "same story as \"Zeabur discontinues AI Hub after its August security breach\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50126612",
+      "title": "Agent Cyber Sentinel: Zero-trust runtime security shield for AI agents",
+      "url": "https://github.com/BenniAlencar/agent-cyber-sentinel",
+      "reason": "same story as \"Agent Cyber Sentinel: Zero-trust runtime security shield for AI agents\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50124600",
+      "title": "Tell HN: Anthropic found 36 bugs (6 CVEs) in Pion, OpenAI missed them",
+      "url": "https://news.ycombinator.com/item?id=50124600",
+      "reason": "same story as \"Tell HN: Anthropic found 36 bugs (6 CVEs) in Pion, OpenAI missed them\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50122321",
+      "title": "China moves to curb tech exports, including AI, citing national security risks",
+      "url": "https://apnews.com/article/china-export-restrictions-ai-chips-solar-us-5ac381c0c6d6628bbea2e0da7d855a5b",
+      "reason": "same story as \"China moves to curb tech exports, including AI, citing national security risks\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50121764",
+      "title": "China Reportedly Planning AI Export Controls, Citing National Security",
+      "url": "https://www.pcmag.com/news/china-reportedly-planning-ai-export-controls-citing-national-security",
+      "reason": "same story as \"China Reportedly Planning AI Export Controls, Citing National Security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50120286",
+      "title": "Show HN: Aegis – Network Firewall for AI Security",
+      "url": "https://aegisfw.com/",
+      "reason": "same story as \"Show HN: Aegis – Network Firewall for AI Security\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50119881",
+      "title": "Perplexity to give away its AI security software",
+      "url": "https://www.semafor.com/article/10/15/2026/perplexity-to-give-away-its-ai-security-software",
+      "reason": "same story as \"Perplexity to give away its AI security software\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50119806",
+      "title": "Show HN: Muse Jailbreak – Let Muse use your own Chrome",
+      "url": "https://gitlab.com/pablosanzo/musejailbreak",
+      "reason": "same story as \"Show HN: Muse Jailbreak – Let Muse use your own Chrome\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50118011",
+      "title": "Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents",
+      "url": "https://github.com/adikshatriyag-crypto/aegis-kernel",
+      "reason": "same story as \"Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
+      "id": "hackernews:50102981",
+      "title": "Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)",
+      "url": "https://app.netlumi.com",
+      "reason": "same story as \"Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-17T07:02:09.193Z",
+      "cycleId": "0c7c4dd3-2e22-4395-a0a6-7d485835818a"
+    },
+    {
       "id": "arxiv:2610.22297v1",
       "title": "Private Retrieval Augmented Generation via Random Projection",
       "url": "https://arxiv.org/abs/2610.22297v1",
@@ -15,87 +123,6 @@
       "url": "https://arxiv.org/abs/2610.22296v1",
       "reason": "not read this cycle: ranked 14 of 14 by the pre-filter, below the top 12 the editor reviews",
       "stage": "editor",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50108600",
-      "title": "FTC probes Anthropic, OpenAI after Trump dismissed AI fears as \"hoax\"",
-      "url": "https://arstechnica.com/tech-policy/2026/10/ftc-probes-if-openai-anthropic-security-incidents-harmed-americans-report-says/",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50124600",
-      "title": "Tell HN: Anthropic found 36 bugs (6 CVEs) in Pion, OpenAI missed them",
-      "url": "https://news.ycombinator.com/item?id=50124600",
-      "reason": "same story as \"Tell HN: Anthropic found 36 bugs (6 CVEs) in Pion, OpenAI missed them\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50122321",
-      "title": "China moves to curb tech exports, including AI, citing national security risks",
-      "url": "https://apnews.com/article/china-export-restrictions-ai-chips-solar-us-5ac381c0c6d6628bbea2e0da7d855a5b",
-      "reason": "same story as \"China moves to curb tech exports, including AI, citing national security risks\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50121764",
-      "title": "China Reportedly Planning AI Export Controls, Citing National Security",
-      "url": "https://www.pcmag.com/news/china-reportedly-planning-ai-export-controls-citing-national-security",
-      "reason": "same story as \"China Reportedly Planning AI Export Controls, Citing National Security\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50120286",
-      "title": "Show HN: Aegis – Network Firewall for AI Security",
-      "url": "https://aegisfw.com/",
-      "reason": "same story as \"Show HN: Aegis – Network Firewall for AI Security\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50119881",
-      "title": "Perplexity to give away its AI security software",
-      "url": "https://www.semafor.com/article/10/15/2026/perplexity-to-give-away-its-ai-security-software",
-      "reason": "same story as \"Perplexity to give away its AI security software\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50119806",
-      "title": "Show HN: Muse Jailbreak – Let Muse use your own Chrome",
-      "url": "https://gitlab.com/pablosanzo/musejailbreak",
-      "reason": "same story as \"Show HN: Muse Jailbreak – Let Muse use your own Chrome\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50118011",
-      "title": "Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents",
-      "url": "https://github.com/adikshatriyag-crypto/aegis-kernel",
-      "reason": "same story as \"Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-17T00:33:03.981Z",
-      "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
-    },
-    {
-      "id": "hackernews:50102981",
-      "title": "Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)",
-      "url": "https://app.netlumi.com",
-      "reason": "same story as \"Show HN: Netlumi – Cloud and AI agent security with auto-remediation(Live demo)\" from hackernews",
-      "stage": "prefilter",
       "rejectedAt": "2026-10-17T00:33:03.981Z",
       "cycleId": "eaf44d2a-da41-4267-84be-903b1947ccb8"
     },
@@ -1868,33 +1895,6 @@
       "title": "Conformal Prediction Sets Quantify Information Gain: A Theoretical Perspective",
       "url": "https://arxiv.org/abs/2610.08785v1",
       "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-07T23:10:09.767Z",
-      "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
-    },
-    {
-      "id": "arxiv:2610.08782v1",
-      "title": "4D-HOF: Hand-Object Flow Matching for Feed-Forward 4D Interaction Reconstruction",
-      "url": "https://arxiv.org/abs/2610.08782v1",
-      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-07T23:10:09.767Z",
-      "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
-    },
-    {
-      "id": "arxiv:2610.08781v1",
-      "title": "IdeaAnchor: Teaching LLMs to Turn Literature into Research Ideas",
-      "url": "https://arxiv.org/abs/2610.08781v1",
-      "reason": "only generic AI vocabulary matched (models, research), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-07T23:10:09.767Z",
-      "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
-    },
-    {
-      "id": "arxiv:2610.08780v1",
-      "title": "DepthWorld: 3D World Model for Robot Manipulation",
-      "url": "https://arxiv.org/abs/2610.08780v1",
-      "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-10-07T23:10:09.767Z",
       "cycleId": "8a0c8c4f-f39d-465f-9e70-481127e24caa"
