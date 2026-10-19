@@ -6,8 +6,8 @@
       "url": "https://aiskills402.com/blog/agent-skills-security-risks",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-19T13:31:42.479Z",
-      "cycleId": "187a280b-7164-4f11-92ea-988067dc3a1d"
+      "rejectedAt": "2026-10-19T20:00:07.886Z",
+      "cycleId": "2cc5d9f2-354a-4d2a-a527-be7314948224"
     },
     {
       "id": "hackernews:50138046",
@@ -15,8 +15,26 @@
       "url": "https://octomon.dev/blog/ai-slop-and-ai-gourmet/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-19T13:31:42.479Z",
-      "cycleId": "187a280b-7164-4f11-92ea-988067dc3a1d"
+      "rejectedAt": "2026-10-19T20:00:07.886Z",
+      "cycleId": "2cc5d9f2-354a-4d2a-a527-be7314948224"
+    },
+    {
+      "id": "hackernews:50156529",
+      "title": "Security patches need patches now that attackers have AI",
+      "url": "https://www.theregister.com/patches/2026/10/19/security-patches-need-patches-now-that-attackers-have-ai/5303927",
+      "reason": "same story as \"Security patches need patches now that attackers have AI\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-19T20:00:07.886Z",
+      "cycleId": "2cc5d9f2-354a-4d2a-a527-be7314948224"
+    },
+    {
+      "id": "hackernews:50155469",
+      "title": "Security Swarm",
+      "url": "https://docs.devin.ai/work-with-devin/security-swarm",
+      "reason": "same story as \"Security Swarm\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-19T20:00:07.886Z",
+      "cycleId": "2cc5d9f2-354a-4d2a-a527-be7314948224"
     },
     {
       "id": "hackernews:50133964",
@@ -1907,24 +1925,6 @@
       "stage": "prefilter",
       "rejectedAt": "2026-10-09T09:12:49.610Z",
       "cycleId": "99f61764-da5e-461c-a660-60fe0da8314f"
-    },
-    {
-      "id": "hackernews:49990079",
-      "title": "Ask HN: How do you check desktop apps for malicious code?",
-      "url": "https://news.ycombinator.com/item?id=49990079",
-      "reason": "same story as \"Ask HN: How do you check desktop apps for malicious code?\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-09T00:27:12.450Z",
-      "cycleId": "fbf314ed-4319-40bb-b4c7-ea1b987220f1"
-    },
-    {
-      "id": "arxiv:2610.10538v1",
-      "title": "Never Look Back: Understanding Persistence in 3D Object Memory from Egocentric Videos",
-      "url": "https://arxiv.org/abs/2610.10538v1",
-      "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-09T00:27:12.450Z",
-      "cycleId": "fbf314ed-4319-40bb-b4c7-ea1b987220f1"
     },
     {
       "id": "hackernews:49962560",
