@@ -6,8 +6,8 @@
       "url": "https://goteleport.com/blog/ai-agent-swarm-security-lessons/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-20T04:59:28.703Z",
-      "cycleId": "ec1c70b3-7770-429e-9775-ae34af83d698"
+      "rejectedAt": "2026-10-20T11:48:08.883Z",
+      "cycleId": "80d9b918-8391-4f0d-85ff-034a28bf28a6"
     },
     {
       "id": "hackernews:50149698",
@@ -15,17 +15,17 @@
       "url": "https://aiskills402.com/blog/agent-skills-security-risks",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-20T04:59:28.703Z",
-      "cycleId": "ec1c70b3-7770-429e-9775-ae34af83d698"
+      "rejectedAt": "2026-10-20T11:48:08.883Z",
+      "cycleId": "80d9b918-8391-4f0d-85ff-034a28bf28a6"
     },
     {
-      "id": "hackernews:50138046",
-      "title": "AI Slop? Nay, AI Gourmet",
-      "url": "https://octomon.dev/blog/ai-slop-and-ai-gourmet/",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
+      "id": "hackernews:50161984",
+      "title": "AegisKernel – Zero-Trust deterministic security runtime for AI agents",
+      "url": "https://github.com/adikshatriyag-crypto/aegis-kernel",
+      "reason": "same story as \"AegisKernel – Zero-Trust deterministic security runtime for AI agents\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-20T04:59:28.703Z",
-      "cycleId": "ec1c70b3-7770-429e-9775-ae34af83d698"
+      "rejectedAt": "2026-10-20T11:48:08.883Z",
+      "cycleId": "80d9b918-8391-4f0d-85ff-034a28bf28a6"
     },
     {
       "id": "hackernews:50156529",
@@ -33,14 +33,23 @@
       "url": "https://www.theregister.com/patches/2026/10/19/security-patches-need-patches-now-that-attackers-have-ai/5303927",
       "reason": "same story as \"Security patches need patches now that attackers have AI\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-20T04:59:28.703Z",
-      "cycleId": "ec1c70b3-7770-429e-9775-ae34af83d698"
+      "rejectedAt": "2026-10-20T11:48:08.883Z",
+      "cycleId": "80d9b918-8391-4f0d-85ff-034a28bf28a6"
     },
     {
       "id": "hackernews:50155469",
       "title": "Security Swarm",
       "url": "https://docs.devin.ai/work-with-devin/security-swarm",
       "reason": "same story as \"Security Swarm\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-20T11:48:08.883Z",
+      "cycleId": "80d9b918-8391-4f0d-85ff-034a28bf28a6"
+    },
+    {
+      "id": "hackernews:50138046",
+      "title": "AI Slop? Nay, AI Gourmet",
+      "url": "https://octomon.dev/blog/ai-slop-and-ai-gourmet/",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-10-20T04:59:28.703Z",
       "cycleId": "ec1c70b3-7770-429e-9775-ae34af83d698"
@@ -896,15 +905,6 @@
       "title": "Perplexity to give away its AI security software",
       "url": "https://www.semafor.com/article/10/15/2026/perplexity-to-give-away-its-ai-security-software",
       "reason": "same story as \"Perplexity to give away its AI security software\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-18T11:18:23.064Z",
-      "cycleId": "eb244e6e-dce9-40ab-8a4f-3850b8af6f26"
-    },
-    {
-      "id": "hackernews:50118011",
-      "title": "Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents",
-      "url": "https://github.com/adikshatriyag-crypto/aegis-kernel",
-      "reason": "same story as \"Show HN: AegisKernel – Zero-trust deterministic security runtime for AI agents\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-10-18T11:18:23.064Z",
       "cycleId": "eb244e6e-dce9-40ab-8a4f-3850b8af6f26"
