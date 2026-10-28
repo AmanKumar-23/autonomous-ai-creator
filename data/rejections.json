@@ -1,22 +1,13 @@
 {
   "rejections": [
     {
-      "id": "hackernews:50263741",
-      "title": "Securing sensitive data in the AI era",
-      "url": "https://blog.piotrnalepa.pl/en/2026/10/27/shadow-ai-in-a-development-team-how-to-keep-your-clients-code-out-of-the-chat/",
-      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
-    },
-    {
       "id": "hackernews:50261335",
       "title": "Show HN: Weir - Catch credential leaks in the AI agents you build and use",
       "url": "https://github.com/IdoGol24/weir",
       "reason": "only generic AI vocabulary matched (ai, model), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50255410",
@@ -24,8 +15,8 @@
       "url": "https://www.theregister.com/security/2026/10/26/britain-bets-big-on-ai-to-defend-against-the-threats-ai-is-helping-create/5305319",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50250494",
@@ -33,8 +24,8 @@
       "url": "https://www.manifold.security/blog/agent-log-tampering",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50250450",
@@ -42,8 +33,8 @@
       "url": "https://www.nbcnews.com/tech/security/grand-theft-ai-highway-thieves-are-stealing-millions-data-center-gear-rcna603733",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50243922",
@@ -51,8 +42,8 @@
       "url": "https://forever.security/blog/hijacking-ai-agents-via-downloads-folder/",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50243883",
@@ -60,8 +51,8 @@
       "url": "https://www.bleepingcomputer.com/news/security/ai-coding-agents-hijacked-using-agentsmd-file-in-downloads-folder/",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50242510",
@@ -69,8 +60,8 @@
       "url": "https://geekyants.com/blog/how-geekyants-manages-ai-models-after-launch-to-maintain-security-control-and-flexibility",
       "reason": "only generic AI vocabulary matched (ai, models), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50263609",
@@ -78,8 +69,8 @@
       "url": "https://www.coderabbit.ai/blog/coderabbit-secure-cross-repository-security",
       "reason": "same story as \"New CodeRabbit Features: Security Agents for Multi-Repo Deep Scans\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50262290",
@@ -87,8 +78,8 @@
       "url": "https://agenticbench.org/",
       "reason": "same story as \"Show HN: AgenticBench, 9 security tests run on 25 AI coding agents\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50258513",
@@ -96,8 +87,8 @@
       "url": "https://github.com/0xArx/hashling",
       "reason": "same story as \"Show HN: Hashling, an open-source Mac security agent your own AI can talk to\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50247654",
@@ -105,8 +96,8 @@
       "url": "https://devin.ai/blog/devin-security-2",
       "reason": "same story as \"Devin Security 2.0: Built for the new threat landscape\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50245284",
@@ -114,8 +105,8 @@
       "url": "https://github.com/sturnus-dev/sturnus",
       "reason": "same story as \"Show HN: Sturnus, a latency-based LLM load balancer\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50244977",
@@ -123,14 +114,23 @@
       "url": "https://blog.tedivm.com/rants/2026/10/the-ai-rcession-has-begun/",
       "reason": "same story as \"The AI RCEssion: AI-driven security is calling in decades of software tech debt\" from hackernews",
       "stage": "prefilter",
-      "rejectedAt": "2026-10-28T01:26:48.894Z",
-      "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
     },
     {
       "id": "hackernews:50259180",
       "title": "Show HN: Model Salt, fixing the pelican problem in LLMs by adding entropy",
       "url": "https://modelsalt.com/",
       "reason": "only generic AI vocabulary matched (model, models), nothing specific to the domain",
+      "stage": "prefilter",
+      "rejectedAt": "2026-10-28T08:41:17.624Z",
+      "cycleId": "988dbbd5-7f40-401b-94cc-625f87b3d4a5"
+    },
+    {
+      "id": "hackernews:50263741",
+      "title": "Securing sensitive data in the AI era",
+      "url": "https://blog.piotrnalepa.pl/en/2026/10/27/shadow-ai-in-a-development-team-how-to-keep-your-clients-code-out-of-the-chat/",
+      "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-10-28T01:26:48.894Z",
       "cycleId": "89563222-bfac-48e8-8986-b0b4eba42737"
