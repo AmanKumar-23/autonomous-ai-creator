@@ -1,6 +1,22 @@
 {
   "cycles": [
     {
+      "id": "8c230d2d-0e29-4aaa-acf3-72d27e8fd5f0",
+      "startedAt": "2026-10-29T23:58:30.360Z",
+      "finishedAt": "2026-10-29T23:58:39.149Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 56,
+      "kept": 8,
+      "dropped": 48,
+      "failures": [],
+      "memory": {
+        "available": false,
+        "failures": 8
+      }
+    },
+    {
       "id": "24da91fb-cdad-4d01-b6ee-8ebf0b489bfe",
       "startedAt": "2026-10-29T19:41:41.273Z",
       "finishedAt": "2026-10-29T19:41:50.165Z",
@@ -3304,28 +3320,6 @@
       "id": "bd31e4a9-2dbd-4c1f-8698-e9243fd5919c",
       "startedAt": "2026-09-13T04:55:36.021Z",
       "finishedAt": "2026-09-13T04:56:13.916Z",
-      "status": "failed",
-      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
-      "domain": "AI Security",
-      "discovered": 15,
-      "kept": 3,
-      "dropped": 12,
-      "failures": [
-        {
-          "source": "arxiv",
-          "error": "timeout after 15000ms",
-          "attempts": 2
-        }
-      ],
-      "memory": {
-        "available": true,
-        "failures": 0
-      }
-    },
-    {
-      "id": "9dfdf37a-f427-401f-a11a-20d4b1fce5e0",
-      "startedAt": "2026-09-12T22:22:21.037Z",
-      "finishedAt": "2026-09-12T22:22:58.147Z",
       "status": "failed",
       "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.6-flash for the latest features and improvemen). Nothing was published.",
       "domain": "AI Security",
