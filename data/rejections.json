@@ -6,8 +6,8 @@
       "url": "https://kotaku.com/humble-bundle-vibe-coded-ai-redesign-account-security-password-email-2000756085",
       "reason": "no domain term appears in the title or abstract",
       "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
     },
     {
       "id": "hackernews:50459255",
@@ -15,8 +15,8 @@
       "url": "https://zumungo.com/get-started.html",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
     },
     {
       "id": "hackernews:50455811",
@@ -24,8 +24,80 @@
       "url": "https://news.ycombinator.com/item?id=50455811",
       "reason": "only generic AI vocabulary matched (ai), nothing specific to the domain",
       "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50475926",
+      "title": "Security flaws in popular AI tools have nearly tripled",
+      "url": "https://birdyfoot.com/research/ai-tool-vulnerabilities",
+      "reason": "same story as \"Security flaws in popular AI tools have nearly tripled\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50470975",
+      "title": "AI Models Know What Women, Peace and Security Is. They Just Don't Bring It Up",
+      "url": "https://blog.cip.org/p/ai-models-know-what-women-peace-and",
+      "reason": "same story as \"AI Models Know What Women, Peace and Security Is. They Just Don't Bring It Up\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50468058",
+      "title": "AI Security Issues Are Social Engineering Issues",
+      "url": "https://www.oblomovka.com/wp/2026/11/11/ai-security-issues-are-social-engineering-issues/",
+      "reason": "same story as \"AI Security Issues Are Social Engineering Issues\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50459974",
+      "title": "Who gets cheaper security from AI?",
+      "url": "https://franklyspeaking.substack.com/p/who-actually-gets-cheaper-security",
+      "reason": "same story as \"Who gets cheaper security from AI?\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50458009",
+      "title": "An open specification for agentic AI security evaluation and testing, from Cisco",
+      "url": "https://github.com/CiscoDevNet/foundry-security-spec",
+      "reason": "same story as \"An open specification for agentic AI security evaluation and testing, from Cisco\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50457079",
+      "title": "Access models for security and safety work that mainstream AI often refuses",
+      "url": "https://abliteration.ai/platform",
+      "reason": "same story as \"Access models for security and safety work that mainstream AI often refuses\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50453055",
+      "title": "Show HN: Beam – Pairing machines with passkeys; replace SSH&VPN's with Tailcat",
+      "url": "https://github.com/notaharness/beam",
+      "reason": "same story as \"Show HN: Beam – Pairing machines with passkeys; replace SSH&VPN's with Tailcat\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
+    },
+    {
+      "id": "hackernews:50452395",
+      "title": "Ring cameras go mobile as Amazon debuts AI-powered security drone and robot",
+      "url": "https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/",
+      "reason": "same story as \"Ring cameras go mobile as Amazon debuts AI-powered security drone and robot\" from hackernews",
+      "stage": "prefilter",
+      "rejectedAt": "2026-11-13T01:10:50.380Z",
+      "cycleId": "babcd260-6359-4d56-aaea-e59cf8ae2ea3"
     },
     {
       "id": "hackernews:50446617",
@@ -46,73 +118,10 @@
       "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
     },
     {
-      "id": "hackernews:50470975",
-      "title": "AI Models Know What Women, Peace and Security Is. They Just Don't Bring It Up",
-      "url": "https://blog.cip.org/p/ai-models-know-what-women-peace-and",
-      "reason": "same story as \"AI Models Know What Women, Peace and Security Is. They Just Don't Bring It Up\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
-    },
-    {
-      "id": "hackernews:50468058",
-      "title": "AI Security Issues Are Social Engineering Issues",
-      "url": "https://www.oblomovka.com/wp/2026/11/11/ai-security-issues-are-social-engineering-issues/",
-      "reason": "same story as \"AI Security Issues Are Social Engineering Issues\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
-    },
-    {
-      "id": "hackernews:50459974",
-      "title": "Who gets cheaper security from AI?",
-      "url": "https://franklyspeaking.substack.com/p/who-actually-gets-cheaper-security",
-      "reason": "same story as \"Who gets cheaper security from AI?\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
-    },
-    {
-      "id": "hackernews:50458009",
-      "title": "An open specification for agentic AI security evaluation and testing, from Cisco",
-      "url": "https://github.com/CiscoDevNet/foundry-security-spec",
-      "reason": "same story as \"An open specification for agentic AI security evaluation and testing, from Cisco\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
-    },
-    {
-      "id": "hackernews:50457079",
-      "title": "Access models for security and safety work that mainstream AI often refuses",
-      "url": "https://abliteration.ai/platform",
-      "reason": "same story as \"Access models for security and safety work that mainstream AI often refuses\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
-    },
-    {
       "id": "hackernews:50455376",
       "title": "Alice Huang helped move 240k banned chips into China, mostly H100 and H200",
       "url": "https://www.tomshardware.com/tech-industry/policy/alice-huang-reportedly-instrumental-in-securing-over-usd7-5-billion-of-nvidia-ai-gpu-imports-during-three-year-relationship-with-jensen-huang-helped-move-240-000-banned-chips-into-china-mostly-h100-and-h200",
       "reason": "no domain term appears in the title or abstract",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
-    },
-    {
-      "id": "hackernews:50453055",
-      "title": "Show HN: Beam – Pairing machines with passkeys; replace SSH&VPN's with Tailcat",
-      "url": "https://github.com/notaharness/beam",
-      "reason": "same story as \"Show HN: Beam – Pairing machines with passkeys; replace SSH&VPN's with Tailcat\" from hackernews",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-12T18:22:48.061Z",
-      "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
-    },
-    {
-      "id": "hackernews:50452395",
-      "title": "Ring cameras go mobile as Amazon debuts AI-powered security drone and robot",
-      "url": "https://arstechnica.com/ai/2026/11/ring-cameras-go-mobile-as-amazon-debuts-ai-powered-security-drone-and-robot/",
-      "reason": "same story as \"Ring cameras go mobile as Amazon debuts AI-powered security drone and robot\" from hackernews",
       "stage": "prefilter",
       "rejectedAt": "2026-11-12T18:22:48.061Z",
       "cycleId": "493082a0-5da0-471f-a039-0d92cbfb2fad"
@@ -1913,15 +1922,6 @@
       "title": "Context--Answer Metamodels: Forecasting LLM Activations Before the First Answer Token",
       "url": "https://arxiv.org/abs/2611.06837v1",
       "reason": "only generic AI vocabulary matched (model), nothing specific to the domain",
-      "stage": "prefilter",
-      "rejectedAt": "2026-11-05T23:41:24.152Z",
-      "cycleId": "d4a48922-f601-476d-8bc9-ed3b274bbc5f"
-    },
-    {
-      "id": "arxiv:2611.06829v1",
-      "title": "Enabling AWS Cloud FPGA Development Using High-Level Vitis HLS",
-      "url": "https://arxiv.org/abs/2611.06829v1",
-      "reason": "only generic AI vocabulary matched (models), nothing specific to the domain",
       "stage": "prefilter",
       "rejectedAt": "2026-11-05T23:41:24.152Z",
       "cycleId": "d4a48922-f601-476d-8bc9-ed3b274bbc5f"
