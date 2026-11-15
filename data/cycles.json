@@ -1,6 +1,22 @@
 {
   "cycles": [
     {
+      "id": "c9caedfb-df88-4ce9-bda4-3ea06e99c02c",
+      "startedAt": "2026-11-15T22:55:51.890Z",
+      "finishedAt": "2026-11-15T22:56:00.834Z",
+      "status": "failed",
+      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvemen). Nothing was published.",
+      "domain": "AI Security",
+      "discovered": 41,
+      "kept": 7,
+      "dropped": 35,
+      "failures": [],
+      "memory": {
+        "available": false,
+        "failures": 4
+      }
+    },
+    {
       "id": "de8d58eb-a682-45a4-9bdb-2e1f0a4f142d",
       "startedAt": "2026-11-15T17:14:54.355Z",
       "finishedAt": "2026-11-15T17:15:03.409Z",
@@ -3244,22 +3260,6 @@
       "discovered": 59,
       "kept": 15,
       "dropped": 44,
-      "failures": [],
-      "memory": {
-        "available": false,
-        "failures": 15
-      }
-    },
-    {
-      "id": "6e404956-47b5-4e25-963b-fafeb667c7da",
-      "startedAt": "2026-09-25T13:54:15.619Z",
-      "finishedAt": "2026-09-25T13:54:24.521Z",
-      "status": "failed",
-      "reason": "Editorial judgment could not run (groq:llama-3.3-70b-versatile: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.3-70b-versatile` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; groq:llama-3.1-8b-instant: HTTP 404: {\"error\":{\"message\":\"The model `llama-3.1-8b-instant` does not exist or you do not have access to it.\",\"type\":\"invalid_request_error\",\"code\":\"model_not_found\"}}\n; gemini:gemini-2.0-flash: HTTP 404: {\n  \"error\": {\n    \"code\": 404,\n    \"message\": \"This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvemen). Nothing was published.",
-      "domain": "AI Security",
-      "discovered": 62,
-      "kept": 15,
-      "dropped": 47,
       "failures": [],
       "memory": {
         "available": false,
